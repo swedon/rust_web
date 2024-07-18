@@ -1112,12 +1112,6 @@ footer .copyright {
 
 
 /* Kits */
-
-.kits-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-}
 .accordion-button {
     background-color: #f8f9fa;
     border: 1px solid #dee2e6;
@@ -1130,14 +1124,14 @@ footer .copyright {
 }
 
 .accordion-body {
-    display: flex;
-    flex-direction: column;
     padding: 1rem;
+    background-color: #ffffff;
 }
 
 .kit-items {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
+    padding: 10px;
 }
 
 .kit-item-wrapper {
@@ -1157,6 +1151,7 @@ footer .copyright {
     background: transparent;
     color: black;
 }
+
 /* #endregion FAQ */
 
 /* #endregion Main */
