@@ -2153,40 +2153,54 @@ document.addEventListener('DOMContentLoaded', function () {
         silver: ["VIP Starter Kit", "VIP Kit", "Base Defense II", "VIP Builder II"],
         gold: ["VIP Starter Kit", "VIP Kit", "Base Defense III", "VIP Builder III"]
     };
+    
     function createKitCard(kit) {
         let mainItems = '';
         let wearItems = '';
         let beltItems = '';
 
-        kit.MainItems.forEach(item => {
+        function createItemImage(item) {
             const itemImage = `https://wiki.rustclash.com/img/items180/${item.Shortname}.png`;
-            mainItems += `<img src="${itemImage}" alt="${item.Shortname}" title="${item.Shortname} x${item.Amount}" class="kit-item">`;
+            return `
+                <div class="kit-item-wrapper">
+                    <img src="${itemImage}" alt="${item.Shortname}" title="${item.Shortname}" class="kit-item">
+                    <span class="item-amount">${item.Amount}</span>
+                </div>
+            `;
+        }
+
+        kit.MainItems.forEach(item => {
+            mainItems += createItemImage(item);
         });
 
         kit.WearItems.forEach(item => {
-            const itemImage = `https://wiki.rustclash.com/img/items180/${item.Shortname}.png`;
-            wearItems += `<img src="${itemImage}" alt="${item.Shortname}" title="${item.Shortname} x${item.Amount}" class="kit-item">`;
+            wearItems += createItemImage(item);
         });
 
         kit.BeltItems.forEach(item => {
-            const itemImage = `https://wiki.rustclash.com/img/items180/${item.Shortname}.png`;
-            beltItems += `<img src="${itemImage}" alt="${item.Shortname}" title="${item.Shortname} x${item.Amount}" class="kit-item">`;
+            beltItems += createItemImage(item);
         });
 
         return `
             <div class="kit-card">
                 <h3>${kit.Name}</h3>
-                <div class="kit-items">
+                <div class="kit-section">
                     <h4>Main Items</h4>
-                    ${mainItems}
+                    <div class="kit-items">
+                        ${mainItems}
+                    </div>
                 </div>
-                <div class="kit-items">
+                <div class="kit-section">
                     <h4>Wear Items</h4>
-                    ${wearItems}
+                    <div class="kit-items">
+                        ${wearItems}
+                    </div>
                 </div>
-                <div class="kit-items">
+                <div class="kit-section">
                     <h4>Belt Items</h4>
-                    ${beltItems}
+                    <div class="kit-items">
+                        ${beltItems}
+                    </div>
                 </div>
             </div>
         `;
