@@ -1,0 +1,1115 @@
+/*
+ * ============================================
+ *            COPYRIGHT SWEDON.SE
+ * ============================================
+ * SUMMARY
+ * --------------------------------------------
+ *  1 - Additionals
+ *  2 - Basic Styles
+ *  3 - Buttons
+ *  4 - Main (Contains 5-10)
+ *  5 -- Navigation
+ *  6 -- Servers
+ *  7 -- Hero
+ *  8 -- Rules
+ *  9 -- Staff
+ * 10 -- Shop
+ * 11 - Footer
+ * 12 - FAQ
+ * --------------------------------------------
+ */
+
+/* #region Additionals */
+
+@font-face {
+	font-family: 'Roboto Condensed';
+	font-style: italic;
+	src: url("../fonts/RobotoCondensed-Italic-VariableFont_wght.ttf") format('truetype');
+}
+
+@font-face {
+	font-family: 'Roboto Condensed';
+	font-style: bold;
+	src: url("../fonts/RobotoCondensed-VariableFont_wght.ttf") format('truetype');
+}
+
+@font-face {
+	font-family: 'Roboto Condensed';
+	font-style: bold;
+	font-weight: 300;
+	font-display: swap;
+	src: url("../fonts/RobotoCondensed-VariableFont_wght.ttf") format('truetype');
+}
+
+@font-face {
+	font-family: 'Roboto Condensed';
+	font-style: bold;
+	font-weight: 400;
+	font-display: swap;
+	src: url("../fonts/RobotoCondensed-VariableFont_wght.ttf") format('truetype');
+}
+
+@font-face {
+	font-family: 'Roboto Condensed';
+	font-style: bold;
+	font-weight: 700;
+	font-display: swap;
+	src: url("../fonts/RobotoCondensed-VariableFont_wght.ttf") format('truetype');
+}
+
+::-webkit-scrollbar {
+	width: 0px;
+}
+
+::-webkit-scrollbar-track {
+	background: rgb(32, 38, 32);
+}
+
+::-webkit-scrollbar-thumb {
+	background: rgb(43, 52, 43);
+}
+
+::-moz-selection {
+	color: rgb(173, 168, 162);
+	background: rgb(20, 24, 20);
+}
+
+::selection {
+	color: rgb(173, 168, 162);
+	background: rgb(41, 49, 41);
+}
+
+/* #endregion Additionals */
+
+/* #region BasicStyles */
+body {
+	font-family: "Roboto Condensed", Arial, sans-serif;
+	color: rgb(173, 168, 162);
+	background: url('../images/background.webp') no-repeat center top rgb(20, 24, 20);
+}
+
+video.background-video {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	right: 0;
+	width: 100%;
+	max-width: 1920px;
+	height: 1080px;
+	transform: translate(-50%, 0);
+	object-fit: cover;
+	z-index: -1;
+}
+
+body::before {
+	content: '';
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	/* Ensure the video covers the entire viewport */
+	z-index: -1;
+	/* Place it behind the content */
+}
+
+.background-gradient {
+	position: absolute;
+	width: 100%;
+	max-width: 1920px;
+	left: 50%;
+	transform: translate(-50%, 0);
+	height: 1080px;
+	background: radial-gradient(at top, rgba(0, 0, 0, 0) 0%, rgba(20, 24, 20, 1) 60%), rgba(20, 24, 20, 0.1);
+	top: 0;
+	z-index: -1;
+}
+
+main {
+	position: relative;
+}
+
+.ribbon {
+	position: absolute;
+	right: -5px;
+	top: -5px;
+	z-index: 1;
+	overflow: hidden;
+	width: 75px;
+	height: 75px;
+	text-align: right;
+}
+
+.ribbon span {
+	font-size: 10px;
+	font-weight: bold;
+	color: #FFF;
+	text-transform: uppercase;
+	text-align: center;
+	line-height: 20px;
+	transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
+	width: 100px;
+	display: block;
+	background: #79A70A;
+	background: linear-gradient(#9BC90D 0%, #79A70A 100%);
+	box-shadow: 0 3px 10px -5px rgba(0, 0, 0, 1);
+	position: absolute;
+	top: 19px;
+	right: -21px;
+}
+
+.ribbon span::before {
+	content: "";
+	position: absolute;
+	left: 0px;
+	top: 100%;
+	z-index: -1;
+	border-left: 3px solid #79A70A;
+	border-right: 3px solid transparent;
+	border-bottom: 3px solid transparent;
+	border-top: 3px solid #79A70A;
+}
+
+.ribbon span::after {
+	content: "";
+	position: absolute;
+	right: 0px;
+	top: 100%;
+	z-index: -1;
+	border-left: 3px solid transparent;
+	border-right: 3px solid #79A70A;
+	border-bottom: 3px solid transparent;
+	border-top: 3px solid #79A70A;
+}
+
+/* #endregion BasicStyles */
+
+/* #region Buttons */
+
+.btn {
+	border-radius: 0;
+	border: 0;
+	padding: 8px 14px;
+	font-weight: bold;
+}
+
+.btn:focus {
+	outline: none !important;
+	box-shadow: none !important;
+}
+
+.btn.btn-success {
+	background: rgb(61, 75, 39);
+	color: rgb(166, 205, 99);
+}
+
+.btn.btn-success:hover {
+	background: rgb(88, 108, 57);
+}
+
+.btn.btn-success:active {
+	background: rgb(61, 75, 39);
+}
+
+.btn.btn-primary {
+	background: rgb(29, 66, 95);
+	color: rgb(72, 154, 212);
+}
+
+.btn.btn-primary:hover {
+	background: rgb(39, 85, 121);
+}
+
+.btn.btn-primary:active {
+	background: rgb(29, 66, 95);
+}
+
+.btn.btn-secondary {
+	background: rgb(89, 85, 82);
+	color: rgb(204, 195, 190);
+}
+
+.btn.btn-secondary:hover {
+	background: rgb(111, 107, 103);
+}
+
+.btn.btn-secondary:active {
+	background: rgb(89, 85, 82);
+}
+
+.btn.btn-danger {
+	background: rgb(150, 47, 32);
+	color: rgb(199, 152, 151);
+}
+
+.btn.btn-danger:hover {
+	background: rgb(172, 56, 39);
+}
+
+.btn.btn-danger:active {
+	background: rgb(150, 47, 32);
+}
+
+/* #endregion Buttons */
+
+/* #region Main */
+
+/* #region Navigation */
+
+.navbar {
+	margin-top: 50px;
+	background-color: rgb(28, 28, 26) !important;
+	border-radius: 0 !important;
+	margin-bottom: 50px;
+	width: 100%;
+	padding-right: var(--bs-gutter-x, .75rem);
+	padding-left: var(--bs-gutter-x, .75rem);
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.navbar .navbar-nav .nav-link {
+	color: rgb(142, 145, 142);
+	font-size: 20px;
+	margin-left: 10px;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+.navbar .navbar-nav .nav-link:hover {
+	color: rgb(193, 193, 193);
+}
+
+.navbar .navbar-nav .nav-link.active {
+	color: rgb(193, 193, 193);
+}
+
+.navbar .navbar-brand {
+	color: rgb(194, 194, 194);
+	margin-left: 15px;
+}
+
+.navbar .navbar-logo-container {
+	width: 75px;
+}
+
+.navbar .nav-logo {
+	position: absolute;
+	height: 75px;
+	margin-top: -38px;
+}
+
+.navbar .navbar-toggler {
+	border-radius: 0;
+}
+
+.navbar .navbar-toggler:focus {
+	box-shadow: none;
+}
+
+@media only screen and (max-width: 992px) {
+	.navbar .navbar-brand {
+		transform: translateX(-50%);
+		left: 50%;
+		top: 40px;
+		position: absolute;
+	}
+
+	.navbar .nav-logo {
+		height: 42px;
+	}
+}
+
+
+/* Navbar Socials */
+.navbar-socials {
+	margin-right: 10px;
+	margin-left: 10px;
+	color: rgb(142, 145, 142);
+	font-size: 20px;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+.navbar-socials .social-icon {
+	vertical-align: -0.125em;
+	font-size: 1.4em;
+}
+
+.navbar-socials a {
+	color: rgb(142, 145, 142);
+	text-decoration: none;
+}
+
+.navbar-socials a:hover {
+	color: rgb(166, 205, 99);
+}
+
+.navbar-socials a:active {
+	color: rgb(193, 193, 193);
+}
+
+/* #endregion Navigation */
+
+/* #region Servers */
+
+.servers .server {
+	min-width: 350px;
+	max-width: 400px;
+	max-height: 400px;
+	border: 6px solid rgb(31, 32, 26);
+	background: rgb(31, 32, 26);
+	margin-top: 25px;
+	margin-bottom: 25px;
+	position: relative;
+}
+
+.servers .server-header {
+	height: 200px;
+	text-align: center;
+	position: relative;
+}
+
+.servers .server-header .header-logo {
+	height: 120px;
+	position: absolute;
+	top: 25px;
+	z-index: 1;
+	text-align: center;
+    left: 140px;
+}
+
+.servers .server-header-overlay {
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(180deg, rgba(31, 32, 26, 0) 35%, rgba(31, 32, 26, 1) 100%);
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.servers .server-container {
+	height: 160px;
+	text-align: center;
+	position: relative;
+}
+
+.servers .server-name {
+	color: rgb(198, 192, 186);
+	font-weight: bold;
+	font-size: 24px;
+	white-space: nowrap;
+	overflow: hidden;
+	display: block;
+	text-overflow: ellipsis;
+	margin-top: -40px;
+}
+
+.servers .server-info {
+	color: rgb(142, 143, 138);
+	display: block;
+	font-size: 18px;
+}
+
+.servers .server-info .bi{
+	color: rgb(150, 47, 32);
+	font-size: 2.5rem;
+}
+
+.servers .server-tags {
+	margin: 5px;
+}
+
+.servers .badge {
+	background: #26435E;
+	color: #C2C5CC;
+	font-size: .9rem;
+	border-radius: 0px;
+	margin: 2px;
+}
+
+.servers #player-count {
+	font-weight: 400;
+	font-size: 1.33rem;
+	color: rgb(166, 205, 99);
+}
+
+.servers #player-count .player-count-max {
+	color: rgb(150, 47, 32);
+	font-weight: 400;
+	font-size: 1.33rem;
+}
+
+.servers #player-count b {
+	color: rgb(142, 143, 138);
+	font-weight: 700;
+	font-size: 1.4rem;
+}
+
+.servers .server-players {
+	color: rgb(142, 143, 138);
+	display: block;
+	font-size: 1.1rem;
+	margin-bottom: 5px;
+	
+}
+
+.servers #server-players {
+	display: none;
+}
+.servers #player-count-progress {
+	display: none;
+}
+
+.servers #server-tags {
+	display: none;
+}
+
+
+
+.servers .server-players .bi {
+	font-size: 1.45rem;
+	color: rgb(61, 75, 39);
+}
+
+.servers .progress {
+	margin-top: -5px;
+	border-radius: 0;
+	background: rgba(255, 255, 255, 0.1);
+}
+
+.servers .progress-bar {
+	background: rgb(166, 205, 99);
+}
+
+.servers .server-offline {
+	background: rgb(150, 47, 32);
+	color: rgb(199, 152, 151);
+	padding: 10px;
+	font-weight: bold;
+	text-transform: uppercase;
+	margin-top: -50px;
+}
+
+.servers .icon {
+	width: 20px;
+	height: 20px;
+	margin-top: -2px;
+}
+
+.servers .server-buttons {
+	white-space: nowrap;
+}
+
+.servers .btn {
+	text-transform: uppercase;
+}
+
+.servers .modal.modal-rust .icon {
+	width: 24px;
+	height: 24px;
+	margin-top: -5px;
+}
+
+.servers .modal.modal-rust .modal-content {
+	border: 8px solid rgb(31, 32, 26);
+	border-radius: 0;
+	background: rgb(31, 32, 26);
+	color: rgb(108, 110, 105);
+}
+
+.servers .modal.modal-rust .modal-header {
+	padding: 0px;
+	margin: 0px;
+	border: 0px;
+}
+
+.modal .server-image-modal-container .header-logo {
+    height: 150px;
+    position: absolute;
+    top: 25px;
+    z-index: 1;
+    text-align: center;
+    left: 175px;
+}
+
+.servers .modal.modal-rust .modal-body {
+	padding: 0px;
+}
+
+.servers .modal.modal-rust .modal-footer {
+	border-top: 0;
+	padding: 0;
+	margin-top: 5px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	text-transform: uppercase;
+}
+
+.servers .modal.modal-rust .modal-footer .btn {
+	margin: 4px 2px;
+}
+
+.servers .modal.modal-rust .server-image-modal-container .server-image-modal-overlay {
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(180deg, rgba(31, 32, 26, 0) 35%, rgba(31, 32, 26, 1) 100%);
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.servers .modal.modal-rust .server-image-modal-container {
+	position: relative;
+}
+
+.servers .modal-server-name {
+	color: rgb(198, 192, 186);
+	font-weight: bold;
+	font-size: 28px;
+	white-space: nowrap;
+	overflow: hidden;
+	display: block;
+	text-overflow: ellipsis;
+	margin-top: -40px;
+	text-align: center;
+}
+
+.servers .modal-server-info {
+    color: rgb(173, 168, 162);
+    font-size: 20px;
+    display: block;
+    text-align: center;
+    margin-top: -8px;
+}
+
+.servers .modal-server-description {
+	margin-top: 10px;
+	color: rgb(105, 107, 102);
+	font-size: 18px;
+	display: block;
+	padding: 10px;
+	line-height: 24px;
+	height: 250px;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+/* #endregion Servers */
+
+/* #region Hero */
+
+.hero {
+	padding-top: 60px;
+	padding-bottom: 60px;
+}
+
+.hero h1 {
+	text-align: center;
+	color: rgb(231, 224, 218);
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 55px;
+}
+
+.hero p {
+	text-align: center;
+	color: rgb(203, 197, 194);
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 25px;
+}
+
+.hero .server-brand {
+	color: rgb(201, 69, 47);
+}
+
+/* #endregion Hero */
+
+/* #region Rules */
+
+.rules {
+	margin-top: 80px;
+}
+
+.rules .rules-heading {
+	color: rgb(220, 211, 202);
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 38px;
+	text-align: center;
+	margin-bottom: 80px;
+}
+
+.rules .accordion-item {
+	background: rgba(255, 255, 255, 0.05);
+	border: 0;
+	border-radius: 0 !important;
+}
+
+.rules .accordion-header {
+	background: rgba(255, 255, 255, 0.025);
+}
+
+.rules .accordion-header .accordion-button {
+	background: transparent;
+	color: rgb(220, 211, 202);
+	outline: none;
+	box-shadow: none;
+	font-weight: bold;
+	text-transform: uppercase;
+	font-size: 26px;
+	padding: 20px 26px;
+}
+
+.rules .accordion-header .accordion-button::after {
+	background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23dcd3ca'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+
+.rules .accordion-header .accordion-button:not(.collapsed)::after {
+	background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23a6cd63'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+	transform: rotate(-180deg);
+}
+
+.rules .accordion-header .accordion-button .icon {
+	height: 30px;
+	width: 30px;
+	margin-right: 10px;
+	margin-top: -2px;
+	color: rgb(166, 205, 99);
+}
+
+.rules .accordion-body {
+	font-size: 20px;
+	font-weight: 300;
+	padding: 28px;
+}
+
+@media only screen and (max-width: 576px) {
+	.rules .accordion-header .accordion-button {
+		font-size: 22px;
+	}
+
+	.rules .accordion-header .accordion-button .icon {
+		height: 26px;
+		width: 26px;
+	}
+
+	.rules .accordion-body {
+		font-size: 18px;
+	}
+}
+
+/* #endregion Rules */
+
+/* #region Staff */
+
+.staff {
+	margin-top: 80px;
+}
+
+.staff .staff-heading {
+	color: rgb(220, 211, 202);
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 38px;
+	text-align: center;
+	margin-bottom: 40px;
+}
+
+.staff .member-container.animated {
+	transition: all 0.3s;
+}
+
+.staff .member {
+	text-align: center;
+	margin-top: 40px;
+}
+
+.staff .member img {
+	width: 180px;
+	height: 180px;
+}
+
+.staff .member .member-description {
+	background: rgba(255, 255, 255, 0.05);
+	padding: 5px;
+	width: 180px;
+}
+
+.staff .member .member-description .member-name {
+	color: rgb(220, 211, 202);
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 28px;
+	text-align: center;
+	display: block;
+	margin-top: 10px;
+	margin-bottom: 5px;
+}
+
+.staff .member .member-description .moderator {
+	color: #86B33C;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 18px;
+	text-align: center;
+	display: block;
+	margin-bottom: 10px;
+}
+
+.staff .member .member-description .admin {
+	color: rgb(201, 69, 47);
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 18px;
+	text-align: center;
+	display: block;
+	margin-bottom: 10px;
+}
+
+.staff .member .member-description .developer {
+	color: #478FC3;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 18px;
+	text-align: center;
+	display: block;
+	margin-bottom: 10px;
+}
+
+.staff .member .member-name-link {
+	text-decoration: none;
+}
+
+.staff .member .member-name-link:hover span {
+	color: rgb(166, 205, 99);
+}
+
+/* #endregion Staff */
+
+/* #region Shop */
+
+.shop {
+	margin-top: 200px;
+}
+
+.shop .shop-image-container {
+	position: relative;
+	opacity: 50%;
+}
+
+.shop .shop-image-container .shop-image-overlay {
+	background: radial-gradient(at center, rgba(0, 0, 0, 0) 35%, rgba(20, 24, 20, 1) 70%) rgba(20, 24, 20, 0.7);
+	;
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+}
+
+.shop .shop-heading {
+	color: rgb(220, 211, 202);
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 42px;
+}
+
+.shop .shop-message {
+	font-size: 20px;
+	font-weight: 300;
+}
+
+.shop .btn-shop {
+	padding: 18px 24px;
+	font-size: 24px;
+	margin-top: 10px;
+	text-transform: uppercase;
+}
+
+.shop .btn-shop .icon {
+	width: 30px;
+	height: 30px;
+	margin-top: -6px;
+}
+
+.shop .shop-message ul {
+	list-style-type: none;
+	padding: 0;
+}
+
+.shop .shop-message ul li {
+	background: rgba(255, 255, 255, 0.05);
+	padding: 8px 12px;
+	margin-top: 12px;
+}
+
+.shop .shop-message ul li::before {
+	content: "■ ";
+	color: rgb(166, 205, 99);
+	font-size: 32px;
+	line-height: 22px;
+}
+
+@media only screen and (max-width: 576px) {
+	.shop {
+		margin-top: 80px;
+	}
+
+	.shop .shop-heading {
+		margin-bottom: 40px;
+	}
+}
+
+.shop .modal {
+	color: rgb(108, 110, 105);
+}
+
+.shop .modal .btn {
+	flex-wrap: nowrap;
+	text-transform: uppercase;
+	font-size: 1.35em;
+}
+
+.shop .shop-icon {
+	font-size: 2em;
+	width: 32px;
+	height: 32px;
+}
+
+.shop .modal .modal-content {
+	border: 8px solid rgb(31, 32, 26);
+	border-radius: 0;
+	background: rgb(31, 32, 26);
+	color: rgb(108, 110, 105);
+	position: relative;
+	margin: 0px;
+	padding: 0px;
+}
+
+.shop .modal .modal-header {
+	border: 0px;
+	text-transform: uppercase;
+	margin: 0px;
+	padding-bottom: 0px;
+}
+
+.shop .modal .modal-body {
+	border: 0px;
+	margin: 0px;
+	padding-left: 0px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+
+.shop .modal .modal-footer {
+	border: 0px;
+	text-transform: uppercase;
+	margin: 0px;
+	padding: 0px;
+}
+
+.shop .modal .vending-machine {
+	display: flex;
+	justify-content: space-between;
+	/* Items and button spaced evenly */
+	align-items: center;
+	width: 100%;
+	margin-top: 10px;
+	color: rgb(105, 107, 102);
+	background-color: #3e3c36;
+	font-size: 18px;
+	padding: 10px;
+	line-height: 24px;
+	height: 100px;
+	overflow-y: hidden;
+	overflow-x: hidden;
+}
+
+.shop .modal .vending-slot {
+	color: rgb(218, 218, 218);
+	background-color: rgb(105, 107, 102);
+	/* background: url("/images/vending.webp") no-repeat;
+	background-size: cover; */
+	font-size: 18px;
+	display: flex;
+	/* Use flex to center content */
+	flex-direction: column;
+	/* Stack content vertically */
+	justify-content: center;
+	/* Vertically center content */
+	align-items: center;
+	/* Horizontally center content */
+	height: 80px;
+	overflow: hidden;
+	/* Combine overflow properties */
+	text-align: center;
+	text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+@media only screen and (max-width: 576px) {
+	.shop .modal .vending-slot {
+		width: 80px;
+	}
+
+	.shop .modal-footer {
+		flex-wrap: nowrap;
+	}
+}
+
+.shop .modal .vending-price {
+	color: rgb(218, 218, 218);
+	background-color: rgb(105, 107, 102);
+	font-size: 28px;
+	display: flex;
+	/* Use flex to center content */
+	justify-content: center;
+	/* Vertically center content */
+	align-items: center;
+	/* Horizontally center content */
+	height: 80px;
+	width: 80px;
+	overflow: hidden;
+	/* Combine overflow properties */
+	text-align: center;
+	text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+	font-weight: bold;
+}
+
+.shop .modal .vending-btn {
+	color: rgb(105, 107, 102);
+	font-size: 18px;
+	line-height: 18px;
+	height: 80px;
+	width: 120px;
+	overflow-y: hidden;
+}
+
+.shop .modal .vending-slot img {
+	border-radius: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.shop .modal .row {
+	padding-top: 5px;
+	padding-bottom: 5px;
+	margin: 10px;
+}
+
+/* #endregion RegionName */
+
+/* #region Footer */
+
+footer {
+	text-align: center;
+	margin-top: 140px;
+	background: rgba(15, 19, 15, 0.8);
+	padding: 40px 20px;
+	font-weight: 300;
+}
+
+footer a,
+footer a:hover {
+	color: rgb(142, 145, 142);
+	text-decoration: none;
+}
+
+footer img {
+	height: 75px;
+	filter: grayscale(1);
+	opacity: 0.5;
+	margin-bottom: 15px;
+}
+
+footer img:hover {
+	filter: grayscale(0) !important;
+}
+
+footer .copyright {
+	font-weight: 400;
+}
+
+/* #endregion Footer */
+
+/* #region FAQ */
+
+.faq {
+	margin-top: 80px;
+}
+
+.faq .faq-heading {
+	color: rgb(220, 211, 202);
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 38px;
+	text-align: center;
+	margin-bottom: 80px;
+}
+
+.faq .accordion-item {
+	background: rgba(255, 255, 255, 0.05);
+	border: 0;
+	border-radius: 0 !important;
+}
+
+.faq .accordion-header {
+	background: rgba(255, 255, 255, 0.025);
+}
+
+.faq .accordion-header .accordion-button {
+	background: transparent;
+	color: rgb(220, 211, 202);
+	outline: none;
+	box-shadow: none;
+	font-weight: bold;
+	text-transform: uppercase;
+	font-size: 26px;
+	padding: 20px 26px;
+}
+
+.faq .accordion-header .accordion-button::after {
+	background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23dcd3ca'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+
+.faq .accordion-header .accordion-button:not(.collapsed)::after {
+	background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23a6cd63'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+	transform: rotate(-180deg);
+}
+
+.faq .accordion-header .accordion-button .icon {
+	height: 30px;
+	width: 30px;
+	margin-right: 10px;
+	margin-top: -2px;
+	color: rgb(166, 205, 99);
+}
+
+.faq .accordion-body {
+	font-size: 20px;
+	font-weight: 300;
+	padding: 28px;
+}
+
+@media only screen and (max-width: 576px) {
+	.faq .accordion-header .accordion-button {
+		font-size: 22px;
+	}
+
+	.faq .accordion-header .accordion-button .icon {
+		height: 26px;
+		width: 26px;
+	}
+
+	.faq .accordion-body {
+		font-size: 18px;
+	}
+}
+
+/* #endregion FAQ */
+
+/* #endregion Main */

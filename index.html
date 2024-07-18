@@ -1,5 +1,528 @@
-<html>
-<body>
-  <p>Template</p>
-<body>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<title>Swedon Rust Server</title>
+	<meta name="description" content="Swedon Rust Server" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+	<meta property="og:title" content="Swedon Rust Server" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://swedon.github.io/rust_web/" />
+
+	<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="./css/bootstrap-icons.min.css" />
+	<link rel="stylesheet" type="text/css" href="./css/animate.min.css" />
+	<link rel="stylesheet" type="text/css" href="./css/style.css" />
+	<link rel="icon" href="./images/favicon.ico" />
+
+	<meta name="theme-color" content="#141814CC" />
+</head>
+
+<body class="cover-container d-flex w-100 h-100 mx-auto flex-column">
+
+	<video muted autoplay playsinline id="background-video" class="mb-auto background-video">
+		<source src="./videos/background.mp4" type="video/mp4"/>
+		<source src="./videos/rust.webm" type="video/webm"/>
+		<source src="./videos/video11.mp4" type="video/mp4"/>
+	</video>
+	<div class="background-gradient"></div>
+
+	<main id="home" class="home container">
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark rounded animate__animated animate__bounceInDown"
+			aria-label="Navigation">
+			<a class="navbar-brand navbar-logo-container" href="./" title="Home">
+				<img id="navbar-logo" class="nav-logo" alt="Site logo" title="Home" src="./images/logo_white.webp"
+					onmouseover="this.src='./images/logo_white_active.webp'"
+					onmouseout="this.src='./images/logo_white.webp'">
+			</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain"
+				aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div class="collapse navbar-collapse" id="navbarMain">
+				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+					<li class="nav-item">
+						<a class="nav-link active" href="./">Home</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#shop">Shop</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#rules">Rules</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#staff">Staff</a>
+					</li>
+				</ul>
+
+				<div class="navbar-nav navbar-socials">
+					<a class="nav-item social-discord" title="Discord" target="_blank"
+						href="https://discord.com/invite/pnX9sTVdBS">
+						<i class="social-icon bi bi-discord"></i> Discord
+					</a>
+				</div>
+			</div>
+		</nav>
+
+		<section id="hero" class="hero">
+			<h1 class="animate__animated animate__bounceInLeft">Welcome!</h1>
+			<p class="animate__animated animate__bounceInRight">Enjoy your stay</p>
+		</section>
+
+		<section id="servers" class="servers">
+			<div class="row animate__animated animate__backInUp">
+				<div class="col-12 d-flex justify-content-center">
+					<!-- <img class="img-fluid" src="https://placehold.co/440x400"> -->
+					<div class="server" onmouseover="changeImage(this, true)" onmouseout="changeImage(this, false)">
+						<div class="server-header">
+							<img class="img-fluid" src="./images/server_header.webp" alt="server header"
+								title="server header" />
+							<img class="img-fluid header-logo" alt="Site logo" title="Home"
+								src="./images/logo_white.webp" />
+							<div class="server-header-overlay"></div>
+						</div>
+						<div class="server-container">
+							<div id="server-name" class="server-name server-offline">Server Offline</div>
+							<div id="server-info" class="server-info"><i class="bi bi-exclamation-triangle"></i><br>It
+								seems that we can't connect to the server.</div>
+							<div id="server-tags" class="server-tags"></div>
+							<div id="server-players" class="server-players"><i class="bi bi-people-fill"></i> <span
+									id="player-count"></span> Players online
+								<div id="player-count-progress" class="progress" role="progressbar"
+									aria-label="Players online" aria-valuemin="0" aria-valuemax="100">
+									<div id="player-count-progressbar" class="progress-bar"></div>
+								</div>
+							</div>
+						</div>
+						<div class="row row-cols-3 align-items-end clearfix server-buttons">
+							<div class="col-auto me-auto">
+								<button class="btn btn-primary" type="button" title="Shop" data-bs-toggle="modal"
+									data-bs-target="#shopModal">
+									<svg xmlns="http://www.w3.org/2000/svg" class="icon" fill="none" viewBox="0 0 24 24"
+										stroke="currentColor" stroke-width="2">
+										<path stroke-linecap="round" stroke-linejoin="round"
+											d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+									</svg>
+									Shop
+								</button>
+							</div>
+							<div class="col-auto">
+								<button class="btn btn-secondary" type="button" title="Server information"
+									data-bs-toggle="modal" data-bs-target="#server0">
+									<svg xmlns="http://www.w3.org/2000/svg" class="icon" fill="none" viewBox="0 0 24 24"
+										stroke="currentColor" stroke-width="2">
+										<path stroke-linecap="round" stroke-linejoin="round"
+											d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+									</svg>
+									Info
+								</button>
+							</div>
+							<div class="col-auto">
+								<button id="steam-connect" class="btn btn-success disabled" type="button"
+									title="Connect via Steam" onclick="">
+									<svg xmlns="http://www.w3.org/2000/svg" class="icon" fill="none" viewBox="0 0 24 24"
+										stroke="currentColor" stroke-width="2">
+										<path stroke-linecap="round" stroke-linejoin="round"
+											d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+									</svg>
+									Connect
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="modal fade modal-rust" id="server0" tabindex="-1">
+				<div class="modal-dialog modal-dialog-centered">
+					<div class="modal-content" onmouseover="changeImage(this, true)"
+						onmouseout="changeImage(this, false)">
+						<div class="modal-header">
+							<div class="server-image-modal-container">
+								<img class="img-fluid header-image" src="./images/server_header.webp"
+									alt="[EU/ENG] Swedon 2x Vanilla+ Server Image"
+									title="[EU/ENG] Swedon 2x Vanilla+" />
+								<img class="img-fluid header-logo" alt="Site logo" title="Home"
+									src="./images/logo_white.webp" />
+								<div class="server-image-modal-overlay"></div>
+							</div>
+						</div>
+						<div class="modal-body">
+							<div id="modal-server-name" class="modal-server-name server-offline">Server Offline</div>
+							<div id="modal-server-info" class="modal-server-info">Unable to load info.</div>
+							<div id="modal-server-description" class="modal-server-description">
+								Unable to load description.
+							</div>
+						</div>
+						<div class="modal-footer">
+							<a href="https://www.battlemetrics.com/servers/rust/23710718" target="_blank"
+								title="BattleMetrics" class="btn btn-danger">
+								<svg xmlns="http://www.w3.org/2000/svg" class="icon" fill="none" viewBox="0 0 24 24"
+									stroke="currentColor" stroke-width="2">
+									<path stroke-linecap="round" stroke-linejoin="round"
+										d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+								</svg>
+								BattleMetrics
+							</a>
+							<a href="#shop" target="_self" title="Shop" class="btn btn-primary" data-bs-toggle="modal"
+								data-bs-target="#shopModal">
+								<svg xmlns="http://www.w3.org/2000/svg" class="icon" fill="none" viewBox="0 0 24 24"
+									stroke="currentColor" stroke-width="2">
+									<path stroke-linecap="round" stroke-linejoin="round"
+										d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+								</svg>
+								Shop
+							</a>
+							<a id="modal-steam-connect" class="btn btn-success disabled" title="Connect via Steam">
+								<svg xmlns="http://www.w3.org/2000/svg" class="icon" fill="none" viewBox="0 0 24 24"
+									stroke="currentColor" stroke-width="2">
+									<path stroke-linecap="round" stroke-linejoin="round"
+										d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+								</svg>
+								Connect
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section id="shop" class="shop">
+			<!-- Shop -->
+			<div class="row animate__animated animate__bounceIn">
+				<div class="d-none d-md-flex col-12 col-md-6">
+					<div class="shop-image-container">
+						<img class="img-fluid" src="./images/vending.webp" alt="A vending machine in Rust" title="Shop">
+						<div class="shop-image-overlay"></div>
+					</div>
+				</div>
+				<div class="col-12 col-md-6">
+					<h2 class="shop-heading text-center text-md-start">Shop</h2>
+					<div class="shop-message">
+						Do you enjoy our servers? Help us by supporting the server! VIP Perks:
+						<ul>
+							<li>In-game Status</li>
+							<li>Discord Status & Chat</li>
+							<li>Priority Support</li>
+							<li>Queue Skip</li>
+						</ul>
+					</div>
+					<button type="button" title="Shop" data-bs-toggle="modal" data-bs-target="#shopModal"
+						class="d-block d-md-inline-block btn btn-primary btn-shop">
+						<svg xmlns="http://www.w3.org/2000/svg" class="icon" fill="none" viewBox="0 0 24 24"
+							stroke="currentColor" stroke-width="2">
+							<path stroke-linecap="round" stroke-linejoin="round"
+								d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+						</svg>
+						Visit Shop
+					</button>
+				</div>
+			</div>
+
+			<!-- Modal Vending Machine -->
+			<div class="modal fade" id="shopModal" tabindex="-1" aria-labelledby="shopModalLabel" aria-hidden="true">
+				<div class="modal-dialog modal-dialog-centered">
+					<div class="modal-content">
+						<div class="modal-header" data-bs-theme="dark">
+							<h2 class="shop-heading text-center text-md-start">Shop</h2>
+							<button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+								aria-label="Close"></button>
+						</div>
+
+						<div class="modal-body container text-center clearfix">
+							<!-- VIP Month -->
+							<div class="row row-cols-3 vending-machine">
+								<div class="col vending-slot d-flex align-items-center justify-content-center">
+									<img src="./images/png/vip_month.png" class="" alt="VIP Month">
+								</div>
+								<div class="col vending-price d-flex align-items-center justify-content-center">5<i
+										class="bi bi-currency-euro"></i></div>
+								<div class="col vending-btn d-flex align-items-center justify-content-center">
+									<a class="btn btn-success" href="https://swedon.tebex.io/package/5906004"
+										target="_blank">
+										<svg class="shop-icon" xmlns="http://www.w3.org/2000/svg" fill="none"
+											viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+											<path stroke-linecap="round" stroke-linejoin="round"
+												d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+										</svg> BUY
+									</a>
+								</div>
+							</div>
+
+							<!-- VIP Year -->
+							<div class="row row-cols-3 vending-machine">
+								<div class="col vending-slot d-flex align-items-center justify-content-center">
+									<img src="./images/png/vip_year.png" class="" alt="VIP Year">
+								</div>
+								<div class="col vending-price d-flex align-items-center justify-content-center">
+									50<i class="bi bi-currency-euro"></i></div>
+								<div class="col vending-btn d-flex align-items-center justify-content-center">
+									<a class="btn btn-success" href="https://swedon.tebex.io/package/5906005"
+										target="_blank">
+										<svg class="shop-icon" xmlns="http://www.w3.org/2000/svg" fill="none"
+											viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+											<path stroke-linecap="round" stroke-linejoin="round"
+												d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+										</svg> BUY
+									</a>
+								</div>
+							</div>
+
+							<!-- VIP Lifetime -->
+							<div class="row row-cols-3 vending-machine">
+								<div class="col vending-slot d-flex align-items-center justify-content-center">
+									<img src="./images/png/vip_lifetime.png" class="" alt="VIP Lifetime">
+								</div>
+								<div class="col vending-price d-flex align-items-center justify-content-center">
+									100<i class="bi bi-currency-euro"></i></div>
+								<div class="col vending-btn d-flex align-items-center justify-content-center">
+									<a class="btn btn-success" href="https://swedon.tebex.io/package/5906006"
+										target="_blank">
+										<svg class="shop-icon" xmlns="http://www.w3.org/2000/svg" fill="none"
+											viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+											<path stroke-linecap="round" stroke-linejoin="round"
+												d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+										</svg> BUY
+									</a>
+								</div>
+							</div>
+						</div>
+
+						<div class="modal-footer">
+							<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section id="rules" class="rules">
+			<div class="row">
+				<div class="col-12">
+					<div class="accordion" id="accordionRules">
+						<div class="accordion-item">
+							<h2 class="accordion-header" id="rule0">
+								<button class="accordion-button" type="button" data-bs-toggle="collapse"
+									data-bs-target="#collapseRule0">
+									<svg xmlns="http://www.w3.org/2000/svg" class="icon" fill="none" viewBox="0 0 24 24"
+										stroke="currentColor" stroke-width="2">
+										<path stroke-linecap="round" stroke-linejoin="round"
+											d="M13 9l3 3m0 0l-3 3m3-3H8m13 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+									</svg>
+									Cheating or Scripting
+								</button>
+							</h2>
+							<div id="collapseRule0" class="accordion-collapse collapse show"
+								data-bs-parent="#accordionRules">
+								<div class="accordion-body">
+									<ul>
+										<li>Do not use any third-party paid or free programs which provide an unfair
+											advantage in-game.
+										</li>
+										<li>This includes scripts that can perform any action that is otherwise not
+											possible to be
+											performed in the game.</li>
+										<li>Playing with cheaters or ban evaders will result in a temporary ban,
+											possibly permanent.</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="accordion-item">
+							<h2 class="accordion-header" id="rule1">
+								<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+									data-bs-target="#collapseRule1">
+									<svg xmlns="http://www.w3.org/2000/svg" class="icon" fill="none" viewBox="0 0 24 24"
+										stroke="currentColor" stroke-width="2">
+										<path stroke-linecap="round" stroke-linejoin="round"
+											d="M13 9l3 3m0 0l-3 3m3-3H8m13 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+									</svg>
+									Ban evasion
+								</button>
+							</h2>
+							<div id="collapseRule1" class="accordion-collapse collapse"
+								data-bs-parent="#accordionRules">
+								<div class="accordion-body">
+									<ul>
+										<li>Do not do anything to bypass a ban on our server(s).</li>
+										<li>Do not try to join with a different account if you were banned; wait out the
+											ban.</li>
+										<li>Any attempt to do so will result in additional bans.</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+
+						<div class="accordion-item">
+							<h2 class="accordion-header" id="rule2">
+								<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+									data-bs-target="#collapseRule2">
+									<svg xmlns="http://www.w3.org/2000/svg" class="icon" fill="none" viewBox="0 0 24 24"
+										stroke="currentColor" stroke-width="2">
+										<path stroke-linecap="round" stroke-linejoin="round"
+											d="M13 9l3 3m0 0l-3 3m3-3H8m13 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+									</svg>
+									Bug Abuse
+								</button>
+							</h2>
+							<div id="collapseRule2" class="accordion-collapse collapse"
+								data-bs-parent="#accordionRules">
+								<div class="accordion-body">
+									<ul>
+										<li>Do not try to use any unfair advantages that were not intentionally possible
+											within the game.
+										</li>
+										<li>This includes, but is not limited to, accessing inaccessible areas, creating
+											graphic errors,
+											or using graphical adjustments.</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="accordion-item">
+							<h2 class="accordion-header" id="rule3">
+								<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+									data-bs-target="#collapseRule3">
+									<svg xmlns="http://www.w3.org/2000/svg" class="icon" fill="none" viewBox="0 0 24 24"
+										stroke="currentColor" stroke-width="2">
+										<path stroke-linecap="round" stroke-linejoin="round"
+											d="M13 9l3 3m0 0l-3 3m3-3H8m13 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+									</svg>
+									Harassment & Toxic Behavior
+								</button>
+							</h2>
+							<div id="collapseRule3" class="accordion-collapse collapse"
+								data-bs-parent="#accordionRules">
+								<div class="accordion-body">
+									<ul>
+										<li>Do not insult other players via text chat or any other applicable
+											communication channel.</li>
+										<li>We want a friendly and comfortable place for everyone on our server(s).</li>
+										<li>Not following this rule will result in temporary or permanent restrictions,
+											and in extreme
+											cases, bans.</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="accordion-item">
+							<h2 class="accordion-header" id="rule4">
+								<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+									data-bs-target="#collapseRule4">
+									<svg xmlns="http://www.w3.org/2000/svg" class="icon" fill="none" viewBox="0 0 24 24"
+										stroke="currentColor" stroke-width="2">
+										<path stroke-linecap="round" stroke-linejoin="round"
+											d="M13 9l3 3m0 0l-3 3m3-3H8m13 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+									</svg>
+									Chat Language
+								</button>
+							</h2>
+							<div id="collapseRule4" class="accordion-collapse collapse"
+								data-bs-parent="#accordionRules">
+								<div class="accordion-body">
+									<ul>
+										<li>Please keep it to English in Global Chat.</li>
+										<li>Feel free to speak any other language in Team chat or /pm.</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="accordion-item">
+							<h2 class="accordion-header" id="rule5">
+								<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+									data-bs-target="#collapseRule5">
+									<svg xmlns="http://www.w3.org/2000/svg" class="icon" fill="none" viewBox="0 0 24 24"
+										stroke="currentColor" stroke-width="2">
+										<path stroke-linecap="round" stroke-linejoin="round"
+											d="M13 9l3 3m0 0l-3 3m3-3H8m13 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+									</svg>
+									Reports & Support
+								</button>
+							</h2>
+							<div id="collapseRule5" class="accordion-collapse collapse"
+								data-bs-parent="#accordionRules">
+								<div class="accordion-body">
+									<ul>
+										<li>All reports are strictly handled in-game by pressing F7 or typing /report.
+										</li>
+										<li>Reports done this way will provide us with video evidence to review the
+											incident.</li>
+										<li>Please do not notify suspicious players by calling them out in global chat;
+											instead, report
+											them.</li>
+										<li>In all cases, admins have the final word. If you wish to appeal, please do
+											so on our Discord.
+										</li>
+										<li>If you need support from staff, please open a ticket on Discord.</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section id="staff" class="staff">
+			<div class="row">
+				<div class="col-12">
+					<h2 class="staff-heading">server Staff</h2>
+				</div>
+			</div>
+			<div class="row justify-content-center">
+				<div class="col-12 col-sm-6 col-lg-3">
+					<div class="member-container d-flex justify-content-center animate__animated">
+						<div class="member d-flex flex-column">
+							<div class="member-description">
+								<span class="member-name">丂卄ㄖㄩ千</span>
+								<span class="admin">admin</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-12 col-sm-6 col-lg-3">
+					<div class="member-container d-flex justify-content-center animate__animated">
+						<div class="member d-flex flex-column">
+							<div class="member-description">
+								<span class="member-name">Giggle</span>
+								<span class="moderator">Moderator</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-12 col-sm-6 col-lg-3">
+					<div class="member-container d-flex justify-content-center animate__animated">
+						<div class="member d-flex flex-column">
+							<div class="member-description">
+								<span class="member-name">Limmek</span>
+								<p class="developer">Developer</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<footer class="footer">
+		<div class="row">
+			<a href="#home"><img id="footer-logo" src="./images/logo_white.webp"
+					onmouseover="this.src='./images/logo_white_active.webp'"
+					onmouseout="this.src='./images/logo_white.webp'" alt="Home" title="Home">
+			</a>
+			<div class="copyright">
+				<i class="bi bi-c-circle" alt="copyright" title="copyright"></i> 2023
+				<a href="https://swedon.se">Swedon </a>Rust. All Rights Reserved.
+			</div>
+		</div>
+	</footer>
+
+	<script src="./js/bootstrap.bundle.min.js"></script>
+	<script src="./js/script.js"></script>
+	<script src="./js/battlemetrics.js"></script>
+</body>
+
 </html>

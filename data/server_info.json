@@ -1,0 +1,77 @@
+{
+    "data": {
+        "type": "server",
+        "id": "23710718",
+        "attributes": {
+            "id": "23710718",
+            "name": "[EU/ENG] Swedon 2x Vanilla+ | Free VIP",
+            "address": null,
+            "ip": "213.64.48.108",
+            "port": 28015,
+            "players": 33,
+            "maxPlayers": 100,
+            "rank": 1423,
+            "location": [
+                12.5709,
+                56.2036
+            ],
+            "status": "online",
+            "details": {
+                "official": false,
+                "rust_type": "modded",
+                "map": "Swedon FPS-Optimized Map",
+                "environment": "l",
+                "rust_build": "88924",
+                "rust_ent_cnt_i": 128585,
+                "rust_fps": 46,
+                "rust_fps_avg": 45.4,
+                "rust_gc_cl": 708,
+                "rust_gc_mb": 4911,
+                "rust_hash": "59673dbd",
+                "rust_headerimage": "https://rust.swedon.se/images/Gameheader1.png",
+                "rust_mem_pv": null,
+                "rust_mem_ws": null,
+                "pve": false,
+                "rust_uptime": 282437,
+                "rust_url": "https://rust.swedon.se",
+                "rust_world_seed": 1338,
+                "rust_world_size": 3500,
+                "rust_world_levelurl": "https://maps.rustmaps.com/240/3a08d55115ed4c1c995e2fc45a2d6589/wHT7pBOdnUmp2G6hxoeY6g/a8ca1c42786f496b9bad5f2dbfbe8d58.map",
+                "rust_maps": {
+                    "seed": 1338,
+                    "size": 3500,
+                    "url": "https://rustmaps.com/map/3500_1338",
+                    "thumbnailUrl": "https://content.rustmaps.com/maps/240/fb66284934c14d8eaba1f1129bc39b7d/thumbnail.png",
+                    "monuments": 141,
+                    "barren": false,
+                    "updatedAt": "2023-10-26T23:12:58.772Z",
+                    "mapUrl": "https://maps.rustmaps.com/240/3a08d55115ed4c1c995e2fc45a2d6589/wHT7pBOdnUmp2G6hxoeY6g/a8ca1c42786f496b9bad5f2dbfbe8d58.map"
+                },
+                "rust_description": "Gameplay Enhancements:\n\\t• Resources 2x during the day and 3x during the night\n\\t• Heli and Bradley crates burn for 2-3 minutes\n\\t• Basic teas added to food crates\n\\t• Trash items removed from loot\n\\t• Hacked Crates 5 minute timer\n\\t• Most electrical BPs unlocked\n\\t• Faster Brighter Nights\n\nWipe Schedule:\n\\t• Map - First & Third Thursday @ 20:00CET(UTC+1)\n\\t• BPs - Monthly @ Force\n\nServer Performance:\n\\t• Good performance with 99% uptime!\n\\t• Active admins\n\nWebsite:\n\\t rust.swedon.se\nDiscord:\n\\t rust.swedon.se/discord\n",
+                "rust_modded": true,
+                "rust_queued_players": 0,
+                "rust_gamemode": "standard",
+                "rust_born": "2023-10-19T17:56:37.000Z",
+                "rust_last_ent_drop": "2023-09-21T18:13:36.268Z",
+                "rust_last_seed_change": "2023-10-23T18:05:16.152Z",
+                "rust_last_wipe": "2023-10-23T18:05:16.152Z",
+                "rust_last_wipe_ent": 111354,
+                "serverSteamId": "90177359948493833"
+            },
+            "private": false,
+            "createdAt": "2023-09-09T07:00:30.162Z",
+            "updatedAt": "2023-10-27T00:21:25.245Z",
+            "portQuery": 28017,
+            "country": "SE",
+            "queryStatus": "valid"
+        },
+        "relationships": {
+            "game": {
+                "data": {
+                    "type": "game",
+                    "id": "rust"
+                }
+            }
+        }
+    }
+}
