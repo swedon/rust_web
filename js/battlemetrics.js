@@ -1,7 +1,7 @@
 // Function to fetch data from the data.json file and update server information
 async function fetchServerInfo() {
     try {
-        const response = await fetch('https://raw.githubusercontent.com/swedon/rust_web/main/data/server_info.json');
+        const response = await fetch('https://api.battlemetrics.com/servers/28259573');
         if (response.ok) {
             const data = await response.json();
             // Extract and update the content with the desired information
