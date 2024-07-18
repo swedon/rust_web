@@ -1118,14 +1118,26 @@ footer .copyright {
     flex-wrap: wrap;
     gap: 10px;
 }
-.kit-card {
-    margin-bottom: 20px;
+.accordion-button {
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+}
+
+.accordion-button:not(.collapsed) {
+    color: #0d6efd;
+    background-color: #e9ecef;
+    border-color: #ced4da;
+}
+
+.accordion-body {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
 }
 
 .kit-items {
     display: flex;
     flex-wrap: wrap;
-    margin-bottom: 10px;
 }
 
 .kit-item-wrapper {

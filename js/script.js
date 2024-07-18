@@ -2147,13 +2147,14 @@ document.addEventListener('DOMContentLoaded', function () {
             "BeltItems": []
         }
     };
+
     const ranks = {
         bronze: ["VIP Starter Kit", "VIP Kit", "Base Defense", "VIP Builder"],
         silver: ["VIP Starter Kit", "VIP Kit", "Base Defense II", "VIP Builder II"],
         gold: ["VIP Starter Kit", "VIP Kit", "Base Defense III", "VIP Builder III"]
     };
 
-    function createKitCard(kitName) {
+    function createAccordionItem(kitName) {
         const kit = kitData[kitName];
         if (!kit) return '';
 
@@ -2162,60 +2163,35 @@ document.addEventListener('DOMContentLoaded', function () {
         let beltItems = kit.BeltItems.map(item => createItemHTML(item, 'belt-items')).join('');
 
         return `
-            <div class="kit-card">
-                <h3>${kitName}</h3>
-                <div class="kit-items main-items">${mainItems}</div>
-                <div class="kit-items wear-items">${wearItems}</div>
-                <div class="kit-items belt-items">${beltItems}</div>
-            </div>
-        `;
-    }
-
-    function createItemHTML(item, itemType) {
-        const itemImage = `https://wiki.rustclash.com/img/items180/${item.Shortname}.png`;
-        const amountText = item.Amount ? `x${item.Amount}` : '';
-        return `
-            <div class="kit-item-wrapper">
-                <img src="${itemImage}" alt="${item.Shortname}" title="${item.Shortname}" class="kit-item">
-                <div class="item-amount">${amountText}</div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="${kitName.replace(/\s+/g, '')}Heading">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#${kitName.replace(/\s+/g, '')}" aria-expanded="true" aria-controls="${kitName.replace(/\s+/g, '')}">
+                        ${kitName}
+                    </button>
+                </h2>
+                <div id="${kitName.replace(/\s+/g, '')}" class="accordion-collapse collapse" aria-labelledby="${kitName.replace(/\s+/g, '')}Heading" data-bs-parent="#${kitName.replace(/\s+/g, '')}Accordion">
+                    <div class="accordion-body">
+                        <div class="kit-items main-items">${mainItems}</div>
+                        <div class="kit-items wear-items">${wearItems}</div>
+                        <div class="kit-items belt-items">${beltItems}</div>
+                    </div>
+                </div>
             </div>
         `;
     }
 
     function loadKits(rank) {
-        const container = document.querySelector(`#${rank}KitsContainer`);
+        const container = document.querySelector(`#${rank}Accordion`);
         const kitNames = ranks[rank];
         if (!container || !kitNames) return;
 
         container.innerHTML = '';
         kitNames.forEach(kitName => {
-            container.innerHTML += createKitCard(kitName);
-        });
-
-        initializeKits(container);
-    }
-
-    function initializeKits(container) {
-        const kits = container.querySelectorAll('.kit-card');
-        let currentIndex = 0;
-
-        if (kits.length > 0) {
-            kits[currentIndex].style.display = 'block'; // Show the first kit
-        }
-
-        container.querySelector('#prevKitBtn').addEventListener('click', () => {
-            kits[currentIndex].style.display = 'none'; // Hide current kit
-            currentIndex = (currentIndex - 1 + kits.length) % kits.length; // Move to previous kit
-            kits[currentIndex].style.display = 'block'; // Show new kit
-        });
-
-        container.querySelector('#nextKitBtn').addEventListener('click', () => {
-            kits[currentIndex].style.display = 'none'; // Hide current kit
-            currentIndex = (currentIndex + 1) % kits.length; // Move to next kit
-            kits[currentIndex].style.display = 'block'; // Show new kit
+            container.innerHTML += createAccordionItem(kitName);
         });
     }
 
+    // Attach event listeners to modals
     document.querySelector('#bronzeModal').addEventListener('show.bs.modal', () => loadKits('bronze'));
     document.querySelector('#silverModal').addEventListener('show.bs.modal', () => loadKits('silver'));
     document.querySelector('#goldModal').addEventListener('show.bs.modal', () => loadKits('gold'));
