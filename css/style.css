@@ -1116,13 +1116,13 @@ footer .copyright {
 .kits-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 5px;
 }
 
 .kit-card {
     padding: 5px;
     width: 100%;
-    max-width: 350px;
+    max-width: 365px;
 }
 .kit-items {
     display: grid;
