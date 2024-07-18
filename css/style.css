@@ -1112,44 +1112,29 @@ footer .copyright {
 
 
 /* Kits */
-.accordion-button {
-    background-color: #f8f9fa;
-    border: 1px solid #dee2e6;
+
+.kits-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
-.accordion-button:not(.collapsed) {
-    color: #0d6efd;
-    background-color: #e9ecef;
-    border-color: #ced4da;
-}
-
-.accordion-body {
-    padding: 1rem;
-    background-color: #ffffff;
+.kit-card {
+    border: 1px solid #ddd;
+    padding: 10px;
+    width: 100%;
+    max-width: 300px;
 }
 
 .kit-items {
     display: flex;
-    flex-direction: column;
-    padding: 10px;
-}
-
-.kit-item-wrapper {
-    position: relative;
-    margin: 5px;
+    flex-wrap: wrap;
+    gap: 5px;
 }
 
 .kit-item {
-    width: 50px;
-    height: 50px;
-}
-
-.item-amount {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    background: transparent;
-    color: black;
+    width: 40px;
+    height: 40px;
 }
 
 /* #endregion FAQ */

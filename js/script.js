@@ -2153,46 +2153,71 @@ document.addEventListener('DOMContentLoaded', function () {
         silver: ["VIP Starter Kit", "VIP Kit", "Base Defense II", "VIP Builder II"],
         gold: ["VIP Starter Kit", "VIP Kit", "Base Defense III", "VIP Builder III"]
     };
+     function createKitCard(kit) {
+        let mainItems = '';
+        let wearItems = '';
+        let beltItems = '';
 
-    function createAccordionItem(kitName) {
-        const kit = kitData[kitName];
-        if (!kit) return '';
+        function createItemImage(item) {
+            const itemImage = `https://wiki.rustclash.com/img/items180/${item.Shortname}.png`;
+            return `
+                <div class="kit-item-wrapper">
+                    <img src="${itemImage}" alt="${item.Shortname}" title="${item.Shortname}" class="kit-item">
+                    <span class="item-amount">${item.Amount}</span>
+                </div>
+            `;
+        }
 
-        let mainItems = kit.MainItems.map(item => createItemHTML(item, 'main-items')).join('');
-        let wearItems = kit.WearItems.map(item => createItemHTML(item, 'wear-items')).join('');
-        let beltItems = kit.BeltItems.map(item => createItemHTML(item, 'belt-items')).join('');
+        kit.MainItems.forEach(item => {
+            mainItems += createItemImage(item);
+        });
+
+        kit.WearItems.forEach(item => {
+            wearItems += createItemImage(item);
+        });
+
+        kit.BeltItems.forEach(item => {
+            beltItems += createItemImage(item);
+        });
 
         return `
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="${kitName.replace(/\s+/g, '')}Heading">
-                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#${kitName.replace(/\s+/g, '')}" aria-expanded="true" aria-controls="${kitName.replace(/\s+/g, '')}">
-                        ${kitName}
-                    </button>
-                </h2>
-                <div id="${kitName.replace(/\s+/g, '')}" class="accordion-collapse collapse" aria-labelledby="${kitName.replace(/\s+/g, '')}Heading" data-bs-parent="#${kitName.replace(/\s+/g, '')}Accordion">
-                    <div class="accordion-body">
-                        <div class="kit-items main-items">${mainItems}</div>
-                        <div class="kit-items wear-items">${wearItems}</div>
-                        <div class="kit-items belt-items">${beltItems}</div>
+            <div class="kit-card">
+                <h3>${kit.Name}</h3>
+                <div class="kit-section">
+                    <h4>Main Items</h4>
+                    <div class="kit-items">
+                        ${mainItems}
+                    </div>
+                </div>
+                <div class="kit-section">
+                    <h4>Wear Items</h4>
+                    <div class="kit-items">
+                        ${wearItems}
+                    </div>
+                </div>
+                <div class="kit-section">
+                    <h4>Belt Items</h4>
+                    <div class="kit-items">
+                        ${beltItems}
                     </div>
                 </div>
             </div>
         `;
     }
 
-    function loadKits(rank) {
-        const container = document.querySelector(`#${rank}Accordion`);
-        const kitNames = ranks[rank];
-        if (!container || !kitNames) return;
-
+    function populateKits(rank, containerId) {
+        const container = document.getElementById(containerId);
+        const kits = ranks[rank];
         container.innerHTML = '';
-        kitNames.forEach(kitName => {
-            container.innerHTML += createAccordionItem(kitName);
+        kits.forEach(kitName => {
+            const kit = kitsData[kitName];
+            if (kit) {
+                container.innerHTML += createKitCard(kit);
+            }
         });
     }
 
-    // Attach event listeners to modals
-    document.querySelector('#bronzeModal').addEventListener('show.bs.modal', () => loadKits('bronze'));
-    document.querySelector('#silverModal').addEventListener('show.bs.modal', () => loadKits('silver'));
-    document.querySelector('#goldModal').addEventListener('show.bs.modal', () => loadKits('gold'));
+    populateKits('bronze', 'bronzeKitsContainer');
+    populateKits('silver', 'silverKitsContainer');
+    populateKits('gold', 'goldKitsContainer');
 });
