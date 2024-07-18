@@ -2147,45 +2147,30 @@ document.addEventListener('DOMContentLoaded', function () {
             "BeltItems": []
         }
     };
-
     const ranks = {
         bronze: ["VIP Starter Kit", "VIP Kit", "Base Defense", "VIP Builder"],
         silver: ["VIP Starter Kit", "VIP Kit", "Base Defense II", "VIP Builder II"],
         gold: ["VIP Starter Kit", "VIP Kit", "Base Defense III", "VIP Builder III"]
     };
 
-    function createKitCard(kit) {
-        let mainItems = '';
-        kit.MainItems.forEach(item => {
-            mainItems += createItemHTML(item, 'main-items');
-        });
-    
-        let wearItems = '';
-        kit.WearItems.forEach(item => {
-            wearItems += createItemHTML(item, 'wear-items');
-        });
-    
-        let beltItems = '';
-        kit.BeltItems.forEach(item => {
-            beltItems += createItemHTML(item, 'belt-items');
-        });
-    
+    function createKitCard(kitName) {
+        const kit = kitData[kitName];
+        if (!kit) return '';
+
+        let mainItems = kit.MainItems.map(item => createItemHTML(item, 'main-items')).join('');
+        let wearItems = kit.WearItems.map(item => createItemHTML(item, 'wear-items')).join('');
+        let beltItems = kit.BeltItems.map(item => createItemHTML(item, 'belt-items')).join('');
+
         return `
             <div class="kit-card">
-                <h3>${kit.Name}</h3>
-                <div class="kit-items main-items">
-                    ${mainItems}
-                </div>
-                <div class="kit-items wear-items">
-                    ${wearItems}
-                </div>
-                <div class="kit-items belt-items">
-                    ${beltItems}
-                </div>
+                <h3>${kitName}</h3>
+                <div class="kit-items main-items">${mainItems}</div>
+                <div class="kit-items wear-items">${wearItems}</div>
+                <div class="kit-items belt-items">${beltItems}</div>
             </div>
         `;
     }
-    
+
     function createItemHTML(item, itemType) {
         const itemImage = `https://wiki.rustclash.com/img/items180/${item.Shortname}.png`;
         const amountText = item.Amount ? `x${item.Amount}` : '';
@@ -2196,55 +2181,42 @@ document.addEventListener('DOMContentLoaded', function () {
             </div>
         `;
     }
-    
-    // Initialize kit carousel
-    function initializeKits() {
-        const kitContainers = document.querySelectorAll('.kits-container');
-    
-        kitContainers.forEach(container => {
-            const kits = container.querySelectorAll('.kit-card');
-            let currentIndex = 0;
-    
-            // Show the first kit
-            if (kits.length > 0) {
-                kits[currentIndex].style.display = 'block'; // Show the first kit
-            }
-    
-            // Add navigation controls
-            const prevBtn = container.querySelector('#prevKitBtn');
-            const nextBtn = container.querySelector('#nextKitBtn');
-    
-            prevBtn.addEventListener('click', () => {
-                kits[currentIndex].style.display = 'none'; // Hide current kit
-                currentIndex = (currentIndex - 1 + kits.length) % kits.length; // Move to previous kit
-                kits[currentIndex].style.display = 'block'; // Show new kit
-            });
-    
-            nextBtn.addEventListener('click', () => {
-                kits[currentIndex].style.display = 'none'; // Hide current kit
-                currentIndex = (currentIndex + 1) % kits.length; // Move to next kit
-                kits[currentIndex].style.display = 'block'; // Show new kit
-            });
-        });
-    }
-    
-    // Call initializeKits after DOM content is loaded
-    document.addEventListener('DOMContentLoaded', initializeKits);
-    
 
-    function populateKits(rank, containerId) {
-        const container = document.getElementById(containerId);
-        const kits = ranks[rank];
+    function loadKits(rank) {
+        const container = document.querySelector(`#${rank}KitsContainer`);
+        const kitNames = ranks[rank];
+        if (!container || !kitNames) return;
+
         container.innerHTML = '';
-        kits.forEach(kitName => {
-            const kit = kitsData[kitName];
-            if (kit) {
-                container.innerHTML += createKitCard(kit);
-            }
+        kitNames.forEach(kitName => {
+            container.innerHTML += createKitCard(kitName);
+        });
+
+        initializeKits(container);
+    }
+
+    function initializeKits(container) {
+        const kits = container.querySelectorAll('.kit-card');
+        let currentIndex = 0;
+
+        if (kits.length > 0) {
+            kits[currentIndex].style.display = 'block'; // Show the first kit
+        }
+
+        container.querySelector('#prevKitBtn').addEventListener('click', () => {
+            kits[currentIndex].style.display = 'none'; // Hide current kit
+            currentIndex = (currentIndex - 1 + kits.length) % kits.length; // Move to previous kit
+            kits[currentIndex].style.display = 'block'; // Show new kit
+        });
+
+        container.querySelector('#nextKitBtn').addEventListener('click', () => {
+            kits[currentIndex].style.display = 'none'; // Hide current kit
+            currentIndex = (currentIndex + 1) % kits.length; // Move to next kit
+            kits[currentIndex].style.display = 'block'; // Show new kit
         });
     }
 
-    populateKits('bronze', 'bronzeKitsContainer');
-    populateKits('silver', 'silverKitsContainer');
-    populateKits('gold', 'goldKitsContainer');
+    document.querySelector('#bronzeModal').addEventListener('show.bs.modal', () => loadKits('bronze'));
+    document.querySelector('#silverModal').addEventListener('show.bs.modal', () => loadKits('silver'));
+    document.querySelector('#goldModal').addEventListener('show.bs.modal', () => loadKits('gold'));
 });

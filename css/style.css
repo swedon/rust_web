@@ -1118,64 +1118,33 @@ footer .copyright {
     flex-wrap: wrap;
     gap: 10px;
 }
-.kits-container {
-    position: relative;
-    max-height: 600px; /* Adjust the height as needed */
-    overflow: hidden;
-}
-
 .kit-card {
-    display: none; /* Hide all kits initially */
-    background: none; /* Remove any background */
-    padding: 10px;
-    border: none; /* Remove borders */
-    box-shadow: none; /* Remove box-shadow */
-    margin-bottom: 20px; /* Space between kits */
-}
-
-.kit-card.active {
-    display: block; /* Show the active kit */
-}
-
-.kit-items {
-    display: grid;
-    gap: 5px;
     margin-bottom: 20px;
 }
 
-.kit-items.main-items {
-    grid-template-columns: repeat(6, 50px); /* 6 items per row for MainItems */
-}
-
-.kit-items.belt-items {
-    grid-template-columns: repeat(6, 50px); /* 6 items per row for BeltItems */
-}
-
-.kit-items.wear-items {
-    grid-template-columns: repeat(7, 50px); /* 7 items per row for WearItems */
+.kit-items {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
 }
 
 .kit-item-wrapper {
     position: relative;
-    width: 50px;
-    height: 50px;
+    margin: 5px;
 }
 
 .kit-item {
-    width: 100%;
-    height: 100%;
+    width: 50px;
+    height: 50px;
 }
 
 .item-amount {
     position: absolute;
     bottom: 0;
     right: 0;
-    color: white;
-    font-size: 10px;
-    margin: 2px;
-    background: none; /* Remove background */
+    background: transparent;
+    color: black;
 }
-
 /* #endregion FAQ */
 
 /* #endregion Main */
