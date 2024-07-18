@@ -62,8 +62,8 @@ function playNextVideo() {
 
 backgroundVideo.addEventListener("ended", playNextVideo);
 if (!isPlaying) {
-        playNextVideo();
-    }
+    playNextVideo();
+}
 
 
 // Change server header image src when a element is hovered
@@ -99,4 +99,56 @@ document.addEventListener('DOMContentLoaded', function () {
     if (!isPlaying) {
         playNextVideo();
     }
+});
+document.addEventListener('DOMContentLoaded', function () {
+    const kitsData = {
+        "VIP Builder I": {
+            // Your JSON data here...
+        },
+        "VIP Builder II": {
+            // Your JSON data here...
+        },
+        "VIP Builder III": {
+            // Your JSON data here...
+        }
+    };
+
+    const ranks = {
+        bronze: ["VIP Builder I"],
+        silver: ["VIP Builder II"],
+        gold: ["VIP Builder III"]
+    };
+
+    function createKitCard(kit) {
+        let mainItems = '';
+        kit.MainItems.forEach(item => {
+            const itemImage = `https://wiki.rustclash.com/img/items180/${item.Shortname}.png`;
+            mainItems += `<img src="${itemImage}" alt="${item.Shortname}" title="${item.Shortname}" class="kit-item">`;
+        });
+
+        return `
+            <div class="kit-card">
+                <h3>${kit.Name}</h3>
+                <div class="kit-items">
+                    ${mainItems}
+                </div>
+            </div>
+        `;
+    }
+
+    function populateKits(rank, containerId) {
+        const container = document.getElementById(containerId);
+        const kits = ranks[rank];
+        container.innerHTML = '';
+        kits.forEach(kitName => {
+            const kit = kitsData[kitName];
+            if (kit) {
+                container.innerHTML += createKitCard(kit);
+            }
+        });
+    }
+
+    populateKits('bronze', 'bronzeKitsContainer');
+    populateKits('silver', 'silverKitsContainer');
+    populateKits('gold', 'goldKitsContainer');
 });

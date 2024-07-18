@@ -23,9 +23,9 @@
 <body class="cover-container d-flex w-100 h-100 mx-auto flex-column">
 
 	<video muted autoplay playsinline id="background-video" class="mb-auto background-video">
-		<source src="./videos/background.mp4" type="video/mp4"/>
-		<source src="./videos/rust.webm" type="video/webm"/>
-		<source src="./videos/video11.mp4" type="video/mp4"/>
+		<source src="./videos/background.mp4" type="video/mp4" />
+		<source src="./videos/rust.webm" type="video/webm" />
+		<source src="./videos/video11.mp4" type="video/mp4" />
 	</video>
 	<div class="background-gradient"></div>
 
@@ -140,8 +140,7 @@
 						<div class="modal-header">
 							<div class="server-image-modal-container">
 								<img class="img-fluid header-image" src="./images/serverheader-new.webp"
-									alt="Rusty Revenge PvE"
-									title="Rusty Revenge PvE" />
+									alt="Rusty Revenge PvE" title="Rusty Revenge PvE" />
 							</div>
 						</div>
 						<div class="modal-body">
@@ -227,60 +226,41 @@
 						</div>
 
 						<div class="modal-body container text-center clearfix">
-							<!-- VIP Month -->
+							<!-- Bronze -->
 							<div class="row row-cols-3 vending-machine">
 								<div class="col vending-slot d-flex align-items-center justify-content-center">
-									<img src="./images/png/vip_month.png" class="" alt="VIP Month">
+									<img src="./images/png/bronze.png" class="" alt="Bronze">
 								</div>
-								<div class="col vending-price d-flex align-items-center justify-content-center">5<i
-										class="bi bi-currency-euro"></i></div>
 								<div class="col vending-btn d-flex align-items-center justify-content-center">
-									<a class="btn btn-success" href="https://swedon.tebex.io/package/5906004"
-										target="_blank">
-										<svg class="shop-icon" xmlns="http://www.w3.org/2000/svg" fill="none"
-											viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-											<path stroke-linecap="round" stroke-linejoin="round"
-												d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
-										</svg> BUY
-									</a>
+									<button class="btn btn-success" data-bs-toggle="modal"
+										data-bs-target="#bronzeModal">
+										View Kits
+									</button>
 								</div>
 							</div>
 
-							<!-- VIP Year -->
+							<!-- Silver -->
 							<div class="row row-cols-3 vending-machine">
 								<div class="col vending-slot d-flex align-items-center justify-content-center">
-									<img src="./images/png/vip_year.png" class="" alt="VIP Year">
+									<img src="./images/png/silver.png" class="" alt="Silver">
 								</div>
-								<div class="col vending-price d-flex align-items-center justify-content-center">
-									50<i class="bi bi-currency-euro"></i></div>
 								<div class="col vending-btn d-flex align-items-center justify-content-center">
-									<a class="btn btn-success" href="https://swedon.tebex.io/package/5906005"
-										target="_blank">
-										<svg class="shop-icon" xmlns="http://www.w3.org/2000/svg" fill="none"
-											viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-											<path stroke-linecap="round" stroke-linejoin="round"
-												d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
-										</svg> BUY
-									</a>
+									<button class="btn btn-success" data-bs-toggle="modal"
+										data-bs-target="#silverModal">
+										View Kits
+									</button>
 								</div>
 							</div>
 
-							<!-- VIP Lifetime -->
+							<!-- Gold -->
 							<div class="row row-cols-3 vending-machine">
 								<div class="col vending-slot d-flex align-items-center justify-content-center">
-									<img src="./images/png/vip_lifetime.png" class="" alt="VIP Lifetime">
+									<img src="./images/png/gold.png" class="" alt="Gold">
 								</div>
-								<div class="col vending-price d-flex align-items-center justify-content-center">
-									100<i class="bi bi-currency-euro"></i></div>
 								<div class="col vending-btn d-flex align-items-center justify-content-center">
-									<a class="btn btn-success" href="https://swedon.tebex.io/package/5906006"
-										target="_blank">
-										<svg class="shop-icon" xmlns="http://www.w3.org/2000/svg" fill="none"
-											viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-											<path stroke-linecap="round" stroke-linejoin="round"
-												d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
-										</svg> BUY
-									</a>
+									<button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#goldModal">
+										View Kits
+									</button>
 								</div>
 							</div>
 						</div>
@@ -291,214 +271,269 @@
 					</div>
 				</div>
 			</div>
-		</section>
 
-		<section id="rules" class="rules">
-			<div class="row">
-				<div class="col-12">
-					<div class="accordion" id="accordionRules">
-						<div class="accordion-item">
-							<h2 class="accordion-header" id="rule0">
-								<button class="accordion-button" type="button" data-bs-toggle="collapse"
-									data-bs-target="#collapseRule0">
-									<svg xmlns="http://www.w3.org/2000/svg" class="icon" fill="none" viewBox="0 0 24 24"
-										stroke="currentColor" stroke-width="2">
-										<path stroke-linecap="round" stroke-linejoin="round"
-											d="M13 9l3 3m0 0l-3 3m3-3H8m13 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-									</svg>
-									Cheating or Scripting
-								</button>
-							</h2>
-							<div id="collapseRule0" class="accordion-collapse collapse show"
-								data-bs-parent="#accordionRules">
-								<div class="accordion-body">
-									<ul>
-										<li>Do not use any third-party paid or free programs which provide an unfair
-											advantage in-game.
-										</li>
-										<li>This includes scripts that can perform any action that is otherwise not
-											possible to be
-											performed in the game.</li>
-										<li>Playing with cheaters or ban evaders will result in a temporary ban,
-											possibly permanent.</li>
-									</ul>
-								</div>
-							</div>
+			<!-- Bronze Kits Modal -->
+			<div class="modal fade" id="bronzeModal" tabindex="-1" aria-labelledby="bronzeModalLabel"
+				aria-hidden="true">
+				<div class="modal-dialog modal-dialog-centered modal-lg">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title" id="bronzeModalLabel">Bronze Kits</h5>
+							<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 						</div>
-						<div class="accordion-item">
-							<h2 class="accordion-header" id="rule1">
-								<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-									data-bs-target="#collapseRule1">
-									<svg xmlns="http://www.w3.org/2000/svg" class="icon" fill="none" viewBox="0 0 24 24"
-										stroke="currentColor" stroke-width="2">
-										<path stroke-linecap="round" stroke-linejoin="round"
-											d="M13 9l3 3m0 0l-3 3m3-3H8m13 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-									</svg>
-									Ban evasion
-								</button>
-							</h2>
-							<div id="collapseRule1" class="accordion-collapse collapse"
-								data-bs-parent="#accordionRules">
-								<div class="accordion-body">
-									<ul>
-										<li>Do not do anything to bypass a ban on our server(s).</li>
-										<li>Do not try to join with a different account if you were banned; wait out the
-											ban.</li>
-										<li>Any attempt to do so will result in additional bans.</li>
-									</ul>
-								</div>
-							</div>
-						</div>
-
-						<div class="accordion-item">
-							<h2 class="accordion-header" id="rule2">
-								<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-									data-bs-target="#collapseRule2">
-									<svg xmlns="http://www.w3.org/2000/svg" class="icon" fill="none" viewBox="0 0 24 24"
-										stroke="currentColor" stroke-width="2">
-										<path stroke-linecap="round" stroke-linejoin="round"
-											d="M13 9l3 3m0 0l-3 3m3-3H8m13 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-									</svg>
-									Bug Abuse
-								</button>
-							</h2>
-							<div id="collapseRule2" class="accordion-collapse collapse"
-								data-bs-parent="#accordionRules">
-								<div class="accordion-body">
-									<ul>
-										<li>Do not try to use any unfair advantages that were not intentionally possible
-											within the game.
-										</li>
-										<li>This includes, but is not limited to, accessing inaccessible areas, creating
-											graphic errors,
-											or using graphical adjustments.</li>
-									</ul>
-								</div>
-							</div>
-						</div>
-						<div class="accordion-item">
-							<h2 class="accordion-header" id="rule3">
-								<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-									data-bs-target="#collapseRule3">
-									<svg xmlns="http://www.w3.org/2000/svg" class="icon" fill="none" viewBox="0 0 24 24"
-										stroke="currentColor" stroke-width="2">
-										<path stroke-linecap="round" stroke-linejoin="round"
-											d="M13 9l3 3m0 0l-3 3m3-3H8m13 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-									</svg>
-									Harassment & Toxic Behavior
-								</button>
-							</h2>
-							<div id="collapseRule3" class="accordion-collapse collapse"
-								data-bs-parent="#accordionRules">
-								<div class="accordion-body">
-									<ul>
-										<li>Do not insult other players via text chat or any other applicable
-											communication channel.</li>
-										<li>We want a friendly and comfortable place for everyone on our server(s).</li>
-										<li>Not following this rule will result in temporary or permanent restrictions,
-											and in extreme
-											cases, bans.</li>
-									</ul>
-								</div>
-							</div>
-						</div>
-						<div class="accordion-item">
-							<h2 class="accordion-header" id="rule4">
-								<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-									data-bs-target="#collapseRule4">
-									<svg xmlns="http://www.w3.org/2000/svg" class="icon" fill="none" viewBox="0 0 24 24"
-										stroke="currentColor" stroke-width="2">
-										<path stroke-linecap="round" stroke-linejoin="round"
-											d="M13 9l3 3m0 0l-3 3m3-3H8m13 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-									</svg>
-									Chat Language
-								</button>
-							</h2>
-							<div id="collapseRule4" class="accordion-collapse collapse"
-								data-bs-parent="#accordionRules">
-								<div class="accordion-body">
-									<ul>
-										<li>Please keep it to English in Global Chat.</li>
-										<li>Feel free to speak any other language in Team chat or /pm.</li>
-									</ul>
-								</div>
-							</div>
-						</div>
-						<div class="accordion-item">
-							<h2 class="accordion-header" id="rule5">
-								<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-									data-bs-target="#collapseRule5">
-									<svg xmlns="http://www.w3.org/2000/svg" class="icon" fill="none" viewBox="0 0 24 24"
-										stroke="currentColor" stroke-width="2">
-										<path stroke-linecap="round" stroke-linejoin="round"
-											d="M13 9l3 3m0 0l-3 3m3-3H8m13 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-									</svg>
-									Reports & Support
-								</button>
-							</h2>
-							<div id="collapseRule5" class="accordion-collapse collapse"
-								data-bs-parent="#accordionRules">
-								<div class="accordion-body">
-									<ul>
-										<li>All reports are strictly handled in-game by pressing F7 or typing /report.
-										</li>
-										<li>Reports done this way will provide us with video evidence to review the
-											incident.</li>
-										<li>Please do not notify suspicious players by calling them out in global chat;
-											instead, report
-											them.</li>
-										<li>In all cases, admins have the final word. If you wish to appeal, please do
-											so on our Discord.
-										</li>
-										<li>If you need support from staff, please open a ticket on Discord.</li>
-									</ul>
-								</div>
-							</div>
+						<div class="modal-body">
+							<div id="bronzeKitsContainer" class="kits-container"></div>
 						</div>
 					</div>
 				</div>
 			</div>
-		</section>
 
-		<section id="staff" class="staff">
-			<div class="row">
-				<div class="col-12">
-					<h2 class="staff-heading">server Staff</h2>
-				</div>
-			</div>
-			<div class="row justify-content-center">
-				<div class="col-12 col-sm-6 col-lg-3">
-					<div class="member-container d-flex justify-content-center animate__animated">
-						<div class="member d-flex flex-column">
-							<div class="member-description">
-								<span class="member-name">丂卄ㄖㄩ千</span>
-								<span class="admin">admin</span>
-							</div>
+			<!-- Silver Kits Modal -->
+			<div class="modal fade" id="silverModal" tabindex="-1" aria-labelledby="silverModalLabel"
+				aria-hidden="true">
+				<div class="modal-dialog modal-dialog-centered modal-lg">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title" id="silverModalLabel">Silver Kits</h5>
+							<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 						</div>
-					</div>
-				</div>
-				<div class="col-12 col-sm-6 col-lg-3">
-					<div class="member-container d-flex justify-content-center animate__animated">
-						<div class="member d-flex flex-column">
-							<div class="member-description">
-								<span class="member-name">Giggle</span>
-								<span class="moderator">Moderator</span>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-12 col-sm-6 col-lg-3">
-					<div class="member-container d-flex justify-content-center animate__animated">
-						<div class="member d-flex flex-column">
-							<div class="member-description">
-								<span class="member-name">Limmek</span>
-								<p class="developer">Developer</p>
-							</div>
+						<div class="modal-body">
+							<div id="silverKitsContainer" class="kits-container"></div>
 						</div>
 					</div>
 				</div>
 			</div>
-		</section>
+
+			<!-- Gold Kits Modal -->
+			<div class="modal fade" id="goldModal" tabindex="-1" aria-labelledby="goldModalLabel" aria-hidden="true">
+				<div class="modal-dialog modal-dialog-centered modal-lg">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title" id="goldModalLabel">Gold Kits</h5>
+							<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+						</div>
+						<div class="modal-body">
+							<div id="goldKitsContainer" class="kits-container"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+			<section id="rules" class="rules">
+				<div class="row">
+					<div class="col-12">
+						<div class="accordion" id="accordionRules">
+							<div class="accordion-item">
+								<h2 class="accordion-header" id="rule0">
+									<button class="accordion-button" type="button" data-bs-toggle="collapse"
+										data-bs-target="#collapseRule0">
+										<svg xmlns="http://www.w3.org/2000/svg" class="icon" fill="none"
+											viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+											<path stroke-linecap="round" stroke-linejoin="round"
+												d="M13 9l3 3m0 0l-3 3m3-3H8m13 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+										</svg>
+										Cheating or Scripting
+									</button>
+								</h2>
+								<div id="collapseRule0" class="accordion-collapse collapse show"
+									data-bs-parent="#accordionRules">
+									<div class="accordion-body">
+										<ul>
+											<li>Do not use any third-party paid or free programs which provide an unfair
+												advantage in-game.
+											</li>
+											<li>This includes scripts that can perform any action that is otherwise not
+												possible to be
+												performed in the game.</li>
+											<li>Playing with cheaters or ban evaders will result in a temporary ban,
+												possibly permanent.</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="accordion-item">
+								<h2 class="accordion-header" id="rule1">
+									<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+										data-bs-target="#collapseRule1">
+										<svg xmlns="http://www.w3.org/2000/svg" class="icon" fill="none"
+											viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+											<path stroke-linecap="round" stroke-linejoin="round"
+												d="M13 9l3 3m0 0l-3 3m3-3H8m13 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+										</svg>
+										Ban evasion
+									</button>
+								</h2>
+								<div id="collapseRule1" class="accordion-collapse collapse"
+									data-bs-parent="#accordionRules">
+									<div class="accordion-body">
+										<ul>
+											<li>Do not do anything to bypass a ban on our server(s).</li>
+											<li>Do not try to join with a different account if you were banned; wait out
+												the
+												ban.</li>
+											<li>Any attempt to do so will result in additional bans.</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+
+							<div class="accordion-item">
+								<h2 class="accordion-header" id="rule2">
+									<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+										data-bs-target="#collapseRule2">
+										<svg xmlns="http://www.w3.org/2000/svg" class="icon" fill="none"
+											viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+											<path stroke-linecap="round" stroke-linejoin="round"
+												d="M13 9l3 3m0 0l-3 3m3-3H8m13 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+										</svg>
+										Bug Abuse
+									</button>
+								</h2>
+								<div id="collapseRule2" class="accordion-collapse collapse"
+									data-bs-parent="#accordionRules">
+									<div class="accordion-body">
+										<ul>
+											<li>Do not try to use any unfair advantages that were not intentionally
+												possible
+												within the game.
+											</li>
+											<li>This includes, but is not limited to, accessing inaccessible areas,
+												creating
+												graphic errors,
+												or using graphical adjustments.</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="accordion-item">
+								<h2 class="accordion-header" id="rule3">
+									<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+										data-bs-target="#collapseRule3">
+										<svg xmlns="http://www.w3.org/2000/svg" class="icon" fill="none"
+											viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+											<path stroke-linecap="round" stroke-linejoin="round"
+												d="M13 9l3 3m0 0l-3 3m3-3H8m13 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+										</svg>
+										Harassment & Toxic Behavior
+									</button>
+								</h2>
+								<div id="collapseRule3" class="accordion-collapse collapse"
+									data-bs-parent="#accordionRules">
+									<div class="accordion-body">
+										<ul>
+											<li>Do not insult other players via text chat or any other applicable
+												communication channel.</li>
+											<li>We want a friendly and comfortable place for everyone on our server(s).
+											</li>
+											<li>Not following this rule will result in temporary or permanent
+												restrictions,
+												and in extreme
+												cases, bans.</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="accordion-item">
+								<h2 class="accordion-header" id="rule4">
+									<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+										data-bs-target="#collapseRule4">
+										<svg xmlns="http://www.w3.org/2000/svg" class="icon" fill="none"
+											viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+											<path stroke-linecap="round" stroke-linejoin="round"
+												d="M13 9l3 3m0 0l-3 3m3-3H8m13 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+										</svg>
+										Chat Language
+									</button>
+								</h2>
+								<div id="collapseRule4" class="accordion-collapse collapse"
+									data-bs-parent="#accordionRules">
+									<div class="accordion-body">
+										<ul>
+											<li>Please keep it to English in Global Chat.</li>
+											<li>Feel free to speak any other language in Team chat or /pm.</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="accordion-item">
+								<h2 class="accordion-header" id="rule5">
+									<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+										data-bs-target="#collapseRule5">
+										<svg xmlns="http://www.w3.org/2000/svg" class="icon" fill="none"
+											viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+											<path stroke-linecap="round" stroke-linejoin="round"
+												d="M13 9l3 3m0 0l-3 3m3-3H8m13 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+										</svg>
+										Reports & Support
+									</button>
+								</h2>
+								<div id="collapseRule5" class="accordion-collapse collapse"
+									data-bs-parent="#accordionRules">
+									<div class="accordion-body">
+										<ul>
+											<li>All reports are strictly handled in-game by pressing F7 or typing
+												/report.
+											</li>
+											<li>Reports done this way will provide us with video evidence to review the
+												incident.</li>
+											<li>Please do not notify suspicious players by calling them out in global
+												chat;
+												instead, report
+												them.</li>
+											<li>In all cases, admins have the final word. If you wish to appeal, please
+												do
+												so on our Discord.
+											</li>
+											<li>If you need support from staff, please open a ticket on Discord.</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section id="staff" class="staff">
+				<div class="row">
+					<div class="col-12">
+						<h2 class="staff-heading">server Staff</h2>
+					</div>
+				</div>
+				<div class="row justify-content-center">
+					<div class="col-12 col-sm-6 col-lg-3">
+						<div class="member-container d-flex justify-content-center animate__animated">
+							<div class="member d-flex flex-column">
+								<div class="member-description">
+									<span class="member-name">丂卄ㄖㄩ千</span>
+									<span class="admin">admin</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-12 col-sm-6 col-lg-3">
+						<div class="member-container d-flex justify-content-center animate__animated">
+							<div class="member d-flex flex-column">
+								<div class="member-description">
+									<span class="member-name">Giggle</span>
+									<span class="moderator">Moderator</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-12 col-sm-6 col-lg-3">
+						<div class="member-container d-flex justify-content-center animate__animated">
+							<div class="member d-flex flex-column">
+								<div class="member-description">
+									<span class="member-name">Limmek</span>
+									<p class="developer">Developer</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
 	</main>
 
 	<footer class="footer">
