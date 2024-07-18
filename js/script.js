@@ -2163,7 +2163,7 @@ document.addEventListener('DOMContentLoaded', function () {
             return `
                 <div class="kit-item-wrapper">
                     <img src="${itemImage}" alt="${item.Shortname}" title="${item.Shortname}" class="kit-item">
-                    <span class="item-amount">${item.Amount}</span>
+                    <span class="item-amount">x${item.Amount}</span>
                 </div>
             `;
         }
