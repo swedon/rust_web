@@ -2171,18 +2171,16 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     
         return `
-            <div class="kit-slide">
-                <div class="kit-card">
-                    <h3>${kit.Name}</h3>
-                    <div class="kit-items main-items">
-                        ${mainItems}
-                    </div>
-                    <div class="kit-items wear-items">
-                        ${wearItems}
-                    </div>
-                    <div class="kit-items belt-items">
-                        ${beltItems}
-                    </div>
+            <div class="kit-card">
+                <h3>${kit.Name}</h3>
+                <div class="kit-items main-items">
+                    ${mainItems}
+                </div>
+                <div class="kit-items wear-items">
+                    ${wearItems}
+                </div>
+                <div class="kit-items belt-items">
+                    ${beltItems}
                 </div>
             </div>
         `;
@@ -2201,27 +2199,20 @@ document.addEventListener('DOMContentLoaded', function () {
     
     // Initialize kit carousel
     function initializeKits() {
-        const kitContainers = document.querySelectorAll('.kits-carousel');
+        const kitContainers = document.querySelectorAll('.kits-container');
+    
         kitContainers.forEach(container => {
-            const kits = container.querySelectorAll('.kit-slide');
-            kits.forEach((kit, index) => {
-                if (index === 0) {
-                    kit.style.display = 'block'; // Show the first kit
-                } else {
-                    kit.style.display = 'none'; // Hide other kits
-                }
-            });
-    
-            // Add navigation controls if needed
-            container.insertAdjacentHTML('beforeend', `
-                <button class="prev-btn">Prev</button>
-                <button class="next-btn">Next</button>
-            `);
-    
-            // Handle navigation
-            const prevBtn = container.querySelector('.prev-btn');
-            const nextBtn = container.querySelector('.next-btn');
+            const kits = container.querySelectorAll('.kit-card');
             let currentIndex = 0;
+    
+            // Show the first kit
+            if (kits.length > 0) {
+                kits[currentIndex].style.display = 'block'; // Show the first kit
+            }
+    
+            // Add navigation controls
+            const prevBtn = container.querySelector('#prevKitBtn');
+            const nextBtn = container.querySelector('#nextKitBtn');
     
             prevBtn.addEventListener('click', () => {
                 kits[currentIndex].style.display = 'none'; // Hide current kit
@@ -2239,6 +2230,7 @@ document.addEventListener('DOMContentLoaded', function () {
     
     // Call initializeKits after DOM content is loaded
     document.addEventListener('DOMContentLoaded', initializeKits);
+    
 
     function populateKits(rank, containerId) {
         const container = document.getElementById(containerId);
