@@ -2156,49 +2156,43 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function createKitCard(kit) {
         let mainItems = '';
-        let wearItems = '';
-        let beltItems = '';
-
-        function createItemImage(item) {
-            const itemImage = `https://wiki.rustclash.com/img/items180/${item.Shortname}.png`;
-            return `
-                <div class="kit-item-wrapper">
-                    <img src="${itemImage}" alt="${item.Shortname}" title="${item.Shortname}" class="kit-item">
-                    <span class="item-amount">${item.Amount}</span>
-                </div>
-            `;
-        }
-
         kit.MainItems.forEach(item => {
-            mainItems += createItemImage(item);
+            mainItems += createItemHTML(item, 'main-items');
         });
-
+    
+        let wearItems = '';
         kit.WearItems.forEach(item => {
-            wearItems += createItemImage(item);
+            wearItems += createItemHTML(item, 'wear-items');
         });
-
+    
+        let beltItems = '';
         kit.BeltItems.forEach(item => {
-            beltItems += createItemImage(item);
+            beltItems += createItemHTML(item, 'belt-items');
         });
-
+    
         return `
             <div class="kit-card">
                 <h3>${kit.Name}</h3>
-                <div class="kit-section">
-                    <div class="kit-items">
-                        ${mainItems}
-                    </div>
+                <div class="kit-items main-items">
+                    ${mainItems}
                 </div>
-                <div class="kit-section">
-                    <div class="kit-items">
-                        ${wearItems}
-                    </div>
+                <div class="kit-items wear-items">
+                    ${wearItems}
                 </div>
-                <div class="kit-section">
-                    <div class="kit-items">
-                        ${beltItems}
-                    </div>
+                <div class="kit-items belt-items">
+                    ${beltItems}
                 </div>
+            </div>
+        `;
+    }
+    
+    function createItemHTML(item, itemType) {
+        const itemImage = `https://wiki.rustclash.com/img/items180/${item.Shortname}.png`;
+        const amountText = item.Amount ? `x${item.Amount}` : '';
+        return `
+            <div class="kit-item-wrapper">
+                <img src="${itemImage}" alt="${item.Shortname}" title="${item.Shortname}" class="kit-item">
+                <div class="item-amount">${amountText}</div>
             </div>
         `;
     }
