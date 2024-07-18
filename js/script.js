@@ -2198,6 +2198,47 @@ document.addEventListener('DOMContentLoaded', function () {
             </div>
         `;
     }
+    
+    // Initialize kit carousel
+    function initializeKits() {
+        const kitContainers = document.querySelectorAll('.kits-carousel');
+        kitContainers.forEach(container => {
+            const kits = container.querySelectorAll('.kit-slide');
+            kits.forEach((kit, index) => {
+                if (index === 0) {
+                    kit.style.display = 'block'; // Show the first kit
+                } else {
+                    kit.style.display = 'none'; // Hide other kits
+                }
+            });
+    
+            // Add navigation controls if needed
+            container.insertAdjacentHTML('beforeend', `
+                <button class="prev-btn">Prev</button>
+                <button class="next-btn">Next</button>
+            `);
+    
+            // Handle navigation
+            const prevBtn = container.querySelector('.prev-btn');
+            const nextBtn = container.querySelector('.next-btn');
+            let currentIndex = 0;
+    
+            prevBtn.addEventListener('click', () => {
+                kits[currentIndex].style.display = 'none'; // Hide current kit
+                currentIndex = (currentIndex - 1 + kits.length) % kits.length; // Move to previous kit
+                kits[currentIndex].style.display = 'block'; // Show new kit
+            });
+    
+            nextBtn.addEventListener('click', () => {
+                kits[currentIndex].style.display = 'none'; // Hide current kit
+                currentIndex = (currentIndex + 1) % kits.length; // Move to next kit
+                kits[currentIndex].style.display = 'block'; // Show new kit
+            });
+        });
+    }
+    
+    // Call initializeKits after DOM content is loaded
+    document.addEventListener('DOMContentLoaded', initializeKits);
 
     function populateKits(rank, containerId) {
         const container = document.getElementById(containerId);

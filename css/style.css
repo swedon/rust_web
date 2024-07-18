@@ -1118,30 +1118,27 @@ footer .copyright {
     flex-wrap: wrap;
     gap: 10px;
 }
-
 .kits-carousel {
     display: flex;
-    overflow-x: auto; /* Enable horizontal scroll */
-    white-space: nowrap;
-    padding: 10px;
+    overflow: hidden; /* Hide overflow to prevent showing extra kits */
+    position: relative;
 }
 
 .kit-slide {
-    flex: 0 0 auto; /* Prevent shrinking */
-    width: 100%; /* Full width of its container */
+    flex: 0 0 100%; /* Make each kit take full width of its container */
     box-sizing: border-box;
-    margin-right: 10px; /* Space between kits */
 }
 
 .kit-card {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: #f8f9fa; /* Background color for kits */
+    background: #f8f9fa;
     padding: 10px;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     width: 300px; /* Adjust width as needed */
+    border: none; /* Remove border */
 }
 
 .kit-items {
