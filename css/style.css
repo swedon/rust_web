@@ -1147,11 +1147,8 @@ footer .copyright {
     position: absolute;
     bottom: 0;
     right: 0;
-    background-color: rgba(0, 0, 0, 0.7);
     color: white;
     font-size: 10px;
-    padding: 2px;
-    border-radius: 3px;
     margin: 2px;
 }
 /* #endregion FAQ */

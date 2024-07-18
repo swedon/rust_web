@@ -2153,7 +2153,7 @@ document.addEventListener('DOMContentLoaded', function () {
         silver: ["VIP Starter Kit", "VIP Kit", "Base Defense II", "VIP Builder II"],
         gold: ["VIP Starter Kit", "VIP Kit", "Base Defense III", "VIP Builder III"]
     };
-    
+
     function createKitCard(kit) {
         let mainItems = '';
         let wearItems = '';
@@ -2185,19 +2185,16 @@ document.addEventListener('DOMContentLoaded', function () {
             <div class="kit-card">
                 <h3>${kit.Name}</h3>
                 <div class="kit-section">
-                    <h4>Main Items</h4>
                     <div class="kit-items">
                         ${mainItems}
                     </div>
                 </div>
                 <div class="kit-section">
-                    <h4>Wear Items</h4>
                     <div class="kit-items">
                         ${wearItems}
                     </div>
                 </div>
                 <div class="kit-section">
-                    <h4>Belt Items</h4>
                     <div class="kit-items">
                         ${beltItems}
                     </div>
