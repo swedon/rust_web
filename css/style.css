@@ -1120,7 +1120,6 @@ footer .copyright {
 }
 
 .kit-card {
-    border: 1px solid #ddd;
     padding: 10px;
     width: 100%;
     max-width: 300px;
@@ -1132,11 +1131,25 @@ footer .copyright {
     gap: 5px;
 }
 
+.kit-item-wrapper {
+    position: relative;
+    display: inline-block;
+    margin: 5px;
+}
+
 .kit-item {
     width: 40px;
     height: 40px;
 }
 
+.item-amount {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    color: white;
+    font-size: 10px;
+    margin: 2px;
+}
 /* #endregion FAQ */
 
 /* #endregion Main */
