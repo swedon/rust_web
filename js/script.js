@@ -2171,16 +2171,18 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     
         return `
-            <div class="kit-card">
-                <h3>${kit.Name}</h3>
-                <div class="kit-items main-items">
-                    ${mainItems}
-                </div>
-                <div class="kit-items wear-items">
-                    ${wearItems}
-                </div>
-                <div class="kit-items belt-items">
-                    ${beltItems}
+            <div class="kit-slide">
+                <div class="kit-card">
+                    <h3>${kit.Name}</h3>
+                    <div class="kit-items main-items">
+                        ${mainItems}
+                    </div>
+                    <div class="kit-items wear-items">
+                        ${wearItems}
+                    </div>
+                    <div class="kit-items belt-items">
+                        ${beltItems}
+                    </div>
                 </div>
             </div>
         `;
