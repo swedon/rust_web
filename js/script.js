@@ -71,8 +71,11 @@ let selectedVideoSource = videoSources[randomIndex];
 
 function playRandomVideo() {
     randomIndex = Math.floor(Math.random() * videoSources.length);
-    selectedVideoSource = videoSources[randomIndex];
-    backgroundVideo.src = selectedVideoSource;
+    let newVideoSource = videoSources[randomIndex];
+    if (newVideoSource === selectedVideoSource) {
+        newVideoSource = videoSources[Math.floor(Math.random() * videoSources.length)];
+    }
+    backgroundVideo.src = newVideoSource;
     backgroundVideo.load();
     backgroundVideo.play().catch(error => {
         // Autoplay was prevented, you can handle this situation here.
