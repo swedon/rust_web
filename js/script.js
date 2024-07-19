@@ -6,7 +6,7 @@ async function fetchLocalServerData() {
             throw new Error(`HTTP error! Status: ${response.status}`);
         }
         const data = await response.json();
-        console.log('Fetched data:', data); // Log the fetched data for debugging
+        // console.log('Fetched data:', data); // Log the fetched data for debugging
         return data;
     } catch (error) {
         console.error('Error fetching local server data:', error);
@@ -24,11 +24,11 @@ function updateServerInfo(data) {
     const players = attributes.players;
     const maxPlayers = attributes.maxPlayers;
 
-    console.log('Players:', players, 'Max Players:', maxPlayers); // Log player counts for debugging
+    // console.log('Players:', players, 'Max Players:', maxPlayers); // Log player counts for debugging
 
     // Find the server players container
     const serverPlayers = document.getElementById('server-players');
-    
+
     // Update player count
     const playerCountElement = document.getElementById('player-count');
     playerCountElement.textContent = `${players}/${maxPlayers}`;
@@ -46,13 +46,6 @@ function updateServerInfo(data) {
     serverPlayers.style.display = 'block';
     document.getElementById('player-count-progress').style.display = 'block';
 }
-
-// Fetch the data and update the UI
-fetchLocalServerData().then(data => {
-    if (data) {
-        updateServerInfo(data);
-    }
-});
 
 // Set active link in navigation
 // Get the container element
@@ -73,34 +66,27 @@ for (var i = 0; i < btns.length; i++) {
 const backgroundVideo = document.getElementById("background-video");
 const sourceElements = backgroundVideo.querySelectorAll("source");
 const videoSources = Array.from(sourceElements).map(source => source.getAttribute("src"));
+let randomIndex = Math.floor(Math.random() * videoSources.length);
+let selectedVideoSource = videoSources[randomIndex];
 
-// Select a random video source
-const randomIndex = Math.floor(Math.random() * videoSources.length);
-const selectedVideoSource = videoSources[randomIndex];
-
-let isPlaying = false;
-
-function playSelectedVideo() {
+function playRandomVideo() {
+    randomIndex = Math.floor(Math.random() * videoSources.length);
+    selectedVideoSource = videoSources[randomIndex];
     backgroundVideo.src = selectedVideoSource;
     backgroundVideo.load();
     backgroundVideo.play().catch(error => {
         // Autoplay was prevented, you can handle this situation here.
         console.error("Autoplay prevented:", error);
     });
-    isPlaying = true;
 }
 
 // Ensure the video repeats seamlessly
 backgroundVideo.addEventListener("ended", () => {
+    playRandomVideo();
     backgroundVideo.play().catch(error => {
         console.error("Autoplay prevented on repeat:", error);
     });
 });
-
-if (!isPlaying) {
-    playSelectedVideo();
-}
-
 
 // Add server tags
 async function fetchServerTags() {
@@ -120,14 +106,14 @@ async function fetchServerTags() {
 
 // Called wehn page is loaded
 document.addEventListener('DOMContentLoaded', function () {
+    playRandomVideo();
     // Call the function to fetch and update server information
-    fetchServerTags()
-    if (!isPlaying) {
-        playNextVideo();
-    }
-});
+    fetchServerTags();
+    // Fetch the data and update the UI
+    fetchLocalServerData().then(data => {
+        updateServerInfo(data);
+    });
 
-document.addEventListener('DOMContentLoaded', function () {
     const kitsData = {
         "Starter Kit": {
             "Name": "Starter Kit",
