@@ -1146,10 +1146,8 @@ footer .copyright {
 .rank-section {
     display: flex;
     justify-content: space-between;
-    border: 1px solid #ddd;
     margin-bottom: 20px;
     padding: 10px;
-    background-color: #f9f9f9;
 }
 
 /* Kits Container */
@@ -1164,9 +1162,7 @@ footer .copyright {
 .kit-card {
     display: flex;
     flex-direction: column;
-    border: 1px solid #ddd;
     padding: 10px;
-    background-color: #fff;
     width: 100%;
     max-width: 400px;
 }
@@ -1229,7 +1225,6 @@ footer .copyright {
     flex: 1;
     margin-left: 20px;
     padding: 10px;
-    border-left: 1px solid #ddd;
 }
 
 /* Commands List */
@@ -1241,23 +1236,6 @@ footer .copyright {
 
 .kit-commands li {
     margin-bottom: 8px;
-}
-
-/* Buttons */
-.button {
-    display: block;
-    margin: 10px 0;
-    padding: 10px;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    text-align: center;
-    background-color: #007bff; /* Button color */
-}
-
-.button:hover {
-    background-color: #0056b3; /* Button hover color */
 }
 
 /* Buy Now Button Alignment */
