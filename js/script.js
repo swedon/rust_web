@@ -2252,7 +2252,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     <ul>
                         ${commandsHTML}
                     </ul>
-                    <button class="buy-now">Buy Now</button>
+                    <button class="btn btn-success">Buy Now</button>
                 </div>
             </div>
         `;
