@@ -34,7 +34,7 @@ async function fetchServerInfo() {
             playerProgressBar.setAttribute('aria-valuenow', playerProgress);
 
             // Update steam connect buttons with server ip and port
-            const steamConnect = `location.href='steam://connect/${serverInfo.ip}:${serverInfo.port}'`
+            const steamConnect = `location.href='steam://run/252490//connect%20${serverInfo.ip}:${serverInfo.port}'`
             document.getElementById('steam-connect').setAttribute('onclick', steamConnect);
             document.getElementById('modal-steam-connect').setAttribute('onclick', steamConnect);
             document.getElementById('steam-connect').classList.remove('disabled');

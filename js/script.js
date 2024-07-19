@@ -1,17 +1,57 @@
-// Animation scripts
-// Get all the member container elements
-const memberContainers = document.querySelectorAll('.member-container');
+// Function to fetch server data from the local JSON file
+async function fetchLocalServerData() {
+    try {
+        const response = await fetch('https://api.battlemetrics.com/servers/28259573');
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        const data = await response.json();
+        console.log('Fetched data:', data); // Log the fetched data for debugging
+        return data;
+    } catch (error) {
+        console.error('Error fetching local server data:', error);
+    }
+}
 
-// Loop through each member container and add the animation on mouseover
-memberContainers.forEach(memberContainer => {
-    // Remove the animation on mouseout
-    memberContainer.addEventListener('mouseout', () => {
-        memberContainer.classList.remove('animate__heartBeat');
-    });
+// Function to update the server info UI based on the fetched data
+function updateServerInfo(data) {
+    if (!data || !data.data || !data.data.attributes) {
+        console.error('Invalid data structure:', data);
+        return;
+    }
 
-    memberContainer.addEventListener('mouseover', () => {
-        memberContainer.classList.add('animate__heartBeat');
-    });
+    const attributes = data.data.attributes;
+    const players = attributes.players;
+    const maxPlayers = attributes.maxPlayers;
+
+    console.log('Players:', players, 'Max Players:', maxPlayers); // Log player counts for debugging
+
+    // Find the server players container
+    const serverPlayers = document.getElementById('server-players');
+    
+    // Update player count
+    const playerCountElement = document.getElementById('player-count');
+    playerCountElement.textContent = `${players}/${maxPlayers}`;
+
+    // Calculate the fill percentage
+    const fillPercentage = (players / maxPlayers) * 100;
+    console.log('Fill Percentage:', fillPercentage); // Log fill percentage for debugging
+
+    // Update the progress bar
+    const progressBar = document.getElementById('player-count-progressbar');
+    progressBar.style.width = fillPercentage + '%';
+    progressBar.setAttribute('aria-valuenow', fillPercentage); // Ensure accessibility attributes are updated
+
+    // Show the elements
+    serverPlayers.style.display = 'block';
+    document.getElementById('player-count-progress').style.display = 'block';
+}
+
+// Fetch the data and update the UI
+fetchLocalServerData().then(data => {
+    if (data) {
+        updateServerInfo(data);
+    }
 });
 
 // Set active link in navigation
@@ -30,28 +70,18 @@ for (var i = 0; i < btns.length; i++) {
     });
 }
 
-
-// Change the background video to a random source
 const backgroundVideo = document.getElementById("background-video");
 const sourceElements = backgroundVideo.querySelectorAll("source");
 const videoSources = Array.from(sourceElements).map(source => source.getAttribute("src"));
-shuffleArray(videoSources);
 
-let currentIndex = 0;
+// Select a random video source
+const randomIndex = Math.floor(Math.random() * videoSources.length);
+const selectedVideoSource = videoSources[randomIndex];
+
 let isPlaying = false;
 
-function shuffleArray(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
-    }
-}
-
-function playNextVideo() {
-    if (isPlaying) {
-        currentIndex = (currentIndex + 1) % videoSources.length;
-    }
-    backgroundVideo.src = videoSources[currentIndex];
+function playSelectedVideo() {
+    backgroundVideo.src = selectedVideoSource;
     backgroundVideo.load();
     backgroundVideo.play().catch(error => {
         // Autoplay was prevented, you can handle this situation here.
@@ -60,9 +90,15 @@ function playNextVideo() {
     isPlaying = true;
 }
 
-backgroundVideo.addEventListener("ended", playNextVideo);
+// Ensure the video repeats seamlessly
+backgroundVideo.addEventListener("ended", () => {
+    backgroundVideo.play().catch(error => {
+        console.error("Autoplay prevented on repeat:", error);
+    });
+});
+
 if (!isPlaying) {
-    playNextVideo();
+    playSelectedVideo();
 }
 
 
@@ -90,6 +126,7 @@ document.addEventListener('DOMContentLoaded', function () {
         playNextVideo();
     }
 });
+
 document.addEventListener('DOMContentLoaded', function () {
     const kitsData = {
         "Starter Kit": {
@@ -2146,25 +2183,32 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const rankCommands = {
         bronze: [
-            "Access to /recycler 1x",
+            "Access to /Recycler 1x",
             "Access to /Up 3",
             "Access to /Bgrade 3",
+            "Access to /Skinset",
             "Access to /Sd (Skindeployable)",
-            "Access to /Skinset"
+            "4x Autoplanters",
+            "+25% $ from kills",
+            "+25.000$",
+            "ChestStack <br/> 5x Small & 4x Large"
         ],
         silver: [
-            "Access to /recycler 2x",
             "Access to /Up 4",
             "Access to /Bgrade 4",
-            "Access to /Sd (Skindeployable)",
-            "Access to /Skinset"
+            "6x Autoplanters",
+            "+50% $ from kills",
+            "+50.000$",
+            "",
+            "Unlocks everything from Bronze"
         ],
         gold: [
-            "Access to /recycler 3x",
-            "Access to /Up 5",
-            "Access to /Bgrade 5",
-            "Access to /Sd (Skindeployable)",
-            "Access to /Skinset"
+            "Access to /Recycler 2x",
+            "6x Autoplanters",
+            "+100% $ from kills",
+            "+100.000$",
+            "",
+            "Unlocks everything from Bronze & Silver"
         ]
     };
 
@@ -2215,9 +2259,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Define URLs for Tebex packages corresponding to each rank
     const tebexUrls = {
-        bronze: '#', // Replace with actual URL
-        silver: '#', // Replace with actual URL
-        gold: '#' // Replace with actual URL
+        bronze: 'https://rustyrevengepve.tebex.io/package/5906004', // Replace with actual URL
+        silver: 'https://rustyrevengepve.tebex.io/package/5906005', // Replace with actual URL
+        gold: 'https://rustyrevengepve.tebex.io/package/5906006' // Replace with actual URL
     };
 
     function createRankSection(rank, containerId) {
@@ -2236,7 +2280,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         let commandsHTML = '';
         commands.forEach(command => {
-            commandsHTML += `<li>${command}</li>`;
+            commandsHTML += `<h6>${command}</h6>`;
         });
 
         container.innerHTML = `
@@ -2245,9 +2289,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 ${kitsHTML}
             </div>
             <div class="commands-container">
-                <ul>
                     ${commandsHTML}
-                </ul>
                 <a href="${tebexUrl}" class="btn btn-success" target="_blank">Buy Now</a>
             </div>
         </div>

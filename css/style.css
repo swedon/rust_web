@@ -94,7 +94,7 @@ video.background-video {
 	left: 50%;
 	right: 0;
 	width: 100%;
-	max-width: 1920px;
+	max-width: 100%;
 	height: 1080px;
 	transform: translate(-50%, 0);
 	object-fit: cover;
@@ -103,25 +103,34 @@ video.background-video {
 
 body::before {
 	content: '';
-	position: fixed;
+	position: absolute;
 	top: 0;
 	left: 0;
 	width: 100%;
 	height: 100%;
-	object-fit: cover;
 	/* Ensure the video covers the entire viewport */
 	z-index: -1;
 	/* Place it behind the content */
 }
 
-.background-gradient {
+.dark-bar-pattern {
+	background-color: rgba(20, 24, 20, 1);
+	height: 53px;
+	mask-image: url("https://files.facepunch.com/lewis/1b0311b1/bar-dark.svg");
+	mask-repeat: repeat-x;
+	position: relative;
+	top: 1030px;
+	z-index: 0;
+  }
+
+  .background-gradient {
 	position: absolute;
 	width: 100%;
-	max-width: 1920px;
+	max-width: 100%;
 	left: 50%;
 	transform: translate(-50%, 0);
 	height: 1080px;
-	background: radial-gradient(at top, rgba(0, 0, 0, 0) 0%, rgba(20, 24, 20, 1) 60%), rgba(20, 24, 20, 0.1);
+	background: radial-gradient(at top, rgba(0, 0, 0, 0) 0%, rgba(20, 24, 20, 0.7) 60%), rgba(20, 24, 20, 0.1);
 	top: 0;
 	z-index: -1;
 }
@@ -259,7 +268,7 @@ main {
 /* #region Navigation */
 
 .navbar {
-	margin-top: 50px;
+	margin-top: -25px;
 	background-color: rgb(28, 28, 26) !important;
 	border-radius: 0 !important;
 	margin-bottom: 50px;
@@ -361,7 +370,7 @@ main {
 	max-height: 400px;
 	border: 6px solid rgb(31, 32, 26);
 	background: rgb(31, 32, 26);
-	margin-top: 25px;
+	margin-top: 200px;
 	margin-bottom: 25px;
 	position: relative;
 }
@@ -429,68 +438,79 @@ main {
 	border-radius: 0px;
 	margin: 2px;
 }
-
+/* Player count styling */
 .servers #player-count {
-	font-weight: 400;
-	font-size: 1.33rem;
-	color: rgb(166, 205, 99);
+    font-weight: 400;
+    font-size: 1.33rem;
+    color: rgb(142, 143, 138);
 }
 
 .servers #player-count .player-count-max {
-	color: rgb(150, 47, 32);
-	font-weight: 400;
-	font-size: 1.33rem;
+    color: rgb(142, 143, 138);
+    font-weight: 400;
+    font-size: 1.33rem;
 }
 
 .servers #player-count b {
-	color: rgb(142, 143, 138);
-	font-weight: 700;
-	font-size: 1.4rem;
+    color: rgb(142, 143, 138);
+    font-weight: 700;
+    font-size: 1.4rem;
 }
 
+/* Server players container */
 .servers .server-players {
-	color: rgb(142, 143, 138);
-	display: block;
-	font-size: 1.1rem;
-	margin-bottom: 5px;
-	
+    color: rgb(142, 143, 138);
+    display: block;
+    font-size: 1.1rem;
+    margin-bottom: 5px;
 }
 
 .servers #server-players {
-	display: none;
+    display: none;
 }
+
 .servers #player-count-progress {
-	display: none;
+    display: none;
 }
 
 .servers #server-tags {
-	display: none;
+    display: none;
 }
 
-
-
-.servers .server-players .bi {
-	font-size: 1.45rem;
-	color: rgb(61, 75, 39);
+/* Temporarily ensure elements are visible */
+#server-players {
+    display: block !important;
 }
 
+#player-count-progress {
+    display: block !important;
+}
+
+/* Styling for the progress container and bar */
 .servers .progress {
-	margin-top: -5px;
-	border-radius: 0;
-	background: rgba(255, 255, 255, 0.1);
+    margin-top: -5px;
+    border-radius: 0;
+    background: rgba(255, 255, 255, 0.1); /* Background of the entire progress bar */
+    width: 100%;
+    height: 1rem; /* Adjust height as needed */
 }
 
 .servers .progress-bar {
-	background: rgb(166, 205, 99);
+    background: rgb(166, 205, 99); /* Background of the filled part of the progress bar */
+    width: 0%; /* Initial width set to 0 */
+    height: 100%; /* Full height of the progress bar */
+    transition: width 0.5s ease; /* Smooth transition for width changes */
 }
 
+
+/* Server offline styling */
 .servers .server-offline {
-	background: rgb(150, 47, 32);
-	color: rgb(199, 152, 151);
-	padding: 10px;
-	font-weight: bold;
-	text-transform: uppercase;
-	margin-top: -50px;
+    background: rgb(150, 47, 32);
+    color: rgb(199, 152, 151);
+    padding: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-top: -50px;
 }
 
 .servers .icon {
@@ -587,7 +607,7 @@ main {
 }
 
 .servers .modal-server-description {
-	margin-top: 10px;
+	margin-top: 5px;
 	color: rgb(105, 107, 102);
 	font-size: 18px;
 	display: block;
@@ -609,7 +629,7 @@ main {
 
 .hero h1 {
 	text-align: center;
-	color: rgb(231, 224, 218);
+	color: rgb(46, 44, 42);
 	text-transform: uppercase;
 	font-weight: bold;
 	font-size: 55px;
@@ -617,7 +637,7 @@ main {
 
 .hero p {
 	text-align: center;
-	color: rgb(203, 197, 194);
+	color: rgb(26, 25, 25);
 	text-transform: uppercase;
 	font-weight: bold;
 	font-size: 25px;
@@ -794,7 +814,7 @@ main {
 /* #region Shop */
 
 .shop {
-	margin-top: 200px;
+	margin-top: 250px;
 }
 
 .shop .shop-image-container {
@@ -810,6 +830,7 @@ main {
 	width: 100%;
 	top: 0;
 	left: 0;
+	z-index: 100;
 }
 
 .shop .shop-heading {
@@ -932,7 +953,7 @@ main {
 
 .shop .modal .vending-slot {
 	color: rgb(218, 218, 218);
-	background-color: rgb(105, 107, 102);
+	background-color: rgba(0, 0, 0, 0.0);
 	/* background: url("/images/vending.webp") no-repeat;
 	background-size: cover; */
 	font-size: 18px;
@@ -963,7 +984,7 @@ main {
 
 .shop .modal .vending-price {
 	color: rgb(218, 218, 218);
-	background-color: rgb(105, 107, 102);
+	background-color: rgba(0, 0, 0, 0.8);
 	font-size: 28px;
 	display: flex;
 	/* Use flex to center content */
@@ -991,8 +1012,8 @@ main {
 
 .shop .modal .vending-slot img {
 	border-radius: 0;
-	width: 100%;
-	height: 100%;
+	width: 150%;
+	height: 150%;
 }
 
 .shop .modal .row {
@@ -1113,7 +1134,6 @@ footer .copyright {
 /* Rank Section */
 .rank-section {
     display: flex;
-    justify-content: space-between;
     margin-bottom: 20px;
     padding: 10px;
 }
@@ -1123,7 +1143,7 @@ footer .copyright {
     flex: 3;
     display: flex;
     flex-wrap: wrap;
-    gap: 16px; /* Adjust gap between kits */
+    gap: 10px; /* Adjust gap between kits */
 }
 
 /* Kit Card */
@@ -1132,16 +1152,9 @@ footer .copyright {
     flex-direction: column;
     padding: 10px;
     width: 100%;
-    max-width: 400px;
+    max-width: 380px;
 }
 
-/* Kit Image */
-.kit-image {
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-    margin-bottom: 10px;
-}
 /* Rank Section */
 .rank-section {
     display: flex;
@@ -1155,7 +1168,7 @@ footer .copyright {
     flex: 3;
     display: flex;
     flex-wrap: wrap;
-    gap: 16px; /* Adjust gap between kits */
+    gap: 10px; /* Adjust gap between kits */
 }
 
 /* Kit Card */
@@ -1219,27 +1232,18 @@ footer .copyright {
     font-size: 10px;
     margin: 2px;
 }
-
-/* Commands Container */
 .commands-container {
-    flex: 1;
-    margin-left: 20px;
-    padding: 10px;
+    margin-top: 20px;
+    margin-left: none; /* Align button to the right */
 }
-
 /* Commands List */
-.kit-commands ul {
-    list-style-type: disc;
-    margin-left: 20px;
-    padding: 0;
-}
-
-.kit-commands li {
-    margin-bottom: 8px;
+.kit-commands p {
+	color: #C2C5CC;
+	margin-left: -120px;
 }
 
 /* Buy Now Button Alignment */
-.commands-container .button {
+.commands-container .btn.btn-success {
     margin-top: 20px;
     margin-left: auto; /* Align button to the right */
 }

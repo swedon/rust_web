@@ -23,19 +23,20 @@
 <body class="cover-container d-flex w-100 h-100 mx-auto flex-column">
 
 	<video muted autoplay playsinline id="background-video" class="mb-auto background-video">
-		<source src="./videos/background.mp4" type="video/mp4" />
-		<source src="./videos/rust.webm" type="video/webm" />
-		<source src="./videos/video11.mp4" type="video/mp4" />
+		<source src="./videos/excv.webm" type="video/webm" />
+		<source src="./videos/harbor1.webm" type="video/webm" />
+		<source src="./videos/industrial.webm" type="video/webm" />
+		<source src="./videos/lighthouse.webm" type="video/webm" />
+		<source src="./videos/workcart.webm" type="video/webm" />
 	</video>
+	<div class="dark-bar-pattern"></div>
 	<div class="background-gradient"></div>
 
 	<main id="home" class="home container">
 		<nav class="navbar navbar-expand-lg navbar-dark bg-dark rounded animate__animated animate__bounceInDown"
 			aria-label="Navigation">
 			<a class="navbar-brand navbar-logo-container" href="./" title="Home">
-				<img id="navbar-logo" class="nav-logo" alt="Site logo" title="Home" src="./images/logo_white.webp"
-					onmouseover="this.src='./images/logo_white_active.webp'"
-					onmouseout="this.src='./images/logo_white.webp'">
+				<img id="navbar-logo" class="nav-logo" alt="Site logo" title="Home" src="./images/png/RRlogo-x256.png">
 			</a>
 			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain"
 				aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
@@ -60,7 +61,7 @@
 
 				<div class="navbar-nav navbar-socials">
 					<a class="nav-item social-discord" title="Discord" target="_blank"
-						href="https://discord.com/invite/pnX9sTVdBS">
+						href="https://discord.com/invite/sxJeqVwFwA">
 						<i class="social-icon bi bi-discord"></i> Discord
 					</a>
 				</div>
@@ -68,15 +69,14 @@
 		</nav>
 
 		<section id="hero" class="hero">
-			<h1 class="animate__animated animate__bounceInLeft">Welcome!</h1>
-			<p class="animate__animated animate__bounceInRight">Enjoy your stay</p>
+			<h1 class="animate__animated animate__bounceInLeft"></h1>
+			<p class="animate__animated animate__bounceInRight"></p>
 		</section>
 
 		<section id="servers" class="servers">
 			<div class="row animate__animated animate__backInUp">
 				<div class="col-12 d-flex justify-content-center">
-					<!-- <img class="img-fluid" src="https://placehold.co/440x400"> -->
-					<div class="server" onmouseover="changeImage(this, true)" onmouseout="changeImage(this, false)">
+					<div class="server">
 						<div class="server-header">
 							<img class="img-fluid" src="./images/serverheader-new.webp" alt="server header"
 								title="server header" />
@@ -86,13 +86,13 @@
 							<div id="server-info" class="server-info"><i class="bi bi-exclamation-triangle"></i><br>It
 								seems that we can't connect to the server.</div>
 							<div id="server-tags" class="server-tags"></div>
-							<div id="server-players" class="server-players"><i class="bi bi-people-fill"></i> <span
-									id="player-count"></span> Players online
-								<div id="player-count-progress" class="progress" role="progressbar"
-									aria-label="Players online" aria-valuemin="0" aria-valuemax="100">
+							<div id="server-players" class="server-players">
+								<i class="bi bi-people-fill"></i> <span id="player-count"></span> Players online
+								<div id="player-count-progress" class="progress" role="progressbar" aria-label="Players online" aria-valuemin="0" aria-valuemax="100">
 									<div id="player-count-progressbar" class="progress-bar"></div>
 								</div>
 							</div>
+													
 						</div>
 						<div class="row row-cols-3 align-items-end clearfix server-buttons">
 							<div class="col-auto me-auto">
@@ -135,8 +135,7 @@
 
 			<div class="modal fade modal-rust" id="server0" tabindex="-1">
 				<div class="modal-dialog modal-dialog-centered">
-					<div class="modal-content" onmouseover="changeImage(this, true)"
-						onmouseout="changeImage(this, false)">
+					<div class="modal-content">
 						<div class="modal-header">
 							<div class="server-image-modal-container">
 								<img class="img-fluid header-image" src="./images/serverheader-new.webp"
@@ -195,12 +194,13 @@
 				<div class="col-12 col-md-6">
 					<h2 class="shop-heading text-center text-md-start">Shop</h2>
 					<div class="shop-message">
-						Do you enjoy our servers? Help us by supporting the server! VIP Perks:
+						Do you enjoy our servers?<br/> Help us maintain the server by supporting us!
 						<ul>
-							<li>In-game Status</li>
-							<li>Discord Status & Chat</li>
-							<li>Priority Support</li>
-							<li>Queue Skip</li>
+							<li>In-game & Discord Status</li>
+							<li>Daily Kits</li>
+							<li>Increased turret limmits</li>
+							<li>Increased $ gain from kills</li>
+							<li>And much more!</li>
 						</ul>
 					</div>
 					<button type="button" title="Shop" data-bs-toggle="modal" data-bs-target="#shopModal"
@@ -333,21 +333,18 @@
 											<path stroke-linecap="round" stroke-linejoin="round"
 												d="M13 9l3 3m0 0l-3 3m3-3H8m13 0a9 9 0 11-18 0 9 9 0 0118 0z" />
 										</svg>
-										Cheating or Scripting
+										General Rules
 									</button>
 								</h2>
 								<div id="collapseRule0" class="accordion-collapse collapse show"
 									data-bs-parent="#accordionRules">
 									<div class="accordion-body">
 										<ul>
-											<li>Do not use any third-party paid or free programs which provide an unfair
-												advantage in-game.
+											<li>Obscene Personal/Offensive chat, voice chat or Communication (eg. Text/Signs) is NOT tolerated.
 											</li>
-											<li>This includes scripts that can perform any action that is otherwise not
-												possible to be
-												performed in the game.</li>
-											<li>Playing with cheaters or ban evaders will result in a temporary ban,
-												possibly permanent.</li>
+											<li>Significant toxic/edgy behavior, trolling or harassment of other members IN OR OUT of Rust will be punished.</li>
+											<li>Impersonating a staff member will result in a ban.</li>
+											<li>We encourage healthy PVP, avoid toxic behaviour and try to fit into the community and its vibe.</li>
 										</ul>
 									</div>
 								</div>
@@ -361,135 +358,23 @@
 											<path stroke-linecap="round" stroke-linejoin="round"
 												d="M13 9l3 3m0 0l-3 3m3-3H8m13 0a9 9 0 11-18 0 9 9 0 0118 0z" />
 										</svg>
-										Ban evasion
+										Building
 									</button>
 								</h2>
 								<div id="collapseRule1" class="accordion-collapse collapse"
 									data-bs-parent="#accordionRules">
 									<div class="accordion-body">
 										<ul>
-											<li>Do not do anything to bypass a ban on our server(s).</li>
-											<li>Do not try to join with a different account if you were banned; wait out
-												the
-												ban.</li>
-											<li>Any attempt to do so will result in additional bans.</li>
+											<li>Do not build huge disruptive structures that will lag the server or other players intentionally.</li>
+											<li>Do not build in locations disrupting PVE structures (to close to monuments). </li>
+											<li>Building a structure (tower, base or similar) that overlooks a monument to farm NPCs is not allowed. You must do the monument properly. </li>
+											<li>Do not build to intentionally grief other players.</li>
+											<li>If you (or your clan) are not active for 72 HOURS your base WILL BE flagged as an Abandonded Base then DELETED!</li>
 										</ul>
 									</div>
 								</div>
 							</div>
 
-							<div class="accordion-item">
-								<h2 class="accordion-header" id="rule2">
-									<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-										data-bs-target="#collapseRule2">
-										<svg xmlns="http://www.w3.org/2000/svg" class="icon" fill="none"
-											viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-											<path stroke-linecap="round" stroke-linejoin="round"
-												d="M13 9l3 3m0 0l-3 3m3-3H8m13 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-										</svg>
-										Bug Abuse
-									</button>
-								</h2>
-								<div id="collapseRule2" class="accordion-collapse collapse"
-									data-bs-parent="#accordionRules">
-									<div class="accordion-body">
-										<ul>
-											<li>Do not try to use any unfair advantages that were not intentionally
-												possible
-												within the game.
-											</li>
-											<li>This includes, but is not limited to, accessing inaccessible areas,
-												creating
-												graphic errors,
-												or using graphical adjustments.</li>
-										</ul>
-									</div>
-								</div>
-							</div>
-							<div class="accordion-item">
-								<h2 class="accordion-header" id="rule3">
-									<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-										data-bs-target="#collapseRule3">
-										<svg xmlns="http://www.w3.org/2000/svg" class="icon" fill="none"
-											viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-											<path stroke-linecap="round" stroke-linejoin="round"
-												d="M13 9l3 3m0 0l-3 3m3-3H8m13 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-										</svg>
-										Harassment & Toxic Behavior
-									</button>
-								</h2>
-								<div id="collapseRule3" class="accordion-collapse collapse"
-									data-bs-parent="#accordionRules">
-									<div class="accordion-body">
-										<ul>
-											<li>Do not insult other players via text chat or any other applicable
-												communication channel.</li>
-											<li>We want a friendly and comfortable place for everyone on our server(s).
-											</li>
-											<li>Not following this rule will result in temporary or permanent
-												restrictions,
-												and in extreme
-												cases, bans.</li>
-										</ul>
-									</div>
-								</div>
-							</div>
-							<div class="accordion-item">
-								<h2 class="accordion-header" id="rule4">
-									<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-										data-bs-target="#collapseRule4">
-										<svg xmlns="http://www.w3.org/2000/svg" class="icon" fill="none"
-											viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-											<path stroke-linecap="round" stroke-linejoin="round"
-												d="M13 9l3 3m0 0l-3 3m3-3H8m13 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-										</svg>
-										Chat Language
-									</button>
-								</h2>
-								<div id="collapseRule4" class="accordion-collapse collapse"
-									data-bs-parent="#accordionRules">
-									<div class="accordion-body">
-										<ul>
-											<li>Please keep it to English in Global Chat.</li>
-											<li>Feel free to speak any other language in Team chat or /pm.</li>
-										</ul>
-									</div>
-								</div>
-							</div>
-							<div class="accordion-item">
-								<h2 class="accordion-header" id="rule5">
-									<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-										data-bs-target="#collapseRule5">
-										<svg xmlns="http://www.w3.org/2000/svg" class="icon" fill="none"
-											viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-											<path stroke-linecap="round" stroke-linejoin="round"
-												d="M13 9l3 3m0 0l-3 3m3-3H8m13 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-										</svg>
-										Reports & Support
-									</button>
-								</h2>
-								<div id="collapseRule5" class="accordion-collapse collapse"
-									data-bs-parent="#accordionRules">
-									<div class="accordion-body">
-										<ul>
-											<li>All reports are strictly handled in-game by pressing F7 or typing
-												/report.
-											</li>
-											<li>Reports done this way will provide us with video evidence to review the
-												incident.</li>
-											<li>Please do not notify suspicious players by calling them out in global
-												chat;
-												instead, report
-												them.</li>
-											<li>In all cases, admins have the final word. If you wish to appeal, please
-												do
-												so on our Discord.
-											</li>
-											<li>If you need support from staff, please open a ticket on Discord.</li>
-										</ul>
-									</div>
-								</div>
-							</div>
 						</div>
 					</div>
 				</div>
@@ -502,27 +387,17 @@
 					</div>
 				</div>
 				<div class="row justify-content-center">
-					<div class="col-12 col-sm-6 col-lg-3">
+					<div class="col-12 col-sm-6 col-lg-2">
 						<div class="member-container d-flex justify-content-center animate__animated">
 							<div class="member d-flex flex-column">
 								<div class="member-description">
-									<span class="member-name">丂卄ㄖㄩ千</span>
-									<span class="admin">admin</span>
+									<span class="member-name">sh0uf</span>
+									<span class="admin">Admin</span>
 								</div>
 							</div>
 						</div>
 					</div>
-					<div class="col-12 col-sm-6 col-lg-3">
-						<div class="member-container d-flex justify-content-center animate__animated">
-							<div class="member d-flex flex-column">
-								<div class="member-description">
-									<span class="member-name">Giggle</span>
-									<span class="moderator">Moderator</span>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-12 col-sm-6 col-lg-3">
+					<div class="col-12 col-sm-6 col-lg-2">
 						<div class="member-container d-flex justify-content-center animate__animated">
 							<div class="member d-flex flex-column">
 								<div class="member-description">
@@ -538,9 +413,7 @@
 
 	<footer class="footer">
 		<div class="row">
-			<a href="#home"><img id="footer-logo" src="./images/logo_white.webp"
-					onmouseover="this.src='./images/logo_white_active.webp'"
-					onmouseout="this.src='./images/logo_white.webp'" alt="Home" title="Home">
+			<a href="#home"><img id="footer-logo" src="./images/png/RRlogo-x256.png"alt="Home" title="Home">
 			</a>
 			<div class="copyright">
 				<i class="bi bi-c-circle" alt="copyright" title="copyright"></i> 2023
