@@ -1142,6 +1142,42 @@ footer .copyright {
     object-fit: cover;
     margin-bottom: 10px;
 }
+/* Rank Section */
+.rank-section {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #f9f9f9;
+}
+
+/* Kits Container */
+.kits-container {
+    flex: 3;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px; /* Adjust gap between kits */
+}
+
+/* Kit Card */
+.kit-card {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ddd;
+    padding: 10px;
+    background-color: #fff;
+    width: 100%;
+    max-width: 400px;
+}
+
+/* Kit Image */
+.kit-image {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
 
 /* Kit Details */
 .kit-details {
@@ -1183,6 +1219,7 @@ footer .copyright {
     position: absolute;
     bottom: 0;
     right: 0;
+    color: white;
     font-size: 10px;
     margin: 2px;
 }
@@ -1192,6 +1229,7 @@ footer .copyright {
     flex: 1;
     margin-left: 20px;
     padding: 10px;
+    border-left: 1px solid #ddd;
 }
 
 /* Commands List */
@@ -1205,21 +1243,27 @@ footer .copyright {
     margin-bottom: 8px;
 }
 
-/* Buy Now Button */
-.buy-now {
+/* Buttons */
+.button {
     display: block;
-    margin-top: 20px;
+    margin: 10px 0;
     padding: 10px;
-    background-color: #28a745;
     color: #fff;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     text-align: center;
+    background-color: #007bff; /* Button color */
 }
 
-.buy-now:hover {
-    background-color: #218838;
+.button:hover {
+    background-color: #0056b3; /* Button hover color */
+}
+
+/* Buy Now Button Alignment */
+.commands-container .button {
+    margin-top: 20px;
+    margin-left: auto; /* Align button to the right */
 }
 
 /* #endregion FAQ */
