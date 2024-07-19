@@ -69,13 +69,8 @@ const videoSources = Array.from(sourceElements).map(source => source.getAttribut
 let randomIndex = Math.floor(Math.random() * videoSources.length);
 let selectedVideoSource = videoSources[randomIndex];
 
-function playRandomVideo() {
-    randomIndex = Math.floor(Math.random() * videoSources.length);
-    let newVideoSource = videoSources[randomIndex];
-    if (newVideoSource === selectedVideoSource) {
-        newVideoSource = videoSources[Math.floor(Math.random() * videoSources.length)];
-    }
-    backgroundVideo.src = newVideoSource;
+function playVideo() {
+    backgroundVideo.src = selectedVideoSource;
     backgroundVideo.load();
     backgroundVideo.play().catch(error => {
         // Autoplay was prevented, you can handle this situation here.
@@ -85,7 +80,7 @@ function playRandomVideo() {
 
 // Ensure the video repeats seamlessly
 backgroundVideo.addEventListener("ended", () => {
-    playRandomVideo();
+    playVideo();
     backgroundVideo.play().catch(error => {
         console.error("Autoplay prevented on repeat:", error);
     });
@@ -109,7 +104,7 @@ async function fetchServerTags() {
 
 // Called wehn page is loaded
 document.addEventListener('DOMContentLoaded', function () {
-    playRandomVideo();
+    playVideo();
     // Call the function to fetch and update server information
     fetchServerTags();
     // Fetch the data and update the UI
