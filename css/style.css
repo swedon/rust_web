@@ -1110,78 +1110,58 @@ footer .copyright {
 	}
 }
 
-
-/* Kits */
-.kit-card {
+/* Rank Section */
+.rank-section {
+    display: flex;
+    justify-content: space-between;
     border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 5px;
-    width: 100%;
-    max-width: 400px;
-    margin-bottom: 16px;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #f9f9f9;
 }
 
-.kit-items {
-    margin-bottom: 16px;
-}
-
-.kit-commands {
-    margin-top: 16px;
-}
-
-.kit-commands ul {
-    list-style-type: disc;
-    margin-left: 20px;
-}
-
-.kit-commands li {
-    margin-bottom: 8px;
-}
-
+/* Kits Container */
 .kits-container {
+    flex: 3;
     display: flex;
     flex-wrap: wrap;
-    gap: 5px;
+    gap: 16px; /* Adjust gap between kits */
 }
 
+/* Kit Card */
+.kit-card {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ddd;
+    padding: 10px;
+    background-color: #fff;
+    width: 100%;
+    max-width: 400px;
+}
+
+/* Kit Image */
+.kit-image {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+/* Kit Details */
+.kit-details {
+    flex: 1;
+}
+
+/* Kit Items */
 .kit-items {
     display: grid;
     gap: 5px; /* Space between items */
-    margin-bottom: 20px; /* Space between sections */
+    margin-bottom: 16px; /* Space between sections */
 }
 
 .kit-items.main-items {
-    grid-template-columns: repeat(6, 50px); /* 6 items per row for MainItems */
-}
+    grid-template-columns: repeat(auto-fill, min
 
-.kit-items.belt-items {
-    grid-template-columns: repeat(6, 50px); /* 6 items per row for BeltItems */
-}
-
-.kit-items.wear-items {
-    grid-template-columns: repeat(7, 50px); /* 7 items per row for WearItems */
-}
-
-.kit-item-wrapper {
-    position: relative;
-    width: 50px;
-    height: 50px;
-}
-
-.kit-item {
-    width: 100%;
-    height: 100%;
-}
-
-.item-amount {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    color: white;
-    font-size: 10px;
-    margin: 2px;
-    background: none; /* Remove background */
-}
 /* #endregion FAQ */
 
 /* #endregion Main */

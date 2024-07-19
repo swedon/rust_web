@@ -2154,38 +2154,65 @@ document.addEventListener('DOMContentLoaded', function () {
         gold: ["VIP Starter Kit", "VIP Kit", "Base Defense III", "VIP Builder III"]
     };
     
+    const rankCommands = {
+        bronze: [
+            "Access to /recycler 1x",
+            "Access to /Up 3",
+            "Access to /Bgrade 3",
+            "Access to /Sd (Skindeployable)",
+            "Access to /Skinset"
+        ],
+        silver: [
+            "Access to /recycler 2x",
+            "Access to /Up 4",
+            "Access to /Bgrade 4",
+            "Access to /Sd (Skindeployable)",
+            "Access to /Skinset"
+        ],
+        gold: [
+            "Access to /recycler 3x",
+            "Access to /Up 5",
+            "Access to /Bgrade 5",
+            "Access to /Sd (Skindeployable)",
+            "Access to /Skinset"
+        ]
+    };
+
     function createKitCard(kit) {
         let mainItems = '';
         kit.MainItems.forEach(item => {
             mainItems += createItemHTML(item, 'main-items');
         });
-    
+
         let wearItems = '';
         kit.WearItems.forEach(item => {
             wearItems += createItemHTML(item, 'wear-items');
         });
-    
+
         let beltItems = '';
         kit.BeltItems.forEach(item => {
             beltItems += createItemHTML(item, 'belt-items');
         });
-    
+
         return `
             <div class="kit-card">
-                <h3>${kit.Name}</h3>
-                <div class="kit-items main-items">
-                    ${mainItems}
-                </div>
-                <div class="kit-items wear-items">
-                    ${wearItems}
-                </div>
-                <div class="kit-items belt-items">
-                    ${beltItems}
+                <img src="${kit.KitImage}" alt="${kit.Name}" class="kit-image">
+                <div class="kit-details">
+                    <h3>${kit.Name}</h3>
+                    <div class="kit-items main-items">
+                        ${mainItems}
+                    </div>
+                    <div class="kit-items wear-items">
+                        ${wearItems}
+                    </div>
+                    <div class="kit-items belt-items">
+                        ${beltItems}
+                    </div>
                 </div>
             </div>
         `;
     }
-    
+
     function createItemHTML(item, itemType) {
         const itemImage = `https://wiki.rustclash.com/img/items180/${item.Shortname}.png`;
         const amountText = item.Amount ? `x${item.Amount}` : '';
@@ -2197,19 +2224,41 @@ document.addEventListener('DOMContentLoaded', function () {
         `;
     }
 
-    function populateKits(rank, containerId) {
+    function createRankSection(rank, containerId) {
         const container = document.getElementById(containerId);
         const kits = ranks[rank];
-        container.innerHTML = '';
+        const commands = rankCommands[rank];
+
+        let kitsHTML = '';
         kits.forEach(kitName => {
             const kit = kitsData[kitName];
             if (kit) {
-                container.innerHTML += createKitCard(kit);
+                kitsHTML += createKitCard(kit);
             }
         });
+
+        let commandsHTML = '';
+        commands.forEach(command => {
+            commandsHTML += `<li>${command}</li>`;
+        });
+
+        container.innerHTML = `
+            <div class="rank-section">
+                <div class="kits-container">
+                    ${kitsHTML}
+                </div>
+                <div class="commands-container">
+                    <h4>Commands:</h4>
+                    <ul>
+                        ${commandsHTML}
+                    </ul>
+                    <button class="buy-now">Buy Now</button>
+                </div>
+            </div>
+        `;
     }
 
-    populateKits('bronze', 'bronzeKitsContainer');
-    populateKits('silver', 'silverKitsContainer');
-    populateKits('gold', 'goldKitsContainer');
+    createRankSection('bronze', 'bronzeKitsContainer');
+    createRankSection('silver', 'silverKitsContainer');
+    createRankSection('gold', 'goldKitsContainer');
 });
