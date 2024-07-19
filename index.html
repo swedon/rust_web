@@ -22,7 +22,7 @@
 
 <body class="cover-container d-flex w-100 h-100 mx-auto flex-column">
 
-	<video muted autoplay playsinline id="background-video" class="mb-auto background-video">
+	<video muted playsinline id="background-video" class="mb-auto background-video" preload="auto">
 		<source src="./videos/excv.webm" type="video/webm" />
 		<source src="./videos/harbor1.webm" type="video/webm" />
 		<source src="./videos/industrial.webm" type="video/webm" />
@@ -88,11 +88,12 @@
 							<div id="server-tags" class="server-tags"></div>
 							<div id="server-players" class="server-players">
 								<i class="bi bi-people-fill"></i> <span id="player-count"></span> Players online
-								<div id="player-count-progress" class="progress" role="progressbar" aria-label="Players online" aria-valuemin="0" aria-valuemax="100">
+								<div id="player-count-progress" class="progress" role="progressbar"
+									aria-label="Players online" aria-valuemin="0" aria-valuemax="100">
 									<div id="player-count-progressbar" class="progress-bar"></div>
 								</div>
 							</div>
-													
+
 						</div>
 						<div class="row row-cols-3 align-items-end clearfix server-buttons">
 							<div class="col-auto me-auto">
@@ -194,7 +195,7 @@
 				<div class="col-12 col-md-6">
 					<h2 class="shop-heading text-center text-md-start">Shop</h2>
 					<div class="shop-message">
-						Do you enjoy our servers?<br/> Help us maintain the server by supporting us!
+						Do you enjoy our servers?<br /> Help us maintain the server by supporting us!
 						<ul>
 							<li>In-game & Discord Status</li>
 							<li>Daily Kits</li>
@@ -340,11 +341,14 @@
 									data-bs-parent="#accordionRules">
 									<div class="accordion-body">
 										<ul>
-											<li>Obscene Personal/Offensive chat, voice chat or Communication (eg. Text/Signs) is NOT tolerated.
+											<li>Obscene Personal/Offensive chat, voice chat or Communication (eg.
+												Text/Signs) is NOT tolerated.
 											</li>
-											<li>Significant toxic/edgy behavior, trolling or harassment of other members IN OR OUT of Rust will be punished.</li>
+											<li>Significant toxic/edgy behavior, trolling or harassment of other members
+												IN OR OUT of Rust will be punished.</li>
 											<li>Impersonating a staff member will result in a ban.</li>
-											<li>We encourage healthy PVP, avoid toxic behaviour and try to fit into the community and its vibe.</li>
+											<li>We encourage healthy PVP, avoid toxic behaviour and try to fit into the
+												community and its vibe.</li>
 										</ul>
 									</div>
 								</div>
@@ -365,11 +369,15 @@
 									data-bs-parent="#accordionRules">
 									<div class="accordion-body">
 										<ul>
-											<li>Do not build huge disruptive structures that will lag the server or other players intentionally.</li>
-											<li>Do not build in locations disrupting PVE structures (to close to monuments). </li>
-											<li>Building a structure (tower, base or similar) that overlooks a monument to farm NPCs is not allowed. You must do the monument properly. </li>
+											<li>Do not build huge disruptive structures that will lag the server or
+												other players intentionally.</li>
+											<li>Do not build in locations disrupting PVE structures (to close to
+												monuments). </li>
+											<li>Building a structure (tower, base or similar) that overlooks a monument
+												to farm NPCs is not allowed. You must do the monument properly. </li>
 											<li>Do not build to intentionally grief other players.</li>
-											<li>If you (or your clan) are not active for 72 HOURS your base WILL BE flagged as an Abandonded Base then DELETED!</li>
+											<li>If you (or your clan) are not active for 72 HOURS your base WILL BE
+												flagged as an Abandonded Base then DELETED!</li>
 										</ul>
 									</div>
 								</div>
@@ -413,7 +421,8 @@
 
 	<footer class="footer">
 		<div class="row">
-			<a href="#home"><img id="footer-logo" src="./images/png/RRlogo-x256.png"alt="Home" title="Home">
+			<a href="#home">
+				<img id="footer-logo" src="./images/png/RRlogo-x256.png" alt="Home" title="Home">
 			</a>
 			<div class="copyright">
 				<i class="bi bi-c-circle" alt="copyright" title="copyright"></i> 2023
