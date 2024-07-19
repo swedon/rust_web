@@ -1178,8 +1178,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             ],
             "WearItems": [],
-            "BeltItems": [],
-        "Commands": ["+25% cash from kills", "Access to /sd (Skindeployable)", "Access to /skinsets", "Access to /up 3", "Access to /Brade 3", "4x Autoplanters", "25.000$ to spend in /shop", "Cheststack 5x small & 4x Large"]
+            "BeltItems": []
         },
         "Base Defense II": {
             "Name": "Base Defense II",
@@ -1512,8 +1511,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             ],
             "WearItems": [],
-            "BeltItems": [],
-        "Commands": ["+50% cash from kills", "Access to /up 4", "Access to /Brade 4", "6x Autoplanters", "50.000$ to spend in /shop"]
+            "BeltItems": []
         },
         "Base Defense III": {
             "Name": "Base Defense III",
@@ -2146,8 +2144,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             ],
             "WearItems": [],
-            "BeltItems": [],
-        "Commands": ["+100% cash from kills", "2x /recycler", "8x Autoplanters", "100.000$ to spend in /shop"]
+            "BeltItems": []
         }
     };
 
@@ -2156,48 +2153,94 @@ document.addEventListener('DOMContentLoaded', function () {
         silver: ["VIP Starter Kit", "VIP Kit", "Base Defense II", "VIP Builder II"],
         gold: ["VIP Starter Kit", "VIP Kit", "Base Defense III", "VIP Builder III"]
     };
+    
+    const commandsByRank = {
+        bronze: [
+            "Command for Bronze 1",
+            "Command for Bronze 2"
+        ],
+        silver: [
+            "Command for Silver 1",
+            "Command for Silver 2"
+        ],
+        gold: [
+            "Command for Gold 1",
+            "Command for Gold 2"
+        ]
+    };
 
-function createKitCard(kit) {
-    let mainItems = '';
-    kit.MainItems.forEach(item => {
-        mainItems += createItemHTML(item, 'main-items');
-    });
-
-    let wearItems = '';
-    kit.WearItems.forEach(item => {
-        wearItems += createItemHTML(item, 'wear-items');
-    });
-
-    let beltItems = '';
-    kit.BeltItems.forEach(item => {
-        beltItems += createItemHTML(item, 'belt-items');
-    });
-
-    let commands = '';
-    kit.Commands.forEach(command => {
-        commands += `<li>${command}</li>`;
-    });
-
-    return `
-        <div class="kit-card">
-            <h3>${kit.Name}</h3>
-            <div class="kit-items main-items">
-                ${mainItems}
+    function createKitCard(kit, rank) {
+        let mainItems = '';
+        kit.MainItems.forEach(item => {
+            mainItems += createItemHTML(item, 'main-items');
+        });
+    
+        let wearItems = '';
+        kit.WearItems.forEach(item => {
+            wearItems += createItemHTML(item, 'wear-items');
+        });
+    
+        let beltItems = '';
+        kit.BeltItems.forEach(item => {
+            beltItems += createItemHTML(item, 'belt-items');
+        });
+    
+        let commandsHTML = '';
+        const commands = commandsByRank[rank] || [];
+        commands.forEach(command => {
+            commandsHTML += `<li>${command}</li>`;
+        });
+    
+        return `
+            <div class="kit-card">
+                <h3>${kit.Name}</h3>
+                <div class="kit-items main-items">
+                    ${mainItems}
+                </div>
+                <div class="kit-items wear-items">
+                    ${wearItems}
+                </div>
+                <div class="kit-items belt-items">
+                    ${beltItems}
+                </div>
+                <div class="kit-commands">
+                    <h4>Commands:</h4>
+                    <ul>
+                        ${commandsHTML}
+                    </ul>
+                </div>
             </div>
-            <div class="kit-items wear-items">
-                ${wearItems}
-            </div>
-            <div class="kit-items belt-items">
-                ${beltItems}
-            </div>
-            <div class="kit-commands">
-                <ul>
-                    ${commands}
-                </ul>
-            </div>
-        </div>
-    `;
-}
+        `;
+    }
+    
+    function populateModals() {
+        // Bronze
+        const bronzeKitsContainer = document.getElementById('bronzeKitsContainer');
+        ranks.bronze.forEach(kitName => {
+            const kit = kitData[kitName]; // Assuming kitData is your kits data
+            const kitCardHTML = createKitCard(kit, 'bronze');
+            bronzeKitsContainer.innerHTML += kitCardHTML;
+        });
+    
+        // Silver
+        const silverKitsContainer = document.getElementById('silverKitsContainer');
+        ranks.silver.forEach(kitName => {
+            const kit = kitData[kitName];
+            const kitCardHTML = createKitCard(kit, 'silver');
+            silverKitsContainer.innerHTML += kitCardHTML;
+        });
+    
+        // Gold
+        const goldKitsContainer = document.getElementById('goldKitsContainer');
+        ranks.gold.forEach(kitName => {
+            const kit = kitData[kitName];
+            const kitCardHTML = createKitCard(kit, 'gold');
+            goldKitsContainer.innerHTML += kitCardHTML;
+        });
+    }
+    
+    // Call the function to populate the modals when the document is ready
+    document.addEventListener('DOMContentLoaded', populateModals);   
     
     function createItemHTML(item, itemType) {
         const itemImage = `https://wiki.rustclash.com/img/items180/${item.Shortname}.png`;

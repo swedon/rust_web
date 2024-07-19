@@ -1112,6 +1112,31 @@ footer .copyright {
 
 
 /* Kits */
+.kit-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 5px;
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 16px;
+}
+
+.kit-items {
+    margin-bottom: 16px;
+}
+
+.kit-commands {
+    margin-top: 16px;
+}
+
+.kit-commands ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+.kit-commands li {
+    margin-bottom: 8px;
+}
 
 .kits-container {
     display: flex;
@@ -1119,11 +1144,6 @@ footer .copyright {
     gap: 5px;
 }
 
-.kit-card {
-    padding: 5px;
-    width: 100%;
-    max-width: 400px;
-}
 .kit-items {
     display: grid;
     gap: 5px; /* Space between items */
