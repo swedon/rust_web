@@ -2169,27 +2169,20 @@ document.addEventListener('DOMContentLoaded', function () {
         ]
     };
 
+    function createItemHTML(item, type) {
+        return `
+            <div class="item ${type}">
+                <img src="path/to/${item.Shortname}.png" alt="${item.Shortname}" class="item-image">
+                <span class="item-count">x${item.Amount}</span>
+            </div>
+        `;
+    }
+    
     function createKitCard(kit, rank) {
-        let mainItems = '';
-        kit.MainItems.forEach(item => {
-            mainItems += createItemHTML(item, 'main-items');
-        });
-    
-        let wearItems = '';
-        kit.WearItems.forEach(item => {
-            wearItems += createItemHTML(item, 'wear-items');
-        });
-    
-        let beltItems = '';
-        kit.BeltItems.forEach(item => {
-            beltItems += createItemHTML(item, 'belt-items');
-        });
-    
-        let commandsHTML = '';
-        const commands = commandsByRank[rank] || [];
-        commands.forEach(command => {
-            commandsHTML += `<li>${command}</li>`;
-        });
+        let mainItems = kit.MainItems.map(item => createItemHTML(item, 'main-items')).join('');
+        let wearItems = kit.WearItems.map(item => createItemHTML(item, 'wear-items')).join('');
+        let beltItems = kit.BeltItems.map(item => createItemHTML(item, 'belt-items')).join('');
+        let commands = commandsByRank[rank] || [];
     
         return `
             <div class="kit-card">
@@ -2206,52 +2199,45 @@ document.addEventListener('DOMContentLoaded', function () {
                 <div class="kit-commands">
                     <h4>Commands:</h4>
                     <ul>
-                        ${commandsHTML}
+                        ${commands.map(command => `<li>${command}</li>`).join('')}
                     </ul>
                 </div>
             </div>
         `;
     }
-    
+
     function populateModals() {
-        // Bronze
         const bronzeKitsContainer = document.getElementById('bronzeKitsContainer');
+        const silverKitsContainer = document.getElementById('silverKitsContainer');
+        const goldKitsContainer = document.getElementById('goldKitsContainer');
+    
+        // Populate Bronze Kits
         ranks.bronze.forEach(kitName => {
-            const kit = kitData[kitName]; // Assuming kitData is your kits data
-            const kitCardHTML = createKitCard(kit, 'bronze');
-            bronzeKitsContainer.innerHTML += kitCardHTML;
+            const kit = kitData[kitName];
+            if (kit) {
+                bronzeKitsContainer.innerHTML += createKitCard(kit, 'bronze');
+            }
         });
     
-        // Silver
-        const silverKitsContainer = document.getElementById('silverKitsContainer');
+        // Populate Silver Kits
         ranks.silver.forEach(kitName => {
             const kit = kitData[kitName];
-            const kitCardHTML = createKitCard(kit, 'silver');
-            silverKitsContainer.innerHTML += kitCardHTML;
+            if (kit) {
+                silverKitsContainer.innerHTML += createKitCard(kit, 'silver');
+            }
         });
     
-        // Gold
-        const goldKitsContainer = document.getElementById('goldKitsContainer');
+        // Populate Gold Kits
         ranks.gold.forEach(kitName => {
             const kit = kitData[kitName];
-            const kitCardHTML = createKitCard(kit, 'gold');
-            goldKitsContainer.innerHTML += kitCardHTML;
+            if (kit) {
+                goldKitsContainer.innerHTML += createKitCard(kit, 'gold');
+            }
         });
     }
     
-    // Call the function to populate the modals when the document is ready
-    document.addEventListener('DOMContentLoaded', populateModals);   
+    document.addEventListener('DOMContentLoaded', populateModals);
     
-    function createItemHTML(item, itemType) {
-        const itemImage = `https://wiki.rustclash.com/img/items180/${item.Shortname}.png`;
-        const amountText = item.Amount ? `x${item.Amount}` : '';
-        return `
-            <div class="kit-item-wrapper">
-                <img src="${itemImage}" alt="${item.Shortname}" title="${item.Shortname}" class="kit-item">
-                <div class="item-amount">${amountText}</div>
-            </div>
-        `;
-    }
 
     function populateKits(rank, containerId) {
         const container = document.getElementById(containerId);
