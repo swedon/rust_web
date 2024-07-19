@@ -66,16 +66,6 @@ if (!isPlaying) {
 }
 
 
-// Change server header image src when a element is hovered
-function changeImage(serverDiv, hover) {
-    const logoImage = serverDiv.querySelector('.header-logo');
-    if (hover) {
-        logoImage.src = './images/logo_white_active.webp';
-    } else {
-        logoImage.src = './images/logo_white.webp';
-    }
-}
-
 // Add server tags
 async function fetchServerTags() {
     try {
@@ -2153,7 +2143,7 @@ document.addEventListener('DOMContentLoaded', function () {
         silver: ["VIP Starter Kit", "VIP Kit", "Base Defense II", "VIP Builder II"],
         gold: ["VIP Starter Kit", "VIP Kit", "Base Defense III", "VIP Builder III"]
     };
-    
+
     const rankCommands = {
         bronze: [
             "Access to /recycler 1x",
@@ -2196,7 +2186,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
         return `
             <div class="kit-card">
-                <img src="${kit.KitImage}" alt="${kit.Name}" class="kit-image">
                 <div class="kit-details">
                     <h3>${kit.Name}</h3>
                     <div class="kit-items main-items">
@@ -2224,10 +2213,18 @@ document.addEventListener('DOMContentLoaded', function () {
         `;
     }
 
+    // Define URLs for Tebex packages corresponding to each rank
+    const tebexUrls = {
+        bronze: '#', // Replace with actual URL
+        silver: '#', // Replace with actual URL
+        gold: '#' // Replace with actual URL
+    };
+
     function createRankSection(rank, containerId) {
         const container = document.getElementById(containerId);
         const kits = ranks[rank];
         const commands = rankCommands[rank];
+        const tebexUrl = tebexUrls[rank] || '#'; // Default to '#' if no URL found
 
         let kitsHTML = '';
         kits.forEach(kitName => {
@@ -2243,19 +2240,18 @@ document.addEventListener('DOMContentLoaded', function () {
         });
 
         container.innerHTML = `
-            <div class="rank-section">
-                <div class="kits-container">
-                    ${kitsHTML}
-                </div>
-                <div class="commands-container">
-                    <h4>Commands:</h4>
-                    <ul>
-                        ${commandsHTML}
-                    </ul>
-                    <button class="btn btn-success">Buy Now</button>
-                </div>
+        <div class="rank-section">
+            <div class="kits-container">
+                ${kitsHTML}
             </div>
-        `;
+            <div class="commands-container">
+                <ul>
+                    ${commandsHTML}
+                </ul>
+                <a href="${tebexUrl}" class="btn btn-success" target="_blank">Buy Now</a>
+            </div>
+        </div>
+    `;
     }
 
     createRankSection('bronze', 'bronzeKitsContainer');
