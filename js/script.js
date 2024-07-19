@@ -66,16 +66,6 @@ if (!isPlaying) {
 }
 
 
-// Change server header image src when a element is hovered
-function changeImage(serverDiv, hover) {
-    const logoImage = serverDiv.querySelector('.header-logo');
-    if (hover) {
-        logoImage.src = './images/logo_white_active.webp';
-    } else {
-        logoImage.src = './images/logo_white.webp';
-    }
-}
-
 // Add server tags
 async function fetchServerTags() {
     try {
