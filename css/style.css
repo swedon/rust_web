@@ -114,35 +114,35 @@ body::before {
 .dark-bar-pattern {
 	background-color: rgb(20, 24, 20);
 	height: 53px;
-	mask-image: url("../images/bar-dark.svg");
+	mask-image: url("/images/bar-dark.svg");
 	mask-repeat: repeat-x;
 	position: relative;
 	left: 50%;
 	transform: translate(-50%, 0);
 	top: 869px;
 	width: 100%;
-	z-index: 10;
+	z-index: 0;
 }
 
 @media only screen and (max-width: 1280px) and (max-height:720px) {
 	.dark-bar-pattern {
 		background-color: rgb(20, 24, 20);
 		height: 53px;
-		mask-image: url("../images/bar-dark.svg");
+		mask-image: url("/images/bar-dark.svg");
 		mask-repeat: repeat-x;
 		position: relative;
 		left: 50%;
 		transform: translate(-50%, 0);
 		top: 700px;
 		width: 100%;
-		z-index: -1;
+		z-index: 0;
 	}
 }
 
 @media only screen and (max-width: 420px) {
 	.dark-bar-pattern {
 		visibility: hidden;
-		z-index: -1;
+		z-index: 0;
 	}
 }
 
@@ -386,6 +386,10 @@ main {
 /* #endregion Navigation */
 
 /* #region Servers */
+
+.servers {
+	z-index: 10;
+}
 
 .servers .server {
 	min-width: 350px;
@@ -1031,7 +1035,7 @@ main {
 .shop .modal .vending-slot {
 	color: rgb(218, 218, 218);
 	background-color: rgba(0, 0, 0, 0.0);
-	/* background: url("/images/vending.webp") no-repeat;
+	/* background: url("./images/vending.webp") no-repeat;
 	background-size: cover; */
 	font-size: 18px;
 	display: flex;
