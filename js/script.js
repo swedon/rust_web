@@ -44,7 +44,7 @@ async function fetchServerTags() {
     }
 }
 
-function UpdateServerTags(data) {
+function updateServerTags(data) {
     // Extract and update the content with the desired information
     const serverInfo = data;
 
@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     playVideo();
     // Call the function to fetch and update server tags
     const serverTags = await fetchServerTags();
-    UpdateServerTags(serverTags);
+    updateServerTags(serverTags);
     // Call the function to fetch and update server information
     const serverInfo = await fetchServerInfo();
     updateServerInfo(serverInfo);
