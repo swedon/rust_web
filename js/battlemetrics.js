@@ -1,3 +1,4 @@
+// Function to update the server info UI based on the fetched data
 async function fetchServerInfo() {
     try {
         const response = await fetch('https://api.battlemetrics.com/servers/28259573');
@@ -6,8 +7,6 @@ async function fetchServerInfo() {
         }
 
         const data = await response.json();
-        // Update server info UI with fetched data
-        updateServerInfo(data);
 
         // Extract and update the content with the desired information
         const serverInfo = data.data.attributes;
@@ -52,39 +51,6 @@ async function fetchServerInfo() {
     } catch (error) {
         console.error('Error fetching server data:', error);
     }
-}
-
-// Function to update the server info UI based on the fetched data
-function updateServerInfo(data) {
-    if (!data || !data.data || !data.data.attributes) {
-        console.error("Invalid data structure:", data);
-        return;
-    }
-
-    const attributes = data.data.attributes;
-    const players = attributes.players;
-    const maxPlayers = attributes.maxPlayers;
-
-    // Find the server players container
-    const serverPlayers = document.getElementById("server-players");
-    serverPlayers.classList.remove("hidden");
-
-    // Update player count
-    const playerCountElement = document.getElementById("player-count");
-    playerCountElement.textContent = `${players}/${maxPlayers}`;
-
-    // Calculate the fill percentage
-    const fillPercentage = (players / maxPlayers) * 100;
-    console.log("Fill Percentage:", fillPercentage); // Log fill percentage for debugging
-
-    // Update the progress bar
-    const progressBar = document.getElementById("player-count-progressbar");
-    progressBar.style.width = fillPercentage + "%";
-    progressBar.setAttribute("aria-valuenow", fillPercentage); // Ensure accessibility attributes are updated
-
-    // Show the elements
-    serverPlayers.style.display = "block";
-    document.getElementById("player-count-progress").style.display = "block";
 }
 
 // Helper function to replace \n with <br> and \t with &emsp (tabb);
