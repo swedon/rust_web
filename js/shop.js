@@ -6,246 +6,34 @@ const shopUrls = {
 };
 
 const kitsData = {
-    "Starter Kit": {
-        Name: "Starter Kit",
+
+    "VIP Starter Kit": {
+        Name: "VIP Starter Kit",
         Description: "",
-        RequiredPermission: "",
-        MaximumUses: 2,
+        RequiredPermission: "kits.vipstarter",
+        MaximumUses: 5,
         RequiredAuth: 0,
         Cooldown: 3600,
         Cost: 0,
         IsHidden: true,
         CopyPasteFile: "",
-        KitImage: "https://wiki.rustclash.com/img/items180/pistol.revolver.png",
+        KitImage: "https://wiki.rustclash.com/img/items180/pistol.semiauto.png",
         MainItems: [
             {
                 Shortname: "ammo.pistol",
                 DisplayName: null,
                 Skin: 0,
-                Amount: 64,
+                Amount: 128,
                 Condition: 0.0,
                 MaxCondition: 0.0,
                 Ammo: 0,
                 Ammotype: null,
-                Position: 0,
+                Position: 18,
                 Frequency: -1,
                 BlueprintShortname: null,
                 Text: null,
-                Contents: null,
+                Contents: null
             },
-        ],
-        WearItems: [
-            {
-                Shortname: "burlap.gloves.new",
-                DisplayName: null,
-                Skin: 0,
-                Amount: 1,
-                Condition: 0.0,
-                MaxCondition: 0.0,
-                Ammo: 0,
-                Ammotype: null,
-                Position: 4,
-                Frequency: -1,
-                BlueprintShortname: null,
-                Text: null,
-                Contents: null,
-            },
-            {
-                Shortname: "hat.wolf",
-                DisplayName: null,
-                Skin: 0,
-                Amount: 1,
-                Condition: 0.0,
-                MaxCondition: 0.0,
-                Ammo: 0,
-                Ammotype: null,
-                Position: 5,
-                Frequency: -1,
-                BlueprintShortname: null,
-                Text: null,
-                Contents: null,
-            },
-            {
-                Shortname: "attire.hide.poncho",
-                DisplayName: "Bone Armor Poncho",
-                Skin: 3268938859,
-                Amount: 1,
-                Condition: 250.0,
-                MaxCondition: 250.0,
-                Ammo: 0,
-                Ammotype: null,
-                Position: 0,
-                Frequency: -1,
-                BlueprintShortname: null,
-                Text: null,
-                Contents: null,
-            },
-            {
-                Shortname: "mask.bandana",
-                DisplayName: "Bone Armor Bandana",
-                Skin: 3268940492,
-                Amount: 1,
-                Condition: 0.0,
-                MaxCondition: 0.0,
-                Ammo: 0,
-                Ammotype: null,
-                Position: 6,
-                Frequency: -1,
-                BlueprintShortname: null,
-                Text: null,
-                Contents: null,
-            },
-            {
-                Shortname: "attire.hide.pants",
-                DisplayName: "Pirate Hide Pants",
-                Skin: 2960205521,
-                Amount: 1,
-                Condition: 0.0,
-                MaxCondition: 0.0,
-                Ammo: 0,
-                Ammotype: null,
-                Position: 1,
-                Frequency: -1,
-                BlueprintShortname: null,
-                Text: null,
-                Contents: null,
-            },
-            {
-                Shortname: "attire.hide.boots",
-                DisplayName: "Pirate Hide Shoes",
-                Skin: 2963367559,
-                Amount: 1,
-                Condition: 0.0,
-                MaxCondition: 0.0,
-                Ammo: 0,
-                Ammotype: null,
-                Position: 2,
-                Frequency: -1,
-                BlueprintShortname: null,
-                Text: null,
-                Contents: null,
-            },
-            {
-                Shortname: "attire.hide.vest",
-                DisplayName: "Pirate Hide Shirt",
-                Skin: 2960204174,
-                Amount: 1,
-                Condition: 0.0,
-                MaxCondition: 0.0,
-                Ammo: 0,
-                Ammotype: null,
-                Position: 3,
-                Frequency: -1,
-                BlueprintShortname: null,
-                Text: null,
-                Contents: null,
-            },
-        ],
-        BeltItems: [
-            {
-                Shortname: "pistol.revolver",
-                DisplayName: null,
-                Skin: 0,
-                Amount: 1,
-                Condition: 100.0,
-                MaxCondition: 100.0,
-                Ammo: 4,
-                Ammotype: "ammo.pistol",
-                Position: 0,
-                Frequency: -1,
-                BlueprintShortname: null,
-                Text: null,
-                Contents: [],
-            },
-            {
-                Shortname: "stone.pickaxe",
-                DisplayName: null,
-                Skin: 0,
-                Amount: 1,
-                Condition: 100.0,
-                MaxCondition: 100.0,
-                Ammo: 0,
-                Ammotype: null,
-                Position: 1,
-                Frequency: -1,
-                BlueprintShortname: null,
-                Text: null,
-                Contents: null,
-            },
-            {
-                Shortname: "stonehatchet",
-                DisplayName: null,
-                Skin: 0,
-                Amount: 1,
-                Condition: 100.0,
-                MaxCondition: 100.0,
-                Ammo: 0,
-                Ammotype: null,
-                Position: 2,
-                Frequency: -1,
-                BlueprintShortname: null,
-                Text: null,
-                Contents: null,
-            },
-            {
-                Shortname: "bandage",
-                DisplayName: null,
-                Skin: 0,
-                Amount: 6,
-                Condition: 0.0,
-                MaxCondition: 0.0,
-                Ammo: 0,
-                Ammotype: null,
-                Position: 3,
-                Frequency: -1,
-                BlueprintShortname: null,
-                Text: null,
-                Contents: null,
-            },
-            {
-                Shortname: "syringe.medical",
-                DisplayName: null,
-                Skin: 0,
-                Amount: 3,
-                Condition: 0.0,
-                MaxCondition: 0.0,
-                Ammo: 0,
-                Ammotype: null,
-                Position: 4,
-                Frequency: -1,
-                BlueprintShortname: null,
-                Text: null,
-                Contents: null,
-            },
-            {
-                Shortname: "potato",
-                DisplayName: null,
-                Skin: 0,
-                Amount: 20,
-                Condition: 100.0,
-                MaxCondition: 100.0,
-                Ammo: 0,
-                Ammotype: null,
-                Position: 5,
-                Frequency: -1,
-                BlueprintShortname: null,
-                Text: null,
-                Contents: null,
-            },
-        ],
-    },
-    "VIP Starter Kit": {
-        Name: "VIP Starter Kit",
-        Description: "",
-        RequiredPermission: "kits.vipstarter",
-        MaximumUses: 1,
-        RequiredAuth: 0,
-        Cooldown: 0,
-        Cost: 0,
-        IsHidden: true,
-        CopyPasteFile: "",
-        KitImage: "https://wiki.rustclash.com/img/items180/pistol.semiauto.png",
-        MainItems: [
             {
                 Shortname: "stones",
                 DisplayName: null,
@@ -259,7 +47,7 @@ const kitsData = {
                 Frequency: -1,
                 BlueprintShortname: null,
                 Text: null,
-                Contents: null,
+                Contents: null
             },
             {
                 Shortname: "cupboard.tool.retro",
@@ -274,7 +62,7 @@ const kitsData = {
                 Frequency: -1,
                 BlueprintShortname: null,
                 Text: null,
-                Contents: null,
+                Contents: null
             },
             {
                 Shortname: "door.hinged.metal",
@@ -289,22 +77,7 @@ const kitsData = {
                 Frequency: -1,
                 BlueprintShortname: null,
                 Text: null,
-                Contents: null,
-            },
-            {
-                Shortname: "lock.key",
-                DisplayName: null,
-                Skin: 0,
-                Amount: 1,
-                Condition: 0.0,
-                MaxCondition: 0.0,
-                Ammo: 0,
-                Ammotype: null,
-                Position: 5,
-                Frequency: -1,
-                BlueprintShortname: null,
-                Text: null,
-                Contents: null,
+                Contents: null
             },
             {
                 Shortname: "metal.fragments",
@@ -319,7 +92,7 @@ const kitsData = {
                 Frequency: -1,
                 BlueprintShortname: null,
                 Text: null,
-                Contents: null,
+                Contents: null
             },
             {
                 Shortname: "wood",
@@ -334,12 +107,10 @@ const kitsData = {
                 Frequency: -1,
                 BlueprintShortname: null,
                 Text: null,
-                Contents: null,
+                Contents: null
             },
-        ],
-        WearItems: [
             {
-                Shortname: "burlap.gloves.new",
+                Shortname: "lock.code",
                 DisplayName: null,
                 Skin: 0,
                 Amount: 1,
@@ -347,12 +118,14 @@ const kitsData = {
                 MaxCondition: 0.0,
                 Ammo: 0,
                 Ammotype: null,
-                Position: 4,
+                Position: 5,
                 Frequency: -1,
                 BlueprintShortname: null,
                 Text: null,
-                Contents: null,
-            },
+                Contents: null
+            }
+        ],
+        WearItems: [
             {
                 Shortname: "attire.hide.poncho",
                 DisplayName: "Bone Armor Poncho",
@@ -366,67 +139,7 @@ const kitsData = {
                 Frequency: -1,
                 BlueprintShortname: null,
                 Text: null,
-                Contents: null,
-            },
-            {
-                Shortname: "attire.hide.pants",
-                DisplayName: "Pirate Hide Pants",
-                Skin: 2960205521,
-                Amount: 1,
-                Condition: 0.0,
-                MaxCondition: 0.0,
-                Ammo: 0,
-                Ammotype: null,
-                Position: 1,
-                Frequency: -1,
-                BlueprintShortname: null,
-                Text: null,
-                Contents: null,
-            },
-            {
-                Shortname: "attire.hide.boots",
-                DisplayName: "Pirate Hide Shoes",
-                Skin: 2963367559,
-                Amount: 1,
-                Condition: 0.0,
-                MaxCondition: 0.0,
-                Ammo: 0,
-                Ammotype: null,
-                Position: 2,
-                Frequency: -1,
-                BlueprintShortname: null,
-                Text: null,
-                Contents: null,
-            },
-            {
-                Shortname: "attire.hide.vest",
-                DisplayName: "Pirate Hide Shirt",
-                Skin: 2960204174,
-                Amount: 1,
-                Condition: 0.0,
-                MaxCondition: 0.0,
-                Ammo: 0,
-                Ammotype: null,
-                Position: 3,
-                Frequency: -1,
-                BlueprintShortname: null,
-                Text: null,
-                Contents: null,
-            },
-            {
-                Shortname: "hat.wolf",
-                DisplayName: null,
-                Skin: 0,
-                Amount: 1,
-                Condition: 0.0,
-                MaxCondition: 0.0,
-                Ammo: 0,
-                Ammotype: null,
-                Position: 5,
-                Frequency: -1,
-                BlueprintShortname: null,
-                Text: null,
-                Contents: null,
+                Contents: null
             },
             {
                 Shortname: "mask.bandana",
@@ -437,19 +150,17 @@ const kitsData = {
                 MaxCondition: 0.0,
                 Ammo: 0,
                 Ammotype: null,
-                Position: 6,
+                Position: 3,
                 Frequency: -1,
                 BlueprintShortname: null,
                 Text: null,
-                Contents: null,
+                Contents: null
             },
-        ],
-        BeltItems: [
             {
-                Shortname: "syringe.medical",
+                Shortname: "burlap.gloves",
                 DisplayName: null,
-                Skin: 0,
-                Amount: 3,
+                Skin: 3295784503,
+                Amount: 1,
                 Condition: 0.0,
                 MaxCondition: 0.0,
                 Ammo: 0,
@@ -458,13 +169,13 @@ const kitsData = {
                 Frequency: -1,
                 BlueprintShortname: null,
                 Text: null,
-                Contents: null,
+                Contents: null
             },
             {
-                Shortname: "bandage",
+                Shortname: "shoes.boots",
                 DisplayName: null,
-                Skin: 0,
-                Amount: 6,
+                Skin: 3295775250,
+                Amount: 1,
                 Condition: 0.0,
                 MaxCondition: 0.0,
                 Ammo: 0,
@@ -473,28 +184,60 @@ const kitsData = {
                 Frequency: -1,
                 BlueprintShortname: null,
                 Text: null,
-                Contents: null,
-            },
+                Contents: null
+            }
+        ],
+        BeltItems: [
             {
-                Shortname: "potato",
+                Shortname: "stone.pickaxe",
                 DisplayName: null,
                 Skin: 0,
-                Amount: 20,
+                Amount: 1,
                 Condition: 100.0,
                 MaxCondition: 100.0,
+                Ammo: 0,
+                Ammotype: null,
+                Position: 0,
+                Frequency: -1,
+                BlueprintShortname: null,
+                Text: null,
+                Contents: null
+            },
+            {
+                Shortname: "stonehatchet",
+                DisplayName: null,
+                Skin: 0,
+                Amount: 1,
+                Condition: 100.0,
+                MaxCondition: 100.0,
+                Ammo: 0,
+                Ammotype: null,
+                Position: 1,
+                Frequency: -1,
+                BlueprintShortname: null,
+                Text: null,
+                Contents: null
+            },
+            {
+                Shortname: "syringe.medical",
+                DisplayName: null,
+                Skin: 0,
+                Amount: 6,
+                Condition: 0.0,
+                MaxCondition: 0.0,
                 Ammo: 0,
                 Ammotype: null,
                 Position: 3,
                 Frequency: -1,
                 BlueprintShortname: null,
                 Text: null,
-                Contents: null,
+                Contents: null
             },
             {
-                Shortname: "ammo.pistol",
+                Shortname: "bandage",
                 DisplayName: null,
                 Skin: 0,
-                Amount: 64,
+                Amount: 12,
                 Condition: 0.0,
                 MaxCondition: 0.0,
                 Ammo: 0,
@@ -503,7 +246,22 @@ const kitsData = {
                 Frequency: -1,
                 BlueprintShortname: null,
                 Text: null,
-                Contents: null,
+                Contents: null
+            },
+            {
+                Shortname: "potato",
+                DisplayName: null,
+                Skin: 0,
+                Amount: 40,
+                Condition: 100.0,
+                MaxCondition: 100.0,
+                Ammo: 0,
+                Ammotype: null,
+                Position: 5,
+                Frequency: -1,
+                BlueprintShortname: null,
+                Text: null,
+                Contents: null
             },
             {
                 Shortname: "pistol.semiauto",
@@ -514,13 +272,13 @@ const kitsData = {
                 MaxCondition: 100.0,
                 Ammo: 4,
                 Ammotype: "ammo.pistol",
-                Position: 0,
+                Position: 2,
                 Frequency: -1,
                 BlueprintShortname: null,
                 Text: null,
-                Contents: [],
-            },
-        ],
+                Contents: []
+            }
+        ]
     },
     "VIP Kit": {
         Name: "VIP Kit",
@@ -547,8 +305,8 @@ const kitsData = {
                 Frequency: -1,
                 BlueprintShortname: null,
                 Text: null,
-                Contents: null,
-            },
+                Contents: null
+            }
         ],
         WearItems: [
             {
@@ -564,7 +322,7 @@ const kitsData = {
                 Frequency: -1,
                 BlueprintShortname: null,
                 Text: null,
-                Contents: null,
+                Contents: null
             },
             {
                 Shortname: "shoes.boots",
@@ -579,7 +337,7 @@ const kitsData = {
                 Frequency: -1,
                 BlueprintShortname: null,
                 Text: null,
-                Contents: null,
+                Contents: null
             },
             {
                 Shortname: "hoodie",
@@ -594,7 +352,7 @@ const kitsData = {
                 Frequency: -1,
                 BlueprintShortname: null,
                 Text: null,
-                Contents: null,
+                Contents: null
             },
             {
                 Shortname: "roadsign.jacket",
@@ -609,7 +367,7 @@ const kitsData = {
                 Frequency: -1,
                 BlueprintShortname: null,
                 Text: null,
-                Contents: null,
+                Contents: null
             },
             {
                 Shortname: "roadsign.gloves",
@@ -624,7 +382,7 @@ const kitsData = {
                 Frequency: -1,
                 BlueprintShortname: null,
                 Text: null,
-                Contents: null,
+                Contents: null
             },
             {
                 Shortname: "roadsign.kilt",
@@ -639,7 +397,7 @@ const kitsData = {
                 Frequency: -1,
                 BlueprintShortname: null,
                 Text: null,
-                Contents: null,
+                Contents: null
             },
             {
                 Shortname: "pants",
@@ -654,8 +412,8 @@ const kitsData = {
                 Frequency: -1,
                 BlueprintShortname: null,
                 Text: null,
-                Contents: null,
-            },
+                Contents: null
+            }
         ],
         BeltItems: [
             {
@@ -685,7 +443,7 @@ const kitsData = {
                         Frequency: -1,
                         BlueprintShortname: null,
                         Text: null,
-                        Contents: null,
+                        Contents: null
                     },
                     {
                         Shortname: "weapon.mod.holosight",
@@ -700,7 +458,7 @@ const kitsData = {
                         Frequency: -1,
                         BlueprintShortname: null,
                         Text: null,
-                        Contents: null,
+                        Contents: null
                     },
                     {
                         Shortname: "weapon.mod.flashlight",
@@ -715,9 +473,9 @@ const kitsData = {
                         Frequency: -1,
                         BlueprintShortname: null,
                         Text: null,
-                        Contents: null,
-                    },
-                ],
+                        Contents: null
+                    }
+                ]
             },
             {
                 Shortname: "syringe.medical",
@@ -732,7 +490,7 @@ const kitsData = {
                 Frequency: -1,
                 BlueprintShortname: null,
                 Text: null,
-                Contents: null,
+                Contents: null
             },
             {
                 Shortname: "icepick.salvaged",
@@ -747,7 +505,7 @@ const kitsData = {
                 Frequency: -1,
                 BlueprintShortname: null,
                 Text: null,
-                Contents: null,
+                Contents: null
             },
             {
                 Shortname: "axe.salvaged",
@@ -762,7 +520,7 @@ const kitsData = {
                 Frequency: -1,
                 BlueprintShortname: null,
                 Text: null,
-                Contents: null,
+                Contents: null
             },
             {
                 Shortname: "bandage",
@@ -777,7 +535,7 @@ const kitsData = {
                 Frequency: -1,
                 BlueprintShortname: null,
                 Text: null,
-                Contents: null,
+                Contents: null
             },
             {
                 Shortname: "supply.signal",
@@ -792,9 +550,9 @@ const kitsData = {
                 Frequency: -1,
                 BlueprintShortname: null,
                 Text: null,
-                Contents: null,
-            },
-        ],
+                Contents: null
+            }
+        ]
     },
     "Base Defense": {
         Name: "Base Defense",
@@ -821,7 +579,7 @@ const kitsData = {
                 Frequency: -1,
                 BlueprintShortname: null,
                 Text: null,
-                Contents: null,
+                Contents: null
             },
             {
                 Shortname: "ammo.pistol",
@@ -836,7 +594,7 @@ const kitsData = {
                 Frequency: -1,
                 BlueprintShortname: null,
                 Text: null,
-                Contents: null,
+                Contents: null
             },
             {
                 Shortname: "ammo.pistol",
@@ -851,7 +609,7 @@ const kitsData = {
                 Frequency: -1,
                 BlueprintShortname: null,
                 Text: null,
-                Contents: null,
+                Contents: null
             },
             {
                 Shortname: "pistol.python",
@@ -866,11 +624,8 @@ const kitsData = {
                 Frequency: -1,
                 BlueprintShortname: null,
                 Text: null,
-                Contents: [],
+                Contents: []
             },
-        ],
-        WearItems: [],
-        BeltItems: [
             {
                 Shortname: "autoturret",
                 DisplayName: null,
@@ -880,88 +635,15 @@ const kitsData = {
                 MaxCondition: 100.0,
                 Ammo: 0,
                 Ammotype: null,
-                Position: 5,
-                Frequency: -1,
-                BlueprintShortname: null,
-                Text: null,
-                Contents: null,
-            },
-            {
-                Shortname: "electrical.branch",
-                DisplayName: null,
-                Skin: 0,
-                Amount: 2,
-                Condition: 100.0,
-                MaxCondition: 100.0,
-                Ammo: 0,
-                Ammotype: null,
                 Position: 4,
                 Frequency: -1,
                 BlueprintShortname: null,
                 Text: null,
-                Contents: null,
-            },
-            {
-                Shortname: "electrical.branch",
-                DisplayName: null,
-                Skin: 0,
-                Amount: 10,
-                Condition: 100.0,
-                MaxCondition: 100.0,
-                Ammo: 0,
-                Ammotype: null,
-                Position: 3,
-                Frequency: -1,
-                BlueprintShortname: null,
-                Text: null,
-                Contents: null,
-            },
-            {
-                Shortname: "electrical.combiner",
-                DisplayName: null,
-                Skin: 0,
-                Amount: 3,
-                Condition: 100.0,
-                MaxCondition: 100.0,
-                Ammo: 0,
-                Ammotype: null,
-                Position: 2,
-                Frequency: -1,
-                BlueprintShortname: null,
-                Text: null,
-                Contents: null,
-            },
-            {
-                Shortname: "wiretool",
-                DisplayName: null,
-                Skin: 0,
-                Amount: 1,
-                Condition: 4.0,
-                MaxCondition: 4.0,
-                Ammo: 0,
-                Ammotype: null,
-                Position: 1,
-                Frequency: -1,
-                BlueprintShortname: null,
-                Text: null,
-                Contents: null,
-            },
-            {
-                Shortname: "electric.generator.small",
-                DisplayName: null,
-                Skin: 0,
-                Amount: 1,
-                Condition: 100.0,
-                MaxCondition: 100.0,
-                Ammo: 0,
-                Ammotype: null,
-                Position: 0,
-                Frequency: -1,
-                BlueprintShortname: null,
-                Text: null,
-                Contents: null,
-            },
+                Contents: null
+            }
         ],
+        WearItems: [],
+        BeltItems: []
     },
     "VIP Builder": {
         Name: "VIP Builder",
@@ -988,7 +670,7 @@ const kitsData = {
                 Frequency: -1,
                 BlueprintShortname: null,
                 Text: null,
-                Contents: null,
+                Contents: null
             },
             {
                 Shortname: "wood",
@@ -1003,7 +685,7 @@ const kitsData = {
                 Frequency: -1,
                 BlueprintShortname: null,
                 Text: null,
-                Contents: null,
+                Contents: null
             },
             {
                 Shortname: "stones",
@@ -1018,7 +700,7 @@ const kitsData = {
                 Frequency: -1,
                 BlueprintShortname: null,
                 Text: null,
-                Contents: null,
+                Contents: null
             },
             {
                 Shortname: "stones",
@@ -1033,7 +715,7 @@ const kitsData = {
                 Frequency: -1,
                 BlueprintShortname: null,
                 Text: null,
-                Contents: null,
+                Contents: null
             },
             {
                 Shortname: "stones",
@@ -1048,7 +730,7 @@ const kitsData = {
                 Frequency: -1,
                 BlueprintShortname: null,
                 Text: null,
-                Contents: null,
+                Contents: null
             },
             {
                 Shortname: "metal.fragments",
@@ -1063,7 +745,7 @@ const kitsData = {
                 Frequency: -1,
                 BlueprintShortname: null,
                 Text: null,
-                Contents: null,
+                Contents: null
             },
             {
                 Shortname: "metal.refined",
@@ -1078,11 +760,11 @@ const kitsData = {
                 Frequency: -1,
                 BlueprintShortname: null,
                 Text: null,
-                Contents: null,
-            },
+                Contents: null
+            }
         ],
         WearItems: [],
-        BeltItems: [],
+        BeltItems: []
     },
     "Base Defense II": {
         Name: "Base Defense II",
@@ -1109,7 +791,7 @@ const kitsData = {
                 Frequency: -1,
                 BlueprintShortname: null,
                 Text: null,
-                Contents: null,
+                Contents: null
             },
             {
                 Shortname: "ammo.pistol",
@@ -1124,7 +806,7 @@ const kitsData = {
                 Frequency: -1,
                 BlueprintShortname: null,
                 Text: null,
-                Contents: null,
+                Contents: null
             },
             {
                 Shortname: "ammo.pistol",
@@ -1139,7 +821,7 @@ const kitsData = {
                 Frequency: -1,
                 BlueprintShortname: null,
                 Text: null,
-                Contents: null,
+                Contents: null
             },
             {
                 Shortname: "pistol.python",
@@ -1154,11 +836,8 @@ const kitsData = {
                 Frequency: -1,
                 BlueprintShortname: null,
                 Text: null,
-                Contents: [],
+                Contents: []
             },
-        ],
-        WearItems: [],
-        BeltItems: [
             {
                 Shortname: "autoturret",
                 DisplayName: null,
@@ -1168,41 +847,11 @@ const kitsData = {
                 MaxCondition: 100.0,
                 Ammo: 0,
                 Ammotype: null,
-                Position: 2,
+                Position: 4,
                 Frequency: -1,
                 BlueprintShortname: null,
                 Text: null,
-                Contents: null,
-            },
-            {
-                Shortname: "electrical.branch",
-                DisplayName: null,
-                Skin: 0,
-                Amount: 2,
-                Condition: 100.0,
-                MaxCondition: 100.0,
-                Ammo: 0,
-                Ammotype: null,
-                Position: 0,
-                Frequency: -1,
-                BlueprintShortname: null,
-                Text: null,
-                Contents: null,
-            },
-            {
-                Shortname: "electrical.branch",
-                DisplayName: null,
-                Skin: 0,
-                Amount: 10,
-                Condition: 100.0,
-                MaxCondition: 100.0,
-                Ammo: 0,
-                Ammotype: null,
-                Position: 1,
-                Frequency: -1,
-                BlueprintShortname: null,
-                Text: null,
-                Contents: null,
+                Contents: null
             },
             {
                 Shortname: "samsite",
@@ -1213,13 +862,15 @@ const kitsData = {
                 MaxCondition: 100.0,
                 Ammo: 0,
                 Ammotype: null,
-                Position: 3,
+                Position: 5,
                 Frequency: -1,
                 BlueprintShortname: null,
                 Text: null,
-                Contents: null,
-            },
+                Contents: null
+            }
         ],
+        WearItems: [],
+        BeltItems: []
     },
     "VIP Builder II": {
         Name: "VIP Builder II",
@@ -1246,7 +897,7 @@ const kitsData = {
                 Frequency: -1,
                 BlueprintShortname: null,
                 Text: null,
-                Contents: null,
+                Contents: null
             },
             {
                 Shortname: "wood",
@@ -1261,7 +912,7 @@ const kitsData = {
                 Frequency: -1,
                 BlueprintShortname: null,
                 Text: null,
-                Contents: null,
+                Contents: null
             },
             {
                 Shortname: "wood",
@@ -1276,7 +927,7 @@ const kitsData = {
                 Frequency: -1,
                 BlueprintShortname: null,
                 Text: null,
-                Contents: null,
+                Contents: null
             },
             {
                 Shortname: "wood",
@@ -1291,7 +942,7 @@ const kitsData = {
                 Frequency: -1,
                 BlueprintShortname: null,
                 Text: null,
-                Contents: null,
+                Contents: null
             },
             {
                 Shortname: "stones",
@@ -1306,7 +957,7 @@ const kitsData = {
                 Frequency: -1,
                 BlueprintShortname: null,
                 Text: null,
-                Contents: null,
+                Contents: null
             },
             {
                 Shortname: "stones",
@@ -1321,7 +972,7 @@ const kitsData = {
                 Frequency: -1,
                 BlueprintShortname: null,
                 Text: null,
-                Contents: null,
+                Contents: null
             },
             {
                 Shortname: "stones",
@@ -1336,7 +987,7 @@ const kitsData = {
                 Frequency: -1,
                 BlueprintShortname: null,
                 Text: null,
-                Contents: null,
+                Contents: null
             },
             {
                 Shortname: "stones",
@@ -1351,7 +1002,7 @@ const kitsData = {
                 Frequency: -1,
                 BlueprintShortname: null,
                 Text: null,
-                Contents: null,
+                Contents: null
             },
             {
                 Shortname: "stones",
@@ -1366,7 +1017,7 @@ const kitsData = {
                 Frequency: -1,
                 BlueprintShortname: null,
                 Text: null,
-                Contents: null,
+                Contents: null
             },
             {
                 Shortname: "metal.fragments",
@@ -1381,7 +1032,7 @@ const kitsData = {
                 Frequency: -1,
                 BlueprintShortname: null,
                 Text: null,
-                Contents: null,
+                Contents: null
             },
             {
                 Shortname: "metal.fragments",
@@ -1396,7 +1047,7 @@ const kitsData = {
                 Frequency: -1,
                 BlueprintShortname: null,
                 Text: null,
-                Contents: null,
+                Contents: null
             },
             {
                 Shortname: "metal.refined",
@@ -1411,11 +1062,11 @@ const kitsData = {
                 Frequency: -1,
                 BlueprintShortname: null,
                 Text: null,
-                Contents: null,
-            },
+                Contents: null
+            }
         ],
         WearItems: [],
-        BeltItems: [],
+        BeltItems: []
     },
     "Base Defense III": {
         Name: "Base Defense III",
@@ -1430,51 +1081,6 @@ const kitsData = {
         KitImage: "https://wiki.rustclash.com/img/items180/autoturret.png",
         MainItems: [
             {
-                Shortname: "autoturret",
-                DisplayName: null,
-                Skin: 0,
-                Amount: 12,
-                Condition: 100.0,
-                MaxCondition: 100.0,
-                Ammo: 0,
-                Ammotype: null,
-                Position: 18,
-                Frequency: -1,
-                BlueprintShortname: null,
-                Text: null,
-                Contents: null,
-            },
-            {
-                Shortname: "autoturret",
-                DisplayName: null,
-                Skin: 0,
-                Amount: 12,
-                Condition: 100.0,
-                MaxCondition: 100.0,
-                Ammo: 0,
-                Ammotype: null,
-                Position: 19,
-                Frequency: -1,
-                BlueprintShortname: null,
-                Text: null,
-                Contents: null,
-            },
-            {
-                Shortname: "samsite",
-                DisplayName: null,
-                Skin: 0,
-                Amount: 3,
-                Condition: 100.0,
-                MaxCondition: 100.0,
-                Ammo: 0,
-                Ammotype: null,
-                Position: 12,
-                Frequency: -1,
-                BlueprintShortname: null,
-                Text: null,
-                Contents: null,
-            },
-            {
                 Shortname: "ammo.rifle",
                 DisplayName: null,
                 Skin: 0,
@@ -1483,26 +1089,11 @@ const kitsData = {
                 MaxCondition: 0.0,
                 Ammo: 0,
                 Ammotype: null,
-                Position: 1,
+                Position: 0,
                 Frequency: -1,
                 BlueprintShortname: null,
                 Text: null,
-                Contents: null,
-            },
-            {
-                Shortname: "ammo.rifle",
-                DisplayName: null,
-                Skin: 0,
-                Amount: 512,
-                Condition: 0.0,
-                MaxCondition: 0.0,
-                Ammo: 0,
-                Ammotype: null,
-                Position: 2,
-                Frequency: -1,
-                BlueprintShortname: null,
-                Text: null,
-                Contents: null,
+                Contents: null
             },
             {
                 Shortname: "ammo.rifle",
@@ -1517,22 +1108,7 @@ const kitsData = {
                 Frequency: -1,
                 BlueprintShortname: null,
                 Text: null,
-                Contents: null,
-            },
-            {
-                Shortname: "ammo.rifle",
-                DisplayName: null,
-                Skin: 0,
-                Amount: 512,
-                Condition: 0.0,
-                MaxCondition: 0.0,
-                Ammo: 0,
-                Ammotype: null,
-                Position: 4,
-                Frequency: -1,
-                BlueprintShortname: null,
-                Text: null,
-                Contents: null,
+                Contents: null
             },
             {
                 Shortname: "ammo.rifle",
@@ -1547,7 +1123,7 @@ const kitsData = {
                 Frequency: -1,
                 BlueprintShortname: null,
                 Text: null,
-                Contents: null,
+                Contents: null
             },
             {
                 Shortname: "ammo.rifle",
@@ -1558,11 +1134,86 @@ const kitsData = {
                 MaxCondition: 0.0,
                 Ammo: 0,
                 Ammotype: null,
-                Position: 0,
+                Position: 2,
                 Frequency: -1,
                 BlueprintShortname: null,
                 Text: null,
-                Contents: null,
+                Contents: null
+            },
+            {
+                Shortname: "ammo.rifle",
+                DisplayName: null,
+                Skin: 0,
+                Amount: 512,
+                Condition: 0.0,
+                MaxCondition: 0.0,
+                Ammo: 0,
+                Ammotype: null,
+                Position: 4,
+                Frequency: -1,
+                BlueprintShortname: null,
+                Text: null,
+                Contents: null
+            },
+            {
+                Shortname: "ammo.rifle",
+                DisplayName: null,
+                Skin: 0,
+                Amount: 512,
+                Condition: 0.0,
+                MaxCondition: 0.0,
+                Ammo: 0,
+                Ammotype: null,
+                Position: 1,
+                Frequency: -1,
+                BlueprintShortname: null,
+                Text: null,
+                Contents: null
+            },
+            {
+                Shortname: "samsite",
+                DisplayName: null,
+                Skin: 0,
+                Amount: 3,
+                Condition: 100.0,
+                MaxCondition: 100.0,
+                Ammo: 0,
+                Ammotype: null,
+                Position: 9,
+                Frequency: -1,
+                BlueprintShortname: null,
+                Text: null,
+                Contents: null
+            },
+            {
+                Shortname: "autoturret",
+                DisplayName: null,
+                Skin: 0,
+                Amount: 12,
+                Condition: 100.0,
+                MaxCondition: 100.0,
+                Ammo: 0,
+                Ammotype: null,
+                Position: 7,
+                Frequency: -1,
+                BlueprintShortname: null,
+                Text: null,
+                Contents: null
+            },
+            {
+                Shortname: "autoturret",
+                DisplayName: null,
+                Skin: 0,
+                Amount: 12,
+                Condition: 100.0,
+                MaxCondition: 100.0,
+                Ammo: 0,
+                Ammotype: null,
+                Position: 8,
+                Frequency: -1,
+                BlueprintShortname: null,
+                Text: null,
+                Contents: null
             },
             {
                 Shortname: "rifle.m39",
@@ -1577,102 +1228,11 @@ const kitsData = {
                 Frequency: -1,
                 BlueprintShortname: null,
                 Text: null,
-                Contents: [],
-            },
+                Contents: []
+            }
         ],
         WearItems: [],
-        BeltItems: [
-            {
-                Shortname: "electric.generator.small",
-                DisplayName: null,
-                Skin: 0,
-                Amount: 1,
-                Condition: 100.0,
-                MaxCondition: 100.0,
-                Ammo: 0,
-                Ammotype: null,
-                Position: 5,
-                Frequency: -1,
-                BlueprintShortname: null,
-                Text: null,
-                Contents: null,
-            },
-            {
-                Shortname: "electrical.branch",
-                DisplayName: null,
-                Skin: 0,
-                Amount: 10,
-                Condition: 100.0,
-                MaxCondition: 100.0,
-                Ammo: 0,
-                Ammotype: null,
-                Position: 3,
-                Frequency: -1,
-                BlueprintShortname: null,
-                Text: null,
-                Contents: null,
-            },
-            {
-                Shortname: "electrical.branch",
-                DisplayName: null,
-                Skin: 0,
-                Amount: 10,
-                Condition: 100.0,
-                MaxCondition: 100.0,
-                Ammo: 0,
-                Ammotype: null,
-                Position: 4,
-                Frequency: -1,
-                BlueprintShortname: null,
-                Text: null,
-                Contents: null,
-            },
-            {
-                Shortname: "electrical.branch",
-                DisplayName: null,
-                Skin: 0,
-                Amount: 4,
-                Condition: 100.0,
-                MaxCondition: 100.0,
-                Ammo: 0,
-                Ammotype: null,
-                Position: 2,
-                Frequency: -1,
-                BlueprintShortname: null,
-                Text: null,
-                Contents: null,
-            },
-            {
-                Shortname: "wiretool",
-                DisplayName: null,
-                Skin: 0,
-                Amount: 1,
-                Condition: 4.0,
-                MaxCondition: 4.0,
-                Ammo: 0,
-                Ammotype: null,
-                Position: 0,
-                Frequency: -1,
-                BlueprintShortname: null,
-                Text: null,
-                Contents: null,
-            },
-            {
-                Shortname: "electrical.combiner",
-                DisplayName: null,
-                Skin: 0,
-                Amount: 3,
-                Condition: 100.0,
-                MaxCondition: 100.0,
-                Ammo: 0,
-                Ammotype: null,
-                Position: 1,
-                Frequency: -1,
-                BlueprintShortname: null,
-                Text: null,
-                Contents: null,
-            },
-        ],
+        BeltItems: []
     },
     "VIP Builder III": {
         Name: "VIP Builder III",
@@ -1699,7 +1259,7 @@ const kitsData = {
                 Frequency: -1,
                 BlueprintShortname: null,
                 Text: null,
-                Contents: null,
+                Contents: null
             },
             {
                 Shortname: "wood",
@@ -1714,7 +1274,7 @@ const kitsData = {
                 Frequency: -1,
                 BlueprintShortname: null,
                 Text: null,
-                Contents: null,
+                Contents: null
             },
             {
                 Shortname: "wood",
@@ -1729,7 +1289,7 @@ const kitsData = {
                 Frequency: -1,
                 BlueprintShortname: null,
                 Text: null,
-                Contents: null,
+                Contents: null
             },
             {
                 Shortname: "wood",
@@ -1744,7 +1304,7 @@ const kitsData = {
                 Frequency: -1,
                 BlueprintShortname: null,
                 Text: null,
-                Contents: null,
+                Contents: null
             },
             {
                 Shortname: "wood",
@@ -1759,7 +1319,7 @@ const kitsData = {
                 Frequency: -1,
                 BlueprintShortname: null,
                 Text: null,
-                Contents: null,
+                Contents: null
             },
             {
                 Shortname: "wood",
@@ -1774,7 +1334,7 @@ const kitsData = {
                 Frequency: -1,
                 BlueprintShortname: null,
                 Text: null,
-                Contents: null,
+                Contents: null
             },
             {
                 Shortname: "wood",
@@ -1789,7 +1349,7 @@ const kitsData = {
                 Frequency: -1,
                 BlueprintShortname: null,
                 Text: null,
-                Contents: null,
+                Contents: null
             },
             {
                 Shortname: "wood",
@@ -1804,7 +1364,7 @@ const kitsData = {
                 Frequency: -1,
                 BlueprintShortname: null,
                 Text: null,
-                Contents: null,
+                Contents: null
             },
             {
                 Shortname: "stones",
@@ -1819,7 +1379,7 @@ const kitsData = {
                 Frequency: -1,
                 BlueprintShortname: null,
                 Text: null,
-                Contents: null,
+                Contents: null
             },
             {
                 Shortname: "stones",
@@ -1834,7 +1394,7 @@ const kitsData = {
                 Frequency: -1,
                 BlueprintShortname: null,
                 Text: null,
-                Contents: null,
+                Contents: null
             },
             {
                 Shortname: "stones",
@@ -1849,7 +1409,7 @@ const kitsData = {
                 Frequency: -1,
                 BlueprintShortname: null,
                 Text: null,
-                Contents: null,
+                Contents: null
             },
             {
                 Shortname: "stones",
@@ -1864,7 +1424,7 @@ const kitsData = {
                 Frequency: -1,
                 BlueprintShortname: null,
                 Text: null,
-                Contents: null,
+                Contents: null
             },
             {
                 Shortname: "stones",
@@ -1879,7 +1439,7 @@ const kitsData = {
                 Frequency: -1,
                 BlueprintShortname: null,
                 Text: null,
-                Contents: null,
+                Contents: null
             },
             {
                 Shortname: "stones",
@@ -1894,7 +1454,7 @@ const kitsData = {
                 Frequency: -1,
                 BlueprintShortname: null,
                 Text: null,
-                Contents: null,
+                Contents: null
             },
             {
                 Shortname: "stones",
@@ -1909,7 +1469,7 @@ const kitsData = {
                 Frequency: -1,
                 BlueprintShortname: null,
                 Text: null,
-                Contents: null,
+                Contents: null
             },
             {
                 Shortname: "stones",
@@ -1924,7 +1484,7 @@ const kitsData = {
                 Frequency: -1,
                 BlueprintShortname: null,
                 Text: null,
-                Contents: null,
+                Contents: null
             },
             {
                 Shortname: "stones",
@@ -1939,7 +1499,7 @@ const kitsData = {
                 Frequency: -1,
                 BlueprintShortname: null,
                 Text: null,
-                Contents: null,
+                Contents: null
             },
             {
                 Shortname: "stones",
@@ -1954,7 +1514,7 @@ const kitsData = {
                 Frequency: -1,
                 BlueprintShortname: null,
                 Text: null,
-                Contents: null,
+                Contents: null
             },
             {
                 Shortname: "stones",
@@ -1969,7 +1529,7 @@ const kitsData = {
                 Frequency: -1,
                 BlueprintShortname: null,
                 Text: null,
-                Contents: null,
+                Contents: null
             },
             {
                 Shortname: "metal.fragments",
@@ -1984,7 +1544,7 @@ const kitsData = {
                 Frequency: -1,
                 BlueprintShortname: null,
                 Text: null,
-                Contents: null,
+                Contents: null
             },
             {
                 Shortname: "metal.fragments",
@@ -1999,7 +1559,7 @@ const kitsData = {
                 Frequency: -1,
                 BlueprintShortname: null,
                 Text: null,
-                Contents: null,
+                Contents: null
             },
             {
                 Shortname: "metal.fragments",
@@ -2014,7 +1574,7 @@ const kitsData = {
                 Frequency: -1,
                 BlueprintShortname: null,
                 Text: null,
-                Contents: null,
+                Contents: null
             },
             {
                 Shortname: "metal.fragments",
@@ -2029,7 +1589,7 @@ const kitsData = {
                 Frequency: -1,
                 BlueprintShortname: null,
                 Text: null,
-                Contents: null,
+                Contents: null
             },
             {
                 Shortname: "metal.refined",
@@ -2044,12 +1604,12 @@ const kitsData = {
                 Frequency: -1,
                 BlueprintShortname: null,
                 Text: null,
-                Contents: null,
-            },
+                Contents: null
+            }
         ],
         WearItems: [],
-        BeltItems: [],
-    },
+        BeltItems: []
+    }
 };
 
 const ranks = {
