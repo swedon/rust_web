@@ -324,14 +324,12 @@ main {
 }
 
 .navbar .navbar-logo-container {
-	width: 75px;
+	width: 5px;
 }
 
 .navbar .nav-logo {
-	position: absolute;
-	height: 105px;
-	margin-top: -55px;
-	margin-left: -10px;
+	position: fixed;
+	height: 55px;
 }
 
 .navbar .navbar-toggler {
@@ -346,12 +344,11 @@ main {
 	.navbar .navbar-brand {
 		transform: translateX(-50%);
 		left: 50%;
-		top: 40px;
 		position: absolute;
 	}
 
 	.navbar .nav-logo {
-		height: 42px;
+		height: 32px;
 	}
 }
 
