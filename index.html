@@ -23,7 +23,8 @@
 <body class="cover-container d-flex w-100 h-100 mx-auto flex-column">
 
 	<div class="video-container">
-		<video muted loop playsinline id="background-video" class="mb-auto background-video" preload="auto">
+		<video muted loop autoplay disablePictureInPicture playsinline id="background-video"
+			style="pointer-events: none;" class="mb-auto background-video" preload="auto">
 			<source src="./videos/excv.webm" type="video/webm" />
 			<source src="./videos/harbor1.webm" type="video/webm" />
 			<source src="./videos/industrial.webm" type="video/webm" />
@@ -410,9 +411,62 @@
 									</div>
 								</div>
 							</div>
-
+							<div class="accordion-item">
+								<h2 class="accordion-header" id="rule2">
+									<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+										data-bs-target="#collapseRule2">
+										<svg xmlns="http://www.w3.org/2000/svg" class="icon" fill="none"
+											viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+											<path stroke-linecap="round" stroke-linejoin="round"
+												d="M13 9l3 3m0 0l-3 3m3-3H8m13 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+										</svg>
+										Support
+									</button>
+								</h2>
+								<div id="collapseRule2" class="accordion-collapse collapse"
+									data-bs-parent="#accordionRules">
+									<div class="accordion-body">
+										<ul>
+											<li>We encourage you to make a ticket on our discord if you run into any
+												trouble.</li>
+											<li>If its just something small thats needs to be looked at that dont
+												require further contact
+												Please use In-Game command /Feedback</li>
+											<li>If someone steals your loot call out in chat to see if any staff member
+												is available or use f7 report.</li>
+										</ul>
+									</div>
+								</div>
+							</div>
 						</div>
+						<div class="accordion-item">
+							<h2 class="accordion-header" id="rule3">
+								<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+									data-bs-target="#collapseRule3">
+									<svg xmlns="http://www.w3.org/2000/svg" class="icon" fill="none" viewBox="0 0 24 24"
+										stroke="currentColor" stroke-width="2">
+										<path stroke-linecap="round" stroke-linejoin="round"
+											d="M13 9l3 3m0 0l-3 3m3-3H8m13 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+									</svg>
+									Staff
+								</button>
+							</h2>
+							<div id="collapseRule3" class="accordion-collapse collapse"
+								data-bs-parent="#accordionRules">
+								<div class="accordion-body">
+									<ul>
+										<li>We allow our staff members to play, this helps us finding and fixing
+											eventual bugs.</li>
+										<li>When members from our staff play their powers are disabled.</li>
+										<li>If you think a staff member is abusing their powers make sure to make it
+											known to the other staff members!</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+
 					</div>
+				</div>
 				</div>
 			</section>
 
@@ -427,8 +481,8 @@
 						<div class="member-container d-flex justify-content-center animate__animated">
 							<div class="member d-flex flex-column">
 								<div class="member-description">
-									<span class="member-name">sh0uf</span>
-									<span class="admin">Owner</span>
+									<span class="member-name">erig</span>
+									<p class="developer">Developer</p>
 								</div>
 							</div>
 						</div>
@@ -449,6 +503,16 @@
 								<div class="member-description">
 									<span class="member-name">Limmek</span>
 									<p class="developer">Developer</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-12 col-sm-6 col-lg-2">
+						<div class="member-container d-flex justify-content-center animate__animated">
+							<div class="member d-flex flex-column">
+								<div class="member-description">
+									<span class="member-name">sh0uf</span>
+									<span class="admin">Owner</span>
 								</div>
 							</div>
 						</div>
