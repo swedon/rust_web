@@ -7,8 +7,8 @@ const shopUrls = {
 
 const kitsData = {
 
-    "VIP Starter Kit": {
-        Name: "VIP Starter Kit",
+    "Upgraded Autokit": {
+        Name: "Upgraded Autokit",
         Description: "",
         RequiredPermission: "kits.vipstarter",
         MaximumUses: 5,
@@ -17,60 +17,31 @@ const kitsData = {
         Cost: 0,
         IsHidden: true,
         CopyPasteFile: "",
-        KitImage: "https://wiki.rustclash.com/img/items180/pistol.semiauto.png",
-        MainItems: [
+        KitImage: "https://wiki.rustclash.com/img/items180/paddle.png",
+        MainItems: [],
+        WearItems: [
             {
-                Shortname: "ammo.pistol",
-                DisplayName: null,
-                Skin: 0,
-                Amount: 128,
-                Condition: 0.0,
-                MaxCondition: 0.0,
+                Shortname: "hat.cap",
+                DisplayName: "RustyRevenge Cap",
+                Skin: 3306813015,
+                Amount: 1,
+                Condition: 250.0,
+                MaxCondition: 250.0,
                 Ammo: 0,
                 Ammotype: null,
-                Position: 18,
+                Position: 5,
                 Frequency: -1,
                 BlueprintShortname: null,
                 Text: null,
                 Contents: null
             },
             {
-                Shortname: "stones",
-                DisplayName: null,
-                Skin: 0,
-                Amount: 10000,
-                Condition: 0.0,
-                MaxCondition: 0.0,
-                Ammo: 0,
-                Ammotype: null,
-                Position: 1,
-                Frequency: -1,
-                BlueprintShortname: null,
-                Text: null,
-                Contents: null
-            },
-            {
-                Shortname: "cupboard.tool.retro",
+                Shortname: "sunglasses",
                 DisplayName: null,
                 Skin: 0,
                 Amount: 1,
                 Condition: 0.0,
                 MaxCondition: 0.0,
-                Ammo: 0,
-                Ammotype: null,
-                Position: 3,
-                Frequency: -1,
-                BlueprintShortname: null,
-                Text: null,
-                Contents: null
-            },
-            {
-                Shortname: "door.hinged.metal",
-                DisplayName: null,
-                Skin: 0,
-                Amount: 1,
-                Condition: 100.0,
-                MaxCondition: 100.0,
                 Ammo: 0,
                 Ammotype: null,
                 Position: 4,
@@ -80,71 +51,9 @@ const kitsData = {
                 Contents: null
             },
             {
-                Shortname: "metal.fragments",
+                Shortname: "tshirt",
                 DisplayName: null,
-                Skin: 0,
-                Amount: 5000,
-                Condition: 0.0,
-                MaxCondition: 0.0,
-                Ammo: 0,
-                Ammotype: null,
-                Position: 2,
-                Frequency: -1,
-                BlueprintShortname: null,
-                Text: null,
-                Contents: null
-            },
-            {
-                Shortname: "wood",
-                DisplayName: null,
-                Skin: 0,
-                Amount: 4000,
-                Condition: 0.0,
-                MaxCondition: 0.0,
-                Ammo: 0,
-                Ammotype: null,
-                Position: 0,
-                Frequency: -1,
-                BlueprintShortname: null,
-                Text: null,
-                Contents: null
-            },
-            {
-                Shortname: "lock.code",
-                DisplayName: null,
-                Skin: 0,
-                Amount: 1,
-                Condition: 0.0,
-                MaxCondition: 0.0,
-                Ammo: 0,
-                Ammotype: null,
-                Position: 5,
-                Frequency: -1,
-                BlueprintShortname: null,
-                Text: null,
-                Contents: null
-            }
-        ],
-        WearItems: [
-            {
-                Shortname: "attire.hide.poncho",
-                DisplayName: "Bone Armor Poncho",
-                Skin: 3268938859,
-                Amount: 1,
-                Condition: 250.0,
-                MaxCondition: 250.0,
-                Ammo: 0,
-                Ammotype: null,
-                Position: 0,
-                Frequency: -1,
-                BlueprintShortname: null,
-                Text: null,
-                Contents: null
-            },
-            {
-                Shortname: "mask.bandana",
-                DisplayName: "Bone Armor Bandana",
-                Skin: 3268940492,
+                Skin: 3306794854,
                 Amount: 1,
                 Condition: 0.0,
                 MaxCondition: 0.0,
@@ -157,15 +66,15 @@ const kitsData = {
                 Contents: null
             },
             {
-                Shortname: "burlap.gloves",
-                DisplayName: null,
-                Skin: 3295784503,
+                Shortname: "pants.shorts",
+                DisplayName: "RustyRevenge Shorts",
+                Skin: 3306797922,
                 Amount: 1,
                 Condition: 0.0,
                 MaxCondition: 0.0,
                 Ammo: 0,
                 Ammotype: null,
-                Position: 1,
+                Position: 2,
                 Frequency: -1,
                 BlueprintShortname: null,
                 Text: null,
@@ -180,7 +89,7 @@ const kitsData = {
                 MaxCondition: 0.0,
                 Ammo: 0,
                 Ammotype: null,
-                Position: 2,
+                Position: 1,
                 Frequency: -1,
                 BlueprintShortname: null,
                 Text: null,
@@ -189,7 +98,7 @@ const kitsData = {
         ],
         BeltItems: [
             {
-                Shortname: "stone.pickaxe",
+                Shortname: "axe.salvaged",
                 DisplayName: null,
                 Skin: 0,
                 Amount: 1,
@@ -204,7 +113,7 @@ const kitsData = {
                 Contents: null
             },
             {
-                Shortname: "stonehatchet",
+                Shortname: "icepick.salvaged",
                 DisplayName: null,
                 Skin: 0,
                 Amount: 1,
@@ -219,10 +128,10 @@ const kitsData = {
                 Contents: null
             },
             {
-                Shortname: "syringe.medical",
+                Shortname: "paddle",
                 DisplayName: null,
                 Skin: 0,
-                Amount: 6,
+                Amount: 1,
                 Condition: 0.0,
                 MaxCondition: 0.0,
                 Ammo: 0,
@@ -237,7 +146,7 @@ const kitsData = {
                 Shortname: "bandage",
                 DisplayName: null,
                 Skin: 0,
-                Amount: 12,
+                Amount: 9,
                 Condition: 0.0,
                 MaxCondition: 0.0,
                 Ammo: 0,
@@ -249,7 +158,7 @@ const kitsData = {
                 Contents: null
             },
             {
-                Shortname: "potato",
+                Shortname: "torch.torch.skull",
                 DisplayName: null,
                 Skin: 0,
                 Amount: 40,
@@ -264,13 +173,13 @@ const kitsData = {
                 Contents: null
             },
             {
-                Shortname: "pistol.semiauto",
+                Shortname: "pistol.revolver",
                 DisplayName: null,
                 Skin: 0,
                 Amount: 1,
                 Condition: 100.0,
                 MaxCondition: 100.0,
-                Ammo: 4,
+                Ammo: 7,
                 Ammotype: "ammo.pistol",
                 Position: 2,
                 Frequency: -1,
@@ -554,8 +463,8 @@ const kitsData = {
             }
         ]
     },
-    "Base Defense": {
-        Name: "Base Defense",
+    "Defense I": {
+        Name: "Defense I",
         Description: "Be ready when the Scientists takes revenge!",
         RequiredPermission: "kits.basedefense1",
         MaximumUses: 1,
@@ -645,8 +554,8 @@ const kitsData = {
         WearItems: [],
         BeltItems: []
     },
-    "VIP Builder": {
-        Name: "VIP Builder",
+    "Builder I": {
+        Name: "Builder I",
         Description: "",
         RequiredPermission: "kits.build1",
         MaximumUses: 0,
@@ -766,8 +675,8 @@ const kitsData = {
         WearItems: [],
         BeltItems: []
     },
-    "Base Defense II": {
-        Name: "Base Defense II",
+    "Defense II": {
+        Name: "Defense II",
         Description: "Be ready when the Scientist take revenge!",
         RequiredPermission: "kits.basedefense2",
         MaximumUses: 1,
@@ -872,8 +781,8 @@ const kitsData = {
         WearItems: [],
         BeltItems: []
     },
-    "VIP Builder II": {
-        Name: "VIP Builder II",
+    "Builder II": {
+        Name: "Builder II",
         Description: "",
         RequiredPermission: "kits.build2",
         MaximumUses: 0,
@@ -1068,8 +977,8 @@ const kitsData = {
         WearItems: [],
         BeltItems: []
     },
-    "Base Defense III": {
-        Name: "Base Defense III",
+    "Defense III": {
+        Name: "Defense III",
         Description: "",
         RequiredPermission: "kits.basedefense3",
         MaximumUses: 1,
@@ -1234,8 +1143,8 @@ const kitsData = {
         WearItems: [],
         BeltItems: []
     },
-    "VIP Builder III": {
-        Name: "VIP Builder III",
+    "Builder III": {
+        Name: "Builder III",
         Description: "",
         RequiredPermission: "kits.build3",
         MaximumUses: 0,
@@ -1613,39 +1522,38 @@ const kitsData = {
 };
 
 const ranks = {
-    bronze: ["VIP Starter Kit", "VIP Kit", "Base Defense", "VIP Builder"],
-    silver: ["VIP Starter Kit", "VIP Kit", "Base Defense II", "VIP Builder II"],
-    gold: ["VIP Starter Kit", "VIP Kit", "Base Defense III", "VIP Builder III"],
+    bronze: ["VIP Starter Kit", "VIP Kit", "Defense", "Builder"],
+    silver: ["VIP Starter Kit", "VIP Kit", "Defense II", "Builder II"],
+    gold: ["VIP Starter Kit", "VIP Kit", "Defense III", "Builder III"],
 };
 
 const rankCommands = {
     bronze: [
+        "+25% $ from kills",
+        "+25.000$ to use in /shop",
         "Access to /Recycler 1x",
         "Access to /Up 3",
         "Access to /Bgrade 3",
         "Access to /Skinset",
         "Access to /Sd (Skindeployable)",
         "4x Autoplanters",
-        "+25% $ from kills",
-        "+25.000$",
-        "ChestStack <br/> 5x Small & 4x Large",
     ],
     silver: [
+        "+50% $ from kills",
+        "+50.000$ to use in /shop",
         "Access to /Up 4",
         "Access to /Bgrade 4",
         "6x Autoplanters",
         "Turret Limit: 24",
-        "+50% $ from kills",
-        "+50.000$",
         "",
         "Unlocks everything from Bronze",
     ],
     gold: [
+        "+100% $ from kills",
+        "+100.000$ to use in /shop",
         "Access to /Recycler 2x",
         "8x Autoplanters",
         "Turret Limit: 48",
-        "+100% $ from kills",
-        "+100.000$",
         "",
         "Unlocks everything from Bronze & Silver",
     ],
